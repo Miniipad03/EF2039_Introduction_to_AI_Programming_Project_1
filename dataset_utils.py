@@ -27,8 +27,8 @@ DATA_ROOT      = PROJECT_ROOT / 'data' / 'fgvc-aircraft-2013b' / 'data'
 IMAGES_DIR     = DATA_ROOT / 'images'
 TOOL_DATA      = PROJECT_ROOT / 'labeling-tool' / 'data'
 USER_IMAGES    = TOOL_DATA / 'user_images'
-EXCLUDED_JSON  = TOOL_DATA / 'excluded.json'
-ADDED_JSON     = TOOL_DATA / 'added_images.json'
+EXCLUDED_DIR   = TOOL_DATA / 'excluded'
+ADDED_DIR      = TOOL_DATA / 'added_images'
 
 
 def _read_annotation(filename):
@@ -72,11 +72,11 @@ class FGVCAircraft(Dataset):
         self.transform  = transform
         self.crop_bbox  = crop_bbox
 
-        # 제거 목록 로드
+        # 제거 목록 로드 (excluded/ 디렉토리, ID별 파일)
         excluded_set = set()
-        if EXCLUDED_JSON.exists():
-            with open(EXCLUDED_JSON) as f:
-                excluded_set = set(json.load(f)['excluded'])
+        if EXCLUDED_DIR.exists():
+            for f in EXCLUDED_DIR.glob('*.json'):
+                excluded_set.add(json.loads(f.read_text())['id'])
 
         # 원본 annotation 로드
         splits = ['train', 'val', 'test'] if split == 'all' else [split]
@@ -99,10 +99,9 @@ class FGVCAircraft(Dataset):
                     'bbox':  bboxes.get(img_id),
                 })
 
-        # 추가 이미지 로드
-        if ADDED_JSON.exists():
-            with open(ADDED_JSON) as f:
-                added_data = json.load(f)['images']
+        # 추가 이미지 로드 (added_images/ 디렉토리, ID별 파일)
+        if ADDED_DIR.exists():
+            added_data = [json.loads(f.read_text()) for f in ADDED_DIR.glob('*.json')]
             for item in added_data:
                 if item['id'] in excluded_set:
                     continue

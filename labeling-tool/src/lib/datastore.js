@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync, unlinkSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -9,7 +9,10 @@ const DATA_ROOT = join(__dirname, '..', '..', '..', 'data', 'fgvc-aircraft-2013b
 // labeling-tool/data/: src/lib/ → (..×2) → labeling-tool/data/
 const TOOL_DATA = join(__dirname, '..', '..', 'data');
 // 사용자가 추가한 이미지 저장 폴더 (원본 데이터셋과 분리)
-const USER_IMAGES = join(TOOL_DATA, 'user_images');
+const USER_IMAGES  = join(TOOL_DATA, 'user_images');
+// 파일 분리 방식: ID별 개별 파일 → 팀원 동시 작업 시 git 충돌 방지
+const EXCLUDED_DIR  = join(TOOL_DATA, 'excluded');
+const ADDED_DIR     = join(TOOL_DATA, 'added_images');
 
 // ─── 파일 파싱 유틸 ───────────────────────────────────────────
 
@@ -144,29 +147,55 @@ export function getHierarchy() {
 	return getCache().hierarchy;
 }
 
-/** excluded.json 읽기 (매번 fresh read) */
+/** excluded/ 디렉토리 전체 읽기 → { excluded: string[], reasons: Record<string,string> } */
 export function getExcluded() {
-	const filePath = join(TOOL_DATA, 'excluded.json');
-	return JSON.parse(readFileSync(filePath, 'utf-8'));
+	const files = readdirSync(EXCLUDED_DIR).filter(f => f.endsWith('.json'));
+	const excluded = [];
+	const reasons = {};
+	for (const file of files) {
+		const data = JSON.parse(readFileSync(join(EXCLUDED_DIR, file), 'utf-8'));
+		excluded.push(data.id);
+		reasons[data.id] = data.reason ?? 'unknown';
+	}
+	return { excluded, reasons };
 }
 
-/** excluded.json 쓰기 */
-export function saveExcluded(data) {
-	const filePath = join(TOOL_DATA, 'excluded.json');
-	writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+/** 이미지 제외 — ID별 파일 저장 (충돌 없음) */
+export function excludeImages(ids, reason = 'unknown') {
+	for (const id of ids) {
+		writeFileSync(
+			join(EXCLUDED_DIR, `${id}.json`),
+			JSON.stringify({ id, reason, excludedAt: new Date().toISOString() }, null, 2),
+			'utf-8'
+		);
+	}
+	clearCache();
 }
 
-/** added_images.json 읽기 */
+/** 제외 해제 — 파일 삭제 */
+export function unexcludeImages(ids) {
+	for (const id of ids) {
+		const p = join(EXCLUDED_DIR, `${id}.json`);
+		if (existsSync(p)) unlinkSync(p);
+	}
+	clearCache();
+}
+
+/** added_images/ 디렉토리 전체 읽기 → { images: object[] } */
 export function getAddedImages() {
-	const filePath = join(TOOL_DATA, 'added_images.json');
-	return JSON.parse(readFileSync(filePath, 'utf-8'));
+	const files = readdirSync(ADDED_DIR).filter(f => f.endsWith('.json'));
+	const images = files.map(f => JSON.parse(readFileSync(join(ADDED_DIR, f), 'utf-8')));
+	return { images };
 }
 
-/** added_images.json 쓰기 */
-export function saveAddedImages(data) {
-	const filePath = join(TOOL_DATA, 'added_images.json');
-	writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
-	clearCache();  // 다음 요청 시 재빌드
+/** 추가 이미지 1개 저장 — ID별 파일 (충돌 없음) */
+export function saveAddedImage(imageData) {
+	writeFileSync(
+		join(ADDED_DIR, `${imageData.id}.json`),
+		JSON.stringify(imageData, null, 2),
+		'utf-8'
+	);
+	clearCache();
 }
 
 /** 이미지 파일 경로 반환 */

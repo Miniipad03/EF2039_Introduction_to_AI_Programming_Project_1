@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit';
 import { writeFileSync } from 'fs';
-import { getAddedImages, saveAddedImages, getImageMap, getUserImagePath } from '$lib/datastore.js';
+import { getAddedImages, saveAddedImage, getUserImagePath } from '$lib/datastore.js';
 
-function generateId(imageMap) {
+function generateId() {
 	// 9000000번대부터 순차 발급
 	const addedData = getAddedImages();
 	if (addedData.images.length === 0) return '9000001';
@@ -28,17 +28,14 @@ export async function POST({ request }) {
 		return json({ success: false, error: 'Missing required fields' }, { status: 400 });
 	}
 
-	const imageMap = getImageMap();
-	const newId = generateId(imageMap);
+	const newId = generateId();
 
 	// 이미지 파일 저장 (원본 데이터셋과 분리된 labeling-tool/data/user_images/ 폴더)
 	const buffer = Buffer.from(await file.arrayBuffer());
-	const destPath = getUserImagePath(newId);
-	writeFileSync(destPath, buffer);
+	writeFileSync(getUserImagePath(newId), buffer);
 
-	// added_images.json 업데이트
-	const addedData = getAddedImages();
-	addedData.images.push({
+	// added_images/{id}.json 저장 (ID별 파일 → 팀원 충돌 없음)
+	saveAddedImage({
 		id: newId,
 		manufacturer,
 		family,
@@ -48,7 +45,6 @@ export async function POST({ request }) {
 		bbox: { xmin, ymin, xmax, ymax },
 		addedAt: new Date().toISOString()
 	});
-	saveAddedImages(addedData); // 내부에서 _imageMap 리셋
 
 	return json({ success: true, id: newId });
 }

@@ -270,7 +270,6 @@
 						<input type="checkbox" bind:checked={isReference} />
 						<span>
 							<strong>Reference 이미지</strong>
-							<span style="color:#64748b"> — 항공기 도면/일러스트 (실제 사진 아님)</span>
 						</span>
 					</label>
 				</div>
