@@ -1,0 +1,15 @@
+{
+  "id": "9000057",
+  "manufacturer": "Boeing",
+  "family": "Boeing 717",
+  "variant": "Boeing 717",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 92,
+    "ymin": 81,
+    "xmax": 2558,
+    "ymax": 612
+  },
+  "addedAt": "2026-04-06T17:00:08.137Z"
+}

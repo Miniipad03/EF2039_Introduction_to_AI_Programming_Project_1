@@ -1,0 +1,15 @@
+{
+  "id": "9000060",
+  "manufacturer": "Boeing",
+  "family": "Boeing 707",
+  "variant": "707-320",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 6,
+    "ymin": 44,
+    "xmax": 396,
+    "ymax": 148
+  },
+  "addedAt": "2026-04-06T17:01:34.624Z"
+}

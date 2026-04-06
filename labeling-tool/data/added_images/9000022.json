@@ -1,0 +1,15 @@
+{
+  "id": "9000022",
+  "manufacturer": "Boeing",
+  "family": "Boeing 777",
+  "variant": "777-300",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 28,
+    "ymin": 88,
+    "xmax": 1001,
+    "ymax": 320
+  },
+  "addedAt": "2026-04-06T16:33:58.937Z"
+}

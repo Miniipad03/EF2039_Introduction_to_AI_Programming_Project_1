@@ -1,0 +1,15 @@
+{
+  "id": "9000006",
+  "manufacturer": "Airbus",
+  "family": "A320",
+  "variant": "A318",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 0,
+    "ymin": 1,
+    "xmax": 368,
+    "ymax": 136
+  },
+  "addedAt": "2026-04-06T16:09:50.265Z"
+}

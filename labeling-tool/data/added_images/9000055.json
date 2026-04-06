@@ -1,0 +1,15 @@
+{
+  "id": "9000055",
+  "manufacturer": "Boeing",
+  "family": "Boeing 727",
+  "variant": "727-200",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 21,
+    "ymin": 246,
+    "xmax": 784,
+    "ymax": 409
+  },
+  "addedAt": "2026-04-06T16:59:28.682Z"
+}
