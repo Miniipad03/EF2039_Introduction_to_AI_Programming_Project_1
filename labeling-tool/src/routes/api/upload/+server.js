@@ -22,6 +22,7 @@ export async function POST({ request }) {
 	const ymin         = parseInt(formData.get('ymin') || '0');
 	const xmax         = parseInt(formData.get('xmax') || '0');
 	const ymax         = parseInt(formData.get('ymax') || '0');
+	const isReference  = formData.get('isReference') === 'true';
 
 	if (!file || !manufacturer || !family || !variant || !split) {
 		return json({ success: false, error: 'Missing required fields' }, { status: 400 });
@@ -43,6 +44,7 @@ export async function POST({ request }) {
 		family,
 		variant,
 		split,
+		isReference,
 		bbox: { xmin, ymin, xmax, ymax },
 		addedAt: new Date().toISOString()
 	});

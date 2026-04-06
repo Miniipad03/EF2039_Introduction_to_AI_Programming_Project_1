@@ -19,6 +19,8 @@
 	let drawStart = null;
 	let drawCurrent = null;
 
+	let isReference = false;
+
 	let uploading = false;
 	let successId = null;
 	let error = '';
@@ -144,6 +146,7 @@
 		form.append('ymin', String(bbox.ymin));
 		form.append('xmax', String(bbox.xmax));
 		form.append('ymax', String(bbox.ymax));
+		form.append('isReference', String(isReference));
 
 		const res = await fetch('/api/upload', { method: 'POST', body: form });
 		const data = await res.json();
@@ -157,6 +160,7 @@
 			manufacturer = '';
 			family = '';
 			variant = '';
+			isReference = false;
 		} else {
 			error = data.error ?? '업로드 실패';
 		}
@@ -259,6 +263,16 @@
 							</label>
 						{/each}
 					</div>
+				</div>
+
+				<div>
+					<label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer">
+						<input type="checkbox" bind:checked={isReference} />
+						<span>
+							<strong>Reference 이미지</strong>
+							<span style="color:#64748b"> — 항공기 도면/일러스트 (실제 사진 아님)</span>
+						</span>
+					</label>
 				</div>
 
 				{#if error}
