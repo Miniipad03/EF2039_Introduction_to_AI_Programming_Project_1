@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"\\\\.\\(js|ts|svelte|json|scss|css|md\\)$\")",
+      "Bash(npm --version)",
+      "Bash(mkdir -p \"c:/Users/bb105/OneDrive/바탕 화면/Kentech/3rd grade/1st semester/[EF2039] Introduction to AI Programming/Project_1/labeling-tool/src/lib\")",
+      "Bash(mkdir -p \"c:/Users/bb105/OneDrive/바탕 화면/Kentech/3rd grade/1st semester/[EF2039] Introduction to AI Programming/Project_1/labeling-tool/src/routes/api/image\")",
+      "Bash(mkdir -p \"c:/Users/bb105/OneDrive/바탕 화면/Kentech/3rd grade/1st semester/[EF2039] Introduction to AI Programming/Project_1/labeling-tool/src/routes/api/taxonomy\")",
+      "Bash(mkdir -p \"c:/Users/bb105/OneDrive/바탕 화면/Kentech/3rd grade/1st semester/[EF2039] Introduction to AI Programming/Project_1/labeling-tool/src/routes/api/images\")",
+      "Bash(mkdir -p \"c:/Users/bb105/OneDrive/바탕 화면/Kentech/3rd grade/1st semester/[EF2039] Introduction to AI Programming/Project_1/labeling-tool/src/routes/api/exclusions\")"
+    ]
+  }
+}

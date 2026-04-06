@@ -1,0 +1,112 @@
+Introduction to AI Programming @ KENTECH, Spring Semester 2026
+Date: 2026.04.06
+ 
+First Project Proposal
+<Fine-Grained Aircraft Classification using CNN>
+ 
+Team Number: 10
+Team Member: 20220645 Mingi Gang, 20220950 Hyundam Park,
+20220117 Hyungjoon Koo, 20220048 Wooseong Kwon
+ 
+1. Project Title & Summary
+a. Title
+Fine-Grained Aircraft Classification using CNN: A Hierarchical Approach to Aircraft Model Recognition
+ 
+b. Summary
+We are building a CNN classification model based on the FGVC-Aircraft dataset for air defense and enemy aircraft identification. This system rapidly and automatically identifies unidentified aircraft by analyzing subtle visual differences, such as airframe structure and engine placement. The goal is to reduce reliance on manual expert interpretation in urgent defense situations and enhance the reliability of aerial surveillance.
+
+2. Dataset Description
+We use the FGVC-Aircraft dataset, publicly available at the Oxford VGG group website (https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/).
+Item
+Details
+Total Images
+10,200 images
+Classes (Family)
+70 families (e.g., Boeing 737)
+Images per Class
+140 images per variant
+Image Resolution
+~1–2 Megapixels (high quality, variable size)
+Image Format
+JPEG (RGB)
+Train / Val / Test Split
+Equally divided (~33–34 images per variant per split)
+Annotations
+Class labels + bounding boxes (crowdsourced via Amazon Mechanical Turk)
+Source
+Aircraft spotter photographs (airliners.net), non-commercial research use only
+
+c. Class Imbalance & Data Quality
+•   	Class distribution is balanced: exactly 100 images per variant, equally split across train/val/test.
+•   	Image quality varies as photos were captured over several decades; however, quality is generally good and aircraft are well-centred in the frame.
+•   	Each image contains a 20-pixel photographer credit banner at the bottom that must be removed before training.
+•   	Diversity maximisation was applied during dataset construction to reduce inter-image correlation from a limited set of photographers.
+ 
+d. Why We Chose This Dataset
+•   	The three-level hierarchy (variant / family / manufacturer) allows flexible control of task difficulty, making it suitable for a course project.
+•   	Unlike animal datasets, aircraft are rigid objects, so class differences stem from structural features (fuselage length, number of engines, wing configuration) rather than pose variation — an interesting and unique challenge for CNNs.
+•   	The dataset is well-curated, publicly available, and directly supported in PyTorch via torchvision.datasets.FGVCAircraft, making it easy to integrate into our pipeline.
+ 
+3. Project Goals & Research Questions
+Main Objectives
+•   	Build a CNN-based image classifier for aircraft model recognition using the FGVC-Aircraft dataset.
+•   	Experiment with classification at multiple hierarchy levels (variant, family, manufacturer) and compare performance.
+•   	Apply data augmentation and dropout to improve generalisation.
+•   	Analyse failure cases using a confusion matrix to understand which aircraft classes are most easily confused.
+ 
+Research Questions
+•   	How well can a CNN distinguish visually similar aircraft variants (e.g., Boeing 737-700 vs. 737-800)?
+•   	Does classifying at the family or manufacturer level significantly improve accuracy compared to variant-level classification?
+•   	Which augmentation strategies are most effective for aircraft images?
+ 
+Performance Targets
+•   	Family-level classification accuracy: ≥ 70% (baseline from original paper: 58.48% using bag-of-visual-words).
+ 
+4. Approach & Methodology
+Step 1 — Data Loading & Preprocessing
+•   	Load the dataset using torchvision.datasets.FGVCAircraft with annotation_level set to 'family' as the primary target.
+•   	Remove the 20-pixel banner from each image before training.
+•   	Apply standard preprocessing: Resize to 224×224, ToTensor(), Normalize with ImageNet mean/std.
+•   	Apply data augmentation for training: RandomHorizontalFlip, RandomCrop, ColorJitter.
+ 
+Step 2 — Model Architecture
+•   	Baseline: Custom CNN with 3–4 convolutional layers, ReLU activations, MaxPooling, Dropout, and a fully connected output layer.
+•   	Advanced: Transfer learning using ResNet18 or ResNet34 pretrained on ImageNet, with the final layer replaced for the target number of classes.
+ 
+Step 3 — Training
+•   	Optimizer: Adam (lr=0.001) for baseline; SGD with momentum for fine-tuning pretrained models.
+•   	Loss function: CrossEntropyLoss.
+•   	Use argparse to control all hyperparameters from the command line.
+•   	Log training loss, validation loss, and validation accuracy per epoch.
+ 
+Step 4 — Evaluation
+•   	Report class-normalised average accuracy (as defined in the original paper) on the test set.
+•   	Plot learning curves (train loss, val loss, val accuracy).
+•   	Visualise confusion matrix to identify frequently confused class pairs (e.g., Boeing 737 variants).
+ 
+5. Potential Challenges & Solutions
+ 
+Challenge
+Proposed Solution
+Fine-grained visual similarity between variants (e.g., A319 vs. A320 vs. A321)
+Use transfer learning with ImageNet-pretrained ResNet; apply attention-based visualisation (Grad-CAM) to understand which regions the model focuses on.
+Small training set (~33 images/class for variant level)
+Apply aggressive data augmentation (flipping, cropping, colour jitter); use transfer learning to leverage pretrained features.
+Banner removal preprocessing requirement
+Apply consistent 20-pixel top crop or use transforms to remove the banner before feeding images to the model.
+Overfitting due to limited data per class
+Use Dropout layers, weight decay, and early stopping based on validation loss.
+High intra-family confusion (e.g., Boeing 737 family)
+Analyse confusion matrix; consider hierarchical loss functions or multi-task learning across hierarchy levels.
+
+ 
+6. Expected Outcomes
+A fully functional CNN training pipeline for aircraft image classification, controllable via command-line arguments.
+Trained models at multiple hierarchy levels (variant, family, manufacturer) with recorded accuracy on the test set.
+Learning curves demonstrating training behaviour and generalisation.
+A confusion matrix showing which aircraft families or variants are most frequently confused, with qualitative analysis.N
+A comparison between the baseline custom CN and a transfer learning approach (ResNet), showing the benefit of pretrained features for fine-grained classification.
+Insights into what visual features (e.g., fuselage length, engine configuration, wing shape) the model learns to distinguish aircraft models, as illustrated through Grad-CAM visualisations.
+ 
+Reference: Maji et al., "Fine-Grained Visual Classification of Aircraft," arXiv:1306.5151, 2013.
+
