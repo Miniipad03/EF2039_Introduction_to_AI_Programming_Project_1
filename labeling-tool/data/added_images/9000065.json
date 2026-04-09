@@ -1,0 +1,15 @@
+{
+  "id": "9000065",
+  "manufacturer": "Embraer",
+  "family": "Embraer E-Jet",
+  "variant": "E-190",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 36,
+    "ymin": 258,
+    "xmax": 991,
+    "ymax": 532
+  },
+  "addedAt": "2026-04-09T00:24:29.854Z"
+}

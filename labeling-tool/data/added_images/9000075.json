@@ -1,0 +1,15 @@
+{
+  "id": "9000075",
+  "manufacturer": "Embraer",
+  "family": "Embraer Legacy 600",
+  "variant": "Embraer Legacy 600",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 38,
+    "ymin": 64,
+    "xmax": 712,
+    "ymax": 216
+  },
+  "addedAt": "2026-04-09T00:35:28.588Z"
+}

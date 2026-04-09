@@ -1,0 +1,15 @@
+{
+  "id": "9000082",
+  "manufacturer": "Canadair",
+  "family": "CRJ-700",
+  "variant": "CRJ-700",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 6,
+    "ymin": 88,
+    "xmax": 823,
+    "ymax": 253
+  },
+  "addedAt": "2026-04-09T00:47:34.303Z"
+}

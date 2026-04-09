@@ -1,0 +1,15 @@
+{
+  "id": "9000085",
+  "manufacturer": "Bombardier Aerospace",
+  "family": "Global Express",
+  "variant": "Global Express",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 12,
+    "ymin": 85,
+    "xmax": 281,
+    "ymax": 150
+  },
+  "addedAt": "2026-04-09T00:58:06.098Z"
+}

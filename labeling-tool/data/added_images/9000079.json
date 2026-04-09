@@ -1,0 +1,15 @@
+{
+  "id": "9000079",
+  "manufacturer": "Canadair",
+  "family": "CRJ-200",
+  "variant": "CRJ-200",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 10,
+    "ymin": 82,
+    "xmax": 281,
+    "ymax": 150
+  },
+  "addedAt": "2026-04-09T00:45:42.453Z"
+}

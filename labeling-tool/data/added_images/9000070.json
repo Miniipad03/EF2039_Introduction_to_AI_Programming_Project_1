@@ -1,0 +1,15 @@
+{
+  "id": "9000070",
+  "manufacturer": "Embraer",
+  "family": "Embraer E-Jet",
+  "variant": "E-170",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 42,
+    "ymin": -8,
+    "xmax": 2446,
+    "ymax": 799
+  },
+  "addedAt": "2026-04-09T00:29:12.492Z"
+}

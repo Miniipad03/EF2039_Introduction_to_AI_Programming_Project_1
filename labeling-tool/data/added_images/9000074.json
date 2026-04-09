@@ -1,0 +1,15 @@
+{
+  "id": "9000074",
+  "manufacturer": "Embraer",
+  "family": "Embraer ERJ 145",
+  "variant": "ERJ 145",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 26,
+    "ymin": 75,
+    "xmax": 909,
+    "ymax": 243
+  },
+  "addedAt": "2026-04-09T00:34:12.829Z"
+}

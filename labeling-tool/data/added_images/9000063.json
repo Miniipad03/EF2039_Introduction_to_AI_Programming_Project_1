@@ -1,0 +1,15 @@
+{
+  "id": "9000063",
+  "manufacturer": "Embraer",
+  "family": "EMB-120",
+  "variant": "EMB-120",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 41,
+    "ymin": 268,
+    "xmax": 988,
+    "ymax": 567
+  },
+  "addedAt": "2026-04-09T00:20:02.268Z"
+}

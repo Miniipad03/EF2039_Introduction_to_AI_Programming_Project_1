@@ -1,0 +1,15 @@
+{
+  "id": "9000078",
+  "manufacturer": "Canadair",
+  "family": "Challenger 600",
+  "variant": "Challenger 600",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 57,
+    "ymin": 39,
+    "xmax": 604,
+    "ymax": 192
+  },
+  "addedAt": "2026-04-09T00:45:08.925Z"
+}
