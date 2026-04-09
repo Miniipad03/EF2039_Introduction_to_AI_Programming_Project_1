@@ -65,7 +65,16 @@ class FGVCAircraft(Dataset):
     crop_bbox : True면 bbox 영역만 crop해서 반환
     """
 
-    def __init__(self, split='train', label='variant', transform=None, crop_bbox=False):
+    def __init__(self, split='train', label='variant', transform=None, crop_bbox=False,
+                 use_excluded=True, use_added=True):
+        """
+        Parameters
+        ----------
+        use_excluded : bool
+            False면 excluded.json 무시 (원본 데이터 그대로 사용)
+        use_added    : bool
+            False면 added_images.json 무시 (원본 데이터 그대로 사용)
+        """
         assert split in ('train', 'val', 'test', 'all')
         assert label in ('variant', 'family', 'manufacturer')
 
@@ -74,7 +83,7 @@ class FGVCAircraft(Dataset):
 
         # 제거 목록 로드 (excluded/ 디렉토리, ID별 파일)
         excluded_set = set()
-        if EXCLUDED_DIR.exists():
+        if use_excluded and EXCLUDED_DIR.exists():
             for f in EXCLUDED_DIR.glob('*.json'):
                 excluded_set.add(json.loads(f.read_text())['id'])
 
@@ -100,7 +109,7 @@ class FGVCAircraft(Dataset):
                 })
 
         # 추가 이미지 로드 (added_images/ 디렉토리, ID별 파일)
-        if ADDED_DIR.exists():
+        if use_added and ADDED_DIR.exists():
             added_data = [json.loads(f.read_text()) for f in ADDED_DIR.glob('*.json')]
             for item in added_data:
                 if item['id'] in excluded_set:
