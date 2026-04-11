@@ -1,0 +1,15 @@
+{
+  "id": "9000125",
+  "manufacturer": "de Havilland",
+  "family": "DHC-6",
+  "variant": "DHC-6",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 4,
+    "ymin": 11,
+    "xmax": 332,
+    "ymax": 138
+  },
+  "addedAt": "2026-04-11T15:19:19.345Z"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "9000096",
+  "manufacturer": "Boeing",
+  "family": "Boeing 767",
+  "variant": "767-400",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 51,
+    "ymin": 255,
+    "xmax": 983,
+    "ymax": 512
+  },
+  "addedAt": "2026-04-11T14:49:21.414Z"
+}

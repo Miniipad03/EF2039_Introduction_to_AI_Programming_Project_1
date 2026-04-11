@@ -1,0 +1,15 @@
+{
+  "id": "9000115",
+  "manufacturer": "Dassault Aviation",
+  "family": "Falcon 900",
+  "variant": "Falcon 900",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 11,
+    "ymin": 7,
+    "xmax": 336,
+    "ymax": 116
+  },
+  "addedAt": "2026-04-11T15:06:05.292Z"
+}

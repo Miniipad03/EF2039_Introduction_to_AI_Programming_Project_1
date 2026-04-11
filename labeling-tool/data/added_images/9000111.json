@@ -1,0 +1,15 @@
+{
+  "id": "9000111",
+  "manufacturer": "Cirrus Aircraft",
+  "family": "SR-20",
+  "variant": "SR-20",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 1,
+    "ymin": 0,
+    "xmax": 387,
+    "ymax": 129
+  },
+  "addedAt": "2026-04-11T15:03:17.395Z"
+}

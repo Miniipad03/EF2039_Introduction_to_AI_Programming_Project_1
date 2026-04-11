@@ -1,0 +1,15 @@
+{
+  "id": "9000089",
+  "manufacturer": "Cessna",
+  "family": "Cessna Citation",
+  "variant": "Cessna 560",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 35,
+    "ymin": 47,
+    "xmax": 1568,
+    "ymax": 596
+  },
+  "addedAt": "2026-04-11T14:41:24.154Z"
+}

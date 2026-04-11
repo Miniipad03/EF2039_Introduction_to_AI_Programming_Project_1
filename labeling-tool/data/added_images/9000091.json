@@ -1,0 +1,15 @@
+{
+  "id": "9000091",
+  "manufacturer": "Cessna",
+  "family": "Cessna Citation",
+  "variant": "Cessna 525",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 9,
+    "ymin": 3,
+    "xmax": 1606,
+    "ymax": 498
+  },
+  "addedAt": "2026-04-11T14:44:18.720Z"
+}

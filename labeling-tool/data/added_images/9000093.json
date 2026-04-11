@@ -1,0 +1,15 @@
+{
+  "id": "9000093",
+  "manufacturer": "Cessna",
+  "family": "Cessna 208",
+  "variant": "Cessna 208",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 180,
+    "ymin": 41,
+    "xmax": 1864,
+    "ymax": 709
+  },
+  "addedAt": "2026-04-11T14:46:00.839Z"
+}
