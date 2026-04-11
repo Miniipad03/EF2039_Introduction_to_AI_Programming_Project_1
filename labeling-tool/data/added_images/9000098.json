@@ -1,0 +1,15 @@
+{
+  "id": "9000098",
+  "manufacturer": "Antonov",
+  "family": "An-12",
+  "variant": "An-12",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 22,
+    "ymin": 407,
+    "xmax": 536,
+    "ymax": 587
+  },
+  "addedAt": "2026-04-11T14:52:18.894Z"
+}

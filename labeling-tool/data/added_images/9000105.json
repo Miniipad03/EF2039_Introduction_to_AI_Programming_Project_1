@@ -1,0 +1,15 @@
+{
+  "id": "9000105",
+  "manufacturer": "Beechcraft",
+  "family": "King Air",
+  "variant": "Model B200",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 14,
+    "ymin": 73,
+    "xmax": 285,
+    "ymax": 164
+  },
+  "addedAt": "2026-04-11T14:56:35.468Z"
+}

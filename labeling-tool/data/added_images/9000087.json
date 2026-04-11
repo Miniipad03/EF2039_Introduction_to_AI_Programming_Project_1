@@ -1,0 +1,15 @@
+{
+  "id": "9000087",
+  "manufacturer": "Boeing",
+  "family": "Boeing 737",
+  "variant": "737-500",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 3,
+    "ymin": 2,
+    "xmax": 366,
+    "ymax": 135
+  },
+  "addedAt": "2026-04-11T14:38:42.762Z"
+}

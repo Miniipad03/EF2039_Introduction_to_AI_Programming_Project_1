@@ -1,0 +1,15 @@
+{
+  "id": "9000095",
+  "manufacturer": "Cessna",
+  "family": "Cessna 172",
+  "variant": "Cessna 172",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 0,
+    "ymin": 27,
+    "xmax": 316,
+    "ymax": 132
+  },
+  "addedAt": "2026-04-11T14:47:47.917Z"
+}

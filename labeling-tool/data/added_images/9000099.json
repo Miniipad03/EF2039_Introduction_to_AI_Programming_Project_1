@@ -1,0 +1,15 @@
+{
+  "id": "9000099",
+  "manufacturer": "ATR",
+  "family": "ATR-42",
+  "variant": "ATR-42",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 35,
+    "ymin": 80,
+    "xmax": 257,
+    "ymax": 152
+  },
+  "addedAt": "2026-04-11T14:52:52.911Z"
+}

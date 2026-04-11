@@ -1,0 +1,15 @@
+{
+  "id": "9000109",
+  "manufacturer": "British Aerospace",
+  "family": "BAE 146",
+  "variant": "BAE 146-200",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 89,
+    "ymin": 49,
+    "xmax": 557,
+    "ymax": 190
+  },
+  "addedAt": "2026-04-11T14:59:34.035Z"
+}

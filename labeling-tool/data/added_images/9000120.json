@@ -1,0 +1,15 @@
+{
+  "id": "9000120",
+  "manufacturer": "de Havilland",
+  "family": "Dash 8",
+  "variant": "DHC-8-300",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 107,
+    "ymin": 72,
+    "xmax": 1458,
+    "ymax": 527
+  },
+  "addedAt": "2026-04-11T15:13:35.834Z"
+}

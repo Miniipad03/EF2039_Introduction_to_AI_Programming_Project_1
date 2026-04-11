@@ -1,0 +1,15 @@
+{
+  "id": "9000114",
+  "manufacturer": "Dassault Aviation",
+  "family": "Falcon 2000",
+  "variant": "Falcon 2000",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 7,
+    "ymin": 26,
+    "xmax": 336,
+    "ymax": 125
+  },
+  "addedAt": "2026-04-11T15:05:38.556Z"
+}

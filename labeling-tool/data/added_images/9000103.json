@@ -1,0 +1,15 @@
+{
+  "id": "9000103",
+  "manufacturer": "Beechcraft",
+  "family": "Beechcraft 1900",
+  "variant": "Beechcraft 1900",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 5,
+    "ymin": 4,
+    "xmax": 405,
+    "ymax": 117
+  },
+  "addedAt": "2026-04-11T14:55:29.532Z"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "9000122",
+  "manufacturer": "de Havilland",
+  "family": "DH-82",
+  "variant": "DH-82",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 4,
+    "ymin": 52,
+    "xmax": 363,
+    "ymax": 192
+  },
+  "addedAt": "2026-04-11T15:14:57.828Z"
+}
