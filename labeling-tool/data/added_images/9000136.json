@@ -1,0 +1,15 @@
+{
+  "id": "9000136",
+  "manufacturer": "McDonnell Douglas",
+  "family": "MD-11",
+  "variant": "MD-11",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 9,
+    "ymin": 9,
+    "xmax": 785,
+    "ymax": 235
+  },
+  "addedAt": "2026-04-12T06:57:05.800Z"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "9000127",
+  "manufacturer": "McDonnell Douglas",
+  "family": "MD-90",
+  "variant": "MD-90",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 15,
+    "ymin": 84,
+    "xmax": 291,
+    "ymax": 141
+  },
+  "addedAt": "2026-04-12T06:46:14.544Z"
+}

@@ -1,0 +1,15 @@
+{
+  "id": "9000130",
+  "manufacturer": "McDonnell Douglas",
+  "family": "MD-80",
+  "variant": "MD-80",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 58,
+    "ymin": 122,
+    "xmax": 1045,
+    "ymax": 324
+  },
+  "addedAt": "2026-04-12T06:49:59.214Z"
+}
