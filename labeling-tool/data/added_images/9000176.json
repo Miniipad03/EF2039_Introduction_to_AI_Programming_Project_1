@@ -1,0 +1,15 @@
+{
+  "id": "9000176",
+  "manufacturer": "ATR",
+  "family": "ATR-72",
+  "variant": "ATR-72",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 153,
+    "ymin": 190,
+    "xmax": 2181,
+    "ymax": 763
+  },
+  "addedAt": "2026-04-12T10:50:43.342Z"
+}
