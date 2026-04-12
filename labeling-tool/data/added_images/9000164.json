@@ -1,0 +1,15 @@
+{
+  "id": "9000164",
+  "manufacturer": "Douglas Aircraft Company",
+  "family": "DC-3",
+  "variant": "DC-3",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 49,
+    "ymin": 246,
+    "xmax": 968,
+    "ymax": 591
+  },
+  "addedAt": "2026-04-12T09:59:49.115Z"
+}
