@@ -1,6 +1,21 @@
 import { json } from '@sveltejs/kit';
 import { writeFileSync } from 'fs';
+import { spawnSync } from 'child_process';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import { getAddedImages, saveAddedImage, getUserImagePath } from '$lib/datastore.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+// __dirname: labeling-tool/src/routes/api/upload/
+// → ../../../../ = labeling-tool/
+const CONVERT_SCRIPT = join(__dirname, '..', '..', '..', '..', 'scripts', 'convert_to_jpeg.py');
+
+function convertToJpeg(filePath) {
+	const result = spawnSync('python', [CONVERT_SCRIPT, filePath], { encoding: 'utf-8' });
+	if (result.status !== 0) {
+		throw new Error(result.stderr || 'Image conversion failed');
+	}
+}
 
 function generateId() {
 	// 9000000번대부터 순차 발급
@@ -32,7 +47,15 @@ export async function POST({ request }) {
 
 	// 이미지 파일 저장 (원본 데이터셋과 분리된 labeling-tool/data/user_images/ 폴더)
 	const buffer = Buffer.from(await file.arrayBuffer());
-	writeFileSync(getUserImagePath(newId), buffer);
+	const destPath = getUserImagePath(newId);
+	writeFileSync(destPath, buffer);
+
+	// AVIF/WebP/PNG 등 비 JPEG 파일을 Pillow로 JPEG 변환 (줄무늬 버그 없음)
+	try {
+		convertToJpeg(destPath);
+	} catch (err) {
+		return json({ success: false, error: `Image conversion failed: ${err.message}` }, { status: 500 });
+	}
 
 	// added_images/{id}.json 저장 (ID별 파일 → 팀원 충돌 없음)
 	saveAddedImage({
