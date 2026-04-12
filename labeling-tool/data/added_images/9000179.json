@@ -1,0 +1,15 @@
+{
+  "id": "9000179",
+  "manufacturer": "Airbus",
+  "family": "A300",
+  "variant": "A300B4",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 4,
+    "ymin": 6,
+    "xmax": 501,
+    "ymax": 154
+  },
+  "addedAt": "2026-04-12T10:57:06.752Z"
+}
