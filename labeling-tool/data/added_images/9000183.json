@@ -1,0 +1,15 @@
+{
+  "id": "9000183",
+  "manufacturer": "Airbus",
+  "family": "A310",
+  "variant": "A310",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 97,
+    "ymin": 258,
+    "xmax": 924,
+    "ymax": 544
+  },
+  "addedAt": "2026-04-12T11:00:16.778Z"
+}
