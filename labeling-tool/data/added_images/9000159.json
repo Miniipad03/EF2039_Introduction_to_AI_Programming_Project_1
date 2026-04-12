@@ -1,0 +1,15 @@
+{
+  "id": "9000159",
+  "manufacturer": "Douglas Aircraft Company",
+  "family": "C-47",
+  "variant": "C-47",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 11,
+    "ymin": 15,
+    "xmax": 687,
+    "ymax": 223
+  },
+  "addedAt": "2026-04-12T09:54:56.648Z"
+}

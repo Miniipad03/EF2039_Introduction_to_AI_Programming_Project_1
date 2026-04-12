@@ -1,0 +1,15 @@
+{
+  "id": "9000153",
+  "manufacturer": "McDonnell Douglas",
+  "family": "DC-10",
+  "variant": "DC-10",
+  "split": "train",
+  "isReference": true,
+  "bbox": {
+    "xmin": 55,
+    "ymin": 15,
+    "xmax": 703,
+    "ymax": 219
+  },
+  "addedAt": "2026-04-12T09:43:03.964Z"
+}
