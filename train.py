@@ -181,8 +181,9 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
-    # Windows에서 num_workers > 0이면 멀티프로세싱 에러 발생 가능
-    num_workers = 0 if os.name == 'nt' else 4
+    # Windows에서 num_workers=0이면 메인 프로세스가 데이터 로딩을 처리해 GPU 병목 발생
+    # 2로 설정 시 에러가 나면 0으로 낮출 것
+    num_workers = 2 if os.name == 'nt' else 4
 
     # ── Transform 정의 ──────────────────────────────────────────────────────
     imagenet_mean = (0.485, 0.456, 0.406)
@@ -232,12 +233,15 @@ def main():
           f"| {'원본' if args.original_only else '커스텀'} 데이터 사용")
     train_dataset.summary()
 
-    train_loader = DataLoader(train_dataset, batch_size=args.batch_size,
-                              shuffle=True,  num_workers=num_workers, pin_memory=True)
-    val_loader   = DataLoader(val_dataset,   batch_size=args.batch_size,
-                              shuffle=False, num_workers=num_workers, pin_memory=True)
-    test_loader  = DataLoader(test_dataset,  batch_size=args.batch_size,
-                              shuffle=False, num_workers=num_workers, pin_memory=True)
+    loader_kwargs = dict(
+        batch_size=args.batch_size,
+        num_workers=num_workers,
+        pin_memory=True,
+        persistent_workers=(num_workers > 0),
+    )
+    train_loader = DataLoader(train_dataset, shuffle=True,  **loader_kwargs)
+    val_loader   = DataLoader(val_dataset,   shuffle=False, **loader_kwargs)
+    test_loader  = DataLoader(test_dataset,  shuffle=False, **loader_kwargs)
 
     # ── ResNet warmup: fc만 먼저 학습 ────────────────────────────────────────
     model = build_model(args.model, num_classes).to(device)
@@ -268,6 +272,9 @@ def main():
     list_train_loss, list_val_loss, list_val_acc = [], [], []
     best_val_acc = 0.0
 
+    import time
+    train_start = time.time()
+
     for epoch in range(1, args.epochs + 1):
         # Warmup 종료 시 backbone unfreeze + optimizer에 backbone 파라미터 추가
         if args.model in ("resnet18", "resnet34") and epoch == warmup_epochs + 1:
@@ -281,8 +288,10 @@ def main():
             })
             print(f"[Epoch {epoch}] Backbone unfreeze (backbone lr={args.lr * 0.1:.0e})")
 
+        epoch_start = time.time()
         train_loss, train_acc = train_one_epoch(model, train_loader, criterion, optimizer, device)
         val_loss,   val_acc   = evaluate(model, val_loader, criterion, device)
+        epoch_secs = time.time() - epoch_start
 
         # warmup 이후에만 scheduler step
         if epoch > warmup_epochs:
@@ -294,11 +303,15 @@ def main():
 
         print(f"[Epoch {epoch:3d}/{args.epochs}] "
               f"Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.4f} | "
-              f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}")
+              f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f} | "
+              f"Time: {epoch_secs:.1f}s")
 
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), f"best_{args.model}_{args.label}.pth")
+
+    total_secs = time.time() - train_start
+    print(f"\n총 학습 시간: {total_secs // 60:.0f}m {total_secs % 60:.1f}s")
 
     # ── 테스트 평가 (best model 기준) ────────────────────────────────────────
     model.load_state_dict(torch.load(f"best_{args.model}_{args.label}.pth",
