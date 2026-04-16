@@ -81,8 +81,12 @@ def build_model(model_name: str, num_classes: int) -> nn.Module:
                  else models.resnet34(weights=weights))
         model.fc = nn.Linear(model.fc.in_features, num_classes)
         return model
+    elif model_name == "convnext_base":
+        model = models.convnext_base(weights=models.ConvNeXt_Base_Weights.DEFAULT)
+        model.classifier[2] = nn.Linear(model.classifier[2].in_features, num_classes)
+        return model
     else:
-        raise ValueError(f"Unknown model: {model_name}. Choose from cnn, resnet18, resnet34")
+        raise ValueError(f"Unknown model: {model_name}. Choose from cnn, resnet18, resnet34, convnext_base")
 
 
 # ── Argument Parser ────────────────────────────────────────────────────────────
@@ -94,7 +98,7 @@ def get_args():
     parser.add_argument("--optimizer",     type=str,   default="adam",
                         choices=["adam", "sgd"])
     parser.add_argument("--model",         type=str,   default="resnet18",
-                        choices=["cnn", "resnet18", "resnet34"])
+                        choices=["cnn", "resnet18", "resnet34", "convnext_base"])
     parser.add_argument("--label",         type=str,   default="family",
                         choices=["variant", "family", "manufacturer"])
     parser.add_argument("--crop_bbox",     action="store_true",
@@ -251,6 +255,11 @@ def main():
             if "fc" not in name:
                 param.requires_grad = False
         warmup_epochs = 5
+    elif args.model == "convnext_base":
+        for name, param in model.named_parameters():
+            if "classifier" not in name:
+                param.requires_grad = False
+        warmup_epochs = 5
     else:
         warmup_epochs = 0
 
@@ -277,8 +286,9 @@ def main():
 
     for epoch in range(1, args.epochs + 1):
         # Warmup 종료 시 backbone unfreeze + optimizer에 backbone 파라미터 추가
-        if args.model in ("resnet18", "resnet34") and epoch == warmup_epochs + 1:
-            backbone_params = [p for n, p in model.named_parameters() if "fc" not in n]
+        if args.model in ("resnet18", "resnet34", "convnext_base") and epoch == warmup_epochs + 1:
+            frozen_key = "fc" if args.model in ("resnet18", "resnet34") else "classifier"
+            backbone_params = [p for n, p in model.named_parameters() if frozen_key not in n]
             for p in backbone_params:
                 p.requires_grad = True
             optimizer.add_param_group({
