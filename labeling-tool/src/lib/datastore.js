@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // 데이터 경로: src/lib/ → (..×2) → labeling-tool/ → (..) → Project_1/
-const DATA_ROOT = join(__dirname, '..', '..', '..', 'data', 'fgvc-aircraft-2013b', 'data');
+const DATA_ROOT = join(__dirname, '..', '..', '..', 'data', 'fgvc-aircraft-2013b', 'fgvc-aircraft-2013b', 'data');
 // labeling-tool/data/: src/lib/ → (..×2) → labeling-tool/data/
 const TOOL_DATA = join(__dirname, '..', '..', 'data');
 // 사용자가 추가한 이미지 저장 폴더 (원본 데이터셋과 분리)
