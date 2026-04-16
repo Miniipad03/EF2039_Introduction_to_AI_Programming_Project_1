@@ -4,9 +4,9 @@
 
 	let data = null;
 	let loading = true;
-	let familySortKey = 'name';
+	let familySortKey = 'family';
 	let familySortAsc = true;
-	let variantSortKey = 'name';
+	let variantSortKey = 'variant';
 	let variantSortAsc = true;
 
 	async function load(force = false) {
@@ -50,9 +50,20 @@
 
 	function sortedRows(rows, key, asc) {
 		return [...rows].sort((a, b) => {
-			const av = a[key], bv = b[key];
-			if (typeof av === 'number') return asc ? av - bv : bv - av;
-			return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+			const av = a[key];
+			const bv = b[key];
+			
+			// Handle numbers (counts)
+			if (typeof av === 'number' || typeof bv === 'number') {
+				const numA = typeof av === 'number' ? av : 0;
+				const numB = typeof bv === 'number' ? bv : 0;
+				return asc ? numA - numB : numB - numA;
+			}
+			
+			// Handle strings (names) safely
+			const strA = String(av ?? '');
+			const strB = String(bv ?? '');
+			return asc ? strA.localeCompare(strB) : strB.localeCompare(strA);
 		});
 	}
 
