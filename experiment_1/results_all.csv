@@ -1,0 +1,5 @@
+model,attn,tuning,label,folds,epochs,batch_size,lr,optimizer,fold1_val_acc,fold2_val_acc,fold3_val_acc,fold4_val_acc,mean_val_acc,ensemble_test_acc,ensemble_cn_acc
+cnn,none,False,family,4,30,32,0.001,adam,0.237,0.2675,0.261,0.2285,0.2485,0.269,0.18327380952380956
+resnet34,none,False,family,4,30,32,0.001,adam,0.893,0.887,0.881,0.877,0.8845000000000001,0.8945,0.8767857142857144
+resnet34,none,True,family,4,30,32,0.001,adam,0.8825,0.888,0.8835,0.8735,0.881875,0.897,0.8819047619047621
+resnet34,cbam,True,family,4,30,32,0.001,adam,0.804,0.804,0.789,0.815,0.803,0.854,0.836279761904762

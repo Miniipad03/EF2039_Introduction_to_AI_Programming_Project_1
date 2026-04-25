@@ -1,0 +1,8 @@
+model,attn,tuning,use_excluded,use_added,crop_bbox,added_repeat,label,folds,epochs,batch_size,lr,optimizer,label_smoothing,num_params,train_time_sec,fold1_val_acc,fold2_val_acc,fold3_val_acc,fold4_val_acc,mean_val_acc,ensemble_test_acc,ensemble_cn_acc
+resnet34,none,False,False,False,True,1,family,4,50,32,0.001,adam,0.0,21320582,1987,0.8835,0.881,0.8835,0.8815,0.8823749999999999,0.901,0.8880654761904762
+resnet34d,none,False,False,False,True,1,family,4,50,32,0.001,adam,0.0,21320582,2018,0.8885,0.8905,0.8955,0.8885,0.89075,0.9105,0.9012797619047621
+resnet34d,none,True,True,True,True,1,family,4,50,32,0.001,adam,0.0,21320582,2038,0.893,0.8955,0.8835,0.8865,0.8896249999999999,0.9015,0.8896726190476191
+resnet34d,none,True,True,True,True,2,family,4,50,32,0.001,adam,0.0,21320582,2020,0.8965,0.8975,0.894,0.891,0.89475,0.913,0.9014285714285715
+resnet34d,none,True,True,True,True,3,family,4,50,32,0.001,adam,0.0,21320582,2050,0.901,0.8865,0.8915,0.884,0.89075,0.908,0.8938988095238096
+resnet34d,none,True,True,True,True,5,family,4,50,32,0.001,adam,0.0,21320582,2109,0.8905,0.8795,0.896,0.8845,0.887625,0.905,0.8914285714285715
+resnet34d,none,True,True,True,True,10,family,4,50,32,0.001,adam,0.0,21320582,2275,0.886,0.8915,0.8835,0.891,0.8879999999999999,0.9065,0.8938988095238097
