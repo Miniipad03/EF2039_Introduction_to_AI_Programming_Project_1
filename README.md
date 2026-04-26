@@ -64,11 +64,24 @@ python train.py --model resnet34 --epochs 30 --batch_size 32
 python train.py --model resnet34 --attn cbam --tuning --epochs 30
 ```
 
+### 🔑 Key Architecture Arguments
+Below are detailed explanations for the critical structural options you can select via `--model` and `--attn`.
+
+**Models (`--model`)**:
+- `resnet18`: A lightweight 18-layer residual network providing extremely fast training iterations and establishing a solid classification baseline.
+- `resnet34`: A deeper 34-layer residual network capable of extracting more complex, granular representations for fine-grained aircraft features.
+- `resnet34d`: A custom-modified ResNet-34 natively incorporating structural Dropout before the fully connected layers, drastically mitigating overfitting in dense representations.
+
+**Attention Modules (`--attn`)**:
+- `channel`: Channel Attention module that weights feature maps independently, teaching the network *what* specific channel features are most important to the current prediction.
+- `spatial`: Spatial Attention module operating structurally across the feature map axes, guiding the network mathematically on *where* to focus physically within the image.
+- `cbam`: Convolutional Block Attention Module that sequentially applies both channel and spatial attentions for the most comprehensive, synergistic feature refinement.
+
 ### Comprehensive Training Arguments
 `train.py` exposes exactly 18 command-line parameters for precision neural network deployment:
 
-- `--model`: Structural neural network architecture selection (`cnn`, `resnet18`, `resnet34`, `resnet34d`).
-- `--attn`: Specifies an attention mechanism to be injected into deeper ResNet layers (`none`, `channel`, `spatial`, `cbam`).
+- `--model`: Structural neural network architecture selection (see Key Architecture Arguments above).
+- `--attn`: Specifies an attention mechanism to be injected into deeper ResNet layers (see Key Architecture Arguments above).
 - `--tuning`: Active Learning shortcut flag that triggers both `--use_excluded` and `--use_added` simultaneously.
 - `--use_excluded`: Forces the dataset engine to ignore noisy images defined by the Labeling Tool.
 - `--use_added`: Instructs the dataset engine to inject custom Web Labeling Tool images directly into the Train subset.
