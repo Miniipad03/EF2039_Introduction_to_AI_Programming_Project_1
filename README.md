@@ -17,10 +17,14 @@ This project utilizes the **FGVC-Aircraft 2013b** dataset, which consists of ima
 
 - **Data Fetching:** Handled strictly via `download_dataset.py`.
 - **Annotation Levels:** Supports hierarchical labeling (`variant`, `family`, `manufacturer`).
-- **Data Engineering (`dataset_utils.py`)**:
-  - Automatically crops out the ~20px bottom banners from images (which contain noisy copyright text).
-  - Merges the default annotations with user-defined JSON configurations from the `labeling-tool`.
-  - Performs a **6:2:2 Stratified Re-Split** (Train/Val/Test) dynamically ensuring classes remain balanced even when new data is injected.
+
+### Data Engineering (`dataset_utils.py` Detailed Analysis)
+`dataset_utils.py` is the operational core of the data pipeline, housing the custom `FGVCAircraft` and `SampleDataset` classes specifically engineered to gracefully blend raw dataset inputs with injected custom intelligence:
+1. **Purging Excluded Data**: Reads the `excluded.json` objects (flagged via the labeling-tool) and actively prohibits their initialization to prevent feeding the model noisy or erroneous samples.
+2. **Train-Set Forced Injection**: Ingests your newly scraped intelligence via `added_images.json`. To prevent evaluation data leakage, it explicitly locks all custom additions dynamically into the Training split.
+3. **6:2:2 Dynamic Stratified Re-Split**: Unlike the generic 1:1:1 FGVC methodology, this logic recalculates the overall scale (`N_total`) dynamically considering new data, forcing a 0.4 proportional chunk exactly back into validation/test splits while completely maintaining class stratifications.
+4. **Targeted Bounding Box Extraction (`crop_bbox`)**: When enabled, mathematically crops precisely around the aircraft using the `images_box.txt` coords, destroying background noise variables.
+5. **Smart Bottom Banner Auto-Removal (`RemoveBottomBanner`)**: FGVC default images ship with ~20px high copyright banners that destructively bias Neural Network Feature maps. This custom transformer securely lops off the bottom footprint of native images without accidentally tampering with user-injected datasets.
 
 ## 🛠️ 3. Environment and Dependencies
 This pipeline is optimized for PyTorch 2.6.0+ and supports automatic CUDA detection.
@@ -40,8 +44,15 @@ pip install -r requirements.txt
 - `torch>=2.6.0`, `torchvision>=0.21.0`
 - `scikit-learn`, `pandas`, `seaborn`, `matplotlib`, `pillow`, `tqdm`
 
-## 🚂 4. Training Instructions
-The main entry point for training is `train.py`. It supports extensive hyperparameter tuning and model configuration. 
+## 🎛️ 4. Data Tuning and Preprocessing via Labeling Tool
+The included SvelteKit-based Labeling Tool acts as a direct **Train-Set Controller** rather than a passive viewing portal. Launching the web environment permits the rapid application of Active Learning mechanics:
+
+- **Data Excluding**: Flagging an incorrect or corrupted image silently logs it into a JSON within `data/excluded`. The `dataset_utils.py` instantly adapts upon next execution, stripping it out of the pipeline.
+- **Data Adding**: Users can upload explicitly harvested images, draw bounding boxes, and label them directly on the web application. These definitions propagate immediately to `data/added_images`.
+- **Seamless Pipeline Integration**: You never touch code to scale or clean data. Toggling the `--use_excluded` / `--use_added` (or `--tuning`) arguments inside `train.py` dynamically forces your entire web workflow into the tensor processing batches. 
+
+## 🚂 5. Training Instructions
+The main entry point for training is `train.py`. It supports extensive hyperparameter tuning and model configuration.
 
 ### Basic Run (Vanilla ResNet-34)
 ```bash
@@ -49,22 +60,36 @@ python train.py --model resnet34 --epochs 30 --batch_size 32
 ```
 
 ### Advanced Run (Tuning & Attention)
-To train a `ResNet-34` with a `CBAM` attention mechanism, while respecting your manually added/excluded datasets from the labeling tool:
 ```bash
 python train.py --model resnet34 --attn cbam --tuning --epochs 30
 ```
 
-### Key Training Arguments
-- `--model`: Architecture choice (`cnn`, `resnet18`, `resnet34`, `resnet34d`).
-- `--attn`: Attention module (`none`, `channel`, `spatial`, `cbam`).
-- `--tuning`: Shortcut flag that enables `--use_excluded` & `--use_added`.
-- `--folds`: Number of K-Fold splits (Default: `4`).
-- `--label_smoothing`: Regularization parameter to prevent overconfidence (e.g., `0.1`).
+### Comprehensive Training Arguments
+`train.py` exposes exactly 18 command-line parameters for precision neural network deployment:
 
-## 📊 5. Evaluation Instructions
+- `--model`: Structural neural network architecture selection (`cnn`, `resnet18`, `resnet34`, `resnet34d`).
+- `--attn`: Specifies an attention mechanism to be injected into deeper ResNet layers (`none`, `channel`, `spatial`, `cbam`).
+- `--tuning`: Active Learning shortcut flag that triggers both `--use_excluded` and `--use_added` simultaneously.
+- `--use_excluded`: Forces the dataset engine to ignore noisy images defined by the Labeling Tool.
+- `--use_added`: Instructs the dataset engine to inject custom Web Labeling Tool images directly into the Train subset.
+- `--folds`: The exact split integer (K) utilized for Cross-Validation (Default: `4`).
+- `--epochs`: Limits the absolute number of backward propagation cycles over the full dataset (Default: `30`).
+- `--batch_size`: Specifies the discrete volume of isolated samples fed forward at a time (Default: `32`).
+- `--lr`: Declares the maximum optimizer learning rate, subject to dynamic Cosine Annealing (Default: `0.001`).
+- `--optimizer`: Gradient Descent algorithm implementation selector (`adam`, `adamw`, `sgd`).
+- `--weight_decay`: Constant L2 parameter penalty punishing infinitely expanding weights (Default: `1e-4`).
+- `--label_smoothing`: Modifies strict Ground Truth `1.0` targets into softer probabilistic vectors to suppress overconfidence (Default: `0.0`).
+- `--label`: Designates the chosen hierarchy tier for FGVC categorical predictions (`variant`, `family`, `manufacturer`).
+- `--crop_bbox`: Clips away external image context, limiting the actual input tensors physically onto the object Bounding Box scale.
+- `--seed`: Hardcoded initialization integer to perfectly replicate fold shuffling parameters globally (Default: `42`).
+- `--save_csv`: Name of the aggregate logging file that continuously tracks distinct experiment iterations (Default: `results.csv`).
+- `--outdir`: Export destination string for generated matrices, charts, and metrics (Default: `.`).
+- `--added_repeat`: Dynamic multiplier (oversampling element) replicating injected custom web images to amplify logic footprints structurally (Default: `1`).
+
+## 📊 6. Evaluation Instructions
 The evaluation phase is built directly into the end of the `train.py` script. After processing all `K` folds, the script performs a **Weighted Soft Voting Ensemble**, weighting each model by its validation accuracy, to predict against the isolated Test set.
 
-All results are automatically flushed to your `--outdir` (default: root) generating:
+All results are automatically flushed to your `--outdir` generating:
 1. **`results.csv`**: A master log appending the performance of every experiment.
 2. **`history_[tag].csv`**: Epoch-by-epoch loss/accuracy metrics.
 3. **`curve_[tag].png`**: Beautiful matplotlib visualizations of your learning curves.
@@ -77,10 +102,8 @@ All results are automatically flushed to your `--outdir` (default: root) generat
 > python pick_best_data.py results.csv
 > ```
 
-## 🖥️ 6. How to Run the Inference Demo (Labeling Tool)
+## 🖥️ 7. How to Run the Inference Demo (Labeling Tool)
 Instead of a standard local python GUI, this project features a modern **SvelteKit** web application `labeling-tool`. This serves as both an inference visualizer and an active data-centric AI refinement environment. 
-
-Here you can view images, flag poor data (sends to `excluded/`), or inject new web-scraped data (sends to `added_images/`).
 
 ### Launching the Web App
 Make sure you have Node.js (`npm`) installed.
