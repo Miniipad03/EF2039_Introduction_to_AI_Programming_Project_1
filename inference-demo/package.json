@@ -1,0 +1,19 @@
+{
+  "name": "fgvc-inference-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev --host --port 5174",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync || echo ''"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-auto": "^6.0.0",
+    "@sveltejs/kit": "^2.36.3",
+    "@sveltejs/vite-plugin-svelte": "^6.0.0",
+    "svelte": "^5.38.6",
+    "vite": "^7.2.4"
+  }
+}

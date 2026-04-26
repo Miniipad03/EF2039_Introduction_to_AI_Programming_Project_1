@@ -1,0 +1,39 @@
+===== Input Arguments =====
+  model         : resnet34d
+  attn          : channel
+  tuning        : False
+  use_excluded  : True
+  use_added     : True
+  folds         : 4
+  epochs        : 400
+  batch_size    : 32
+  lr            : 0.001
+  optimizer     : adamw
+  weight_decay  : 0.005
+  label_smoothing: 0.0
+  label         : family
+  crop_bbox     : True
+  seed          : 42
+  save_csv      : results_all.csv
+  outdir        : /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/best_model/400epochs
+  added_repeat  : 1
+  rotation      : 15
+  cutmix        : 0.5
+===========================
+Device: cuda  |  AMP: True  |  Workers: 14
+Label: family  |  Classes: 70
+Mode: excl=True, added=True  |  Original: 10000, Added(train-only): 180 ×1 = 180
+Test set isolated: 2000 samples (20%, seed=42)
+Train+Val pool   : 8000 samples → 4-fold CV
+
+============================================================
+  Fold 1/4
+============================================================
+  Train: 6180, Val: 2000, Test: 2000
+  resnet34_dropout(p=0.5) + CHANNEL  injected=9 modules
+  [F1 E  1/400] Train 4.1142/0.0668  Val 3.8505/0.0805  (10.1s)
+  [F1 E  2/400] Train 3.9245/0.0846  Val 3.6807/0.0950  (8.5s)
+  [F1 E  3/400] Train 3.8119/0.0982  Val 3.5436/0.1340  (9.2s)
+  [F1 E  4/400] Train 3.7936/0.0995  Val 3.4421/0.1550  (8.7s)
+  [F1 E  5/400] Train 3.6988/0.1199  Val 3.3703/0.1535  (7.9s)
+  [Epoch 6] Backbone unfreeze (lr=1e-04)

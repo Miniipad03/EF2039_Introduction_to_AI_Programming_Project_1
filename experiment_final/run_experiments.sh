@@ -84,7 +84,7 @@ run_exp 5 8 "DataAblation_Tuning" \
 # ════════════════════════════════════════════════════════════
 
 echo ""
-echo "── Section 2 결과에서 최적 데이터 설정 선택 중... ──"
+echo "── Section 2 결과에서 최적 데이터 설정 선택 중... ──" 
 cd "$PROJECT_ROOT"
 BEST_DATA=$("$PYTHON" pick_best_data.py "$OUTDIR/$RESULTS_CSV" \
             --model resnet34d --attn none)

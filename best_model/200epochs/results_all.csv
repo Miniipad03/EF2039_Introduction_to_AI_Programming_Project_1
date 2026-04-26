@@ -1,0 +1,2 @@
+model,attn,tuning,use_excluded,use_added,crop_bbox,added_repeat,label,folds,epochs,batch_size,lr,optimizer,label_smoothing,num_params,train_time_sec,fold1_val_acc,fold2_val_acc,fold3_val_acc,fold4_val_acc,mean_val_acc,ensemble_test_acc,ensemble_cn_acc
+resnet34d,channel,False,True,True,True,1,family,4,200,32,0.001,adamw,0.0,21468038,8928,0.924,0.919,0.917,0.9115,0.917875,0.933,0.9236607142857143

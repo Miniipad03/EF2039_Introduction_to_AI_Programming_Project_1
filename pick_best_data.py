@@ -36,6 +36,8 @@ def main():
         flags.append('--use_excluded')
     if best['use_added']:
         flags.append('--use_added')
+    if best['tuning']:
+        flags.append('--tuning')
 
     print(' '.join(flags))
 
