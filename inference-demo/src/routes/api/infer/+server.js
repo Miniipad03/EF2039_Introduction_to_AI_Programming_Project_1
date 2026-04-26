@@ -11,11 +11,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const INFER_SCRIPT = join(__dirname, '..', '..', '..', '..', 'scripts', 'infer.py');
 
 export async function POST({ request }) {
-	const formData  = await request.formData();
-	const imageFile = formData.get('image');
-	const modelPath = formData.get('modelPath');
+	const formData   = await request.formData();
+	const imageFile  = formData.get('image');
+	const modelPaths = formData.getAll('modelPath');
 
-	if (!imageFile || !modelPath) {
+	if (!imageFile || modelPaths.length === 0) {
 		return json({ error: 'image와 modelPath가 필요합니다' }, { status: 400 });
 	}
 
@@ -25,7 +25,7 @@ export async function POST({ request }) {
 	try {
 		const result = spawnSync(
 			'python',
-			[INFER_SCRIPT, '--model_path', modelPath, '--image', tmpPath, '--top_k', '5'],
+			[INFER_SCRIPT, '--model_path', ...modelPaths, '--image', tmpPath, '--top_k', '5'],
 			{ encoding: 'utf-8', timeout: 120_000 }
 		);
 
