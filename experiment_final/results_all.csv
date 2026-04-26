@@ -1,0 +1,2 @@
+model,attn,tuning,use_excluded,use_added,crop_bbox,added_repeat,label,folds,epochs,batch_size,lr,optimizer,weight_decay,label_smoothing,rotation,cutmix,num_params,train_time_sec,fold1_val_acc,fold2_val_acc,fold3_val_acc,fold4_val_acc,mean_val_acc,ensemble_test_acc,ensemble_cn_acc
+cnn,none,False,False,False,True,1,family,4,100,32,0.001,adamw,0.005,0.0,15,0.5,2522950,3305,0.2735,0.3055,0.3145,0.362,0.313875,0.3615,0.26511904761904764
