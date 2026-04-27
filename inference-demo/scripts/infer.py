@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""FGVC-Aircraft single-image inference — outputs JSON to stdout."""
+"""FGVC-Aircraft inference (single or ensemble) — outputs JSON to stdout."""
 
 import argparse
 import contextlib
@@ -89,36 +89,62 @@ def get_classes(label_type: str):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--model_path', required=True,  help='경로 (.pth)')
+    parser.add_argument('--model_path', required=True, nargs='+', help='모델 경로 (.pth) 하나 이상')
     parser.add_argument('--image',      required=True,  help='입력 이미지 경로')
     parser.add_argument('--top_k',      type=int, default=5)
+    parser.add_argument('--bbox',       type=int, nargs=4, metavar=('XMIN', 'YMIN', 'XMAX', 'YMAX'), default=None)
     args = parser.parse_args()
 
-    model_name, attn, label_type = parse_model_info(args.model_path)
-
-    sd = torch.load(args.model_path, map_location='cpu', weights_only=True)
-    num_classes = get_num_classes(sd)
-
-    # build_model이 stdout에 출력하는 내용 억제
-    with contextlib.redirect_stdout(io.StringIO()):
-        if model_name == 'resnet34d':
-            model = build_model_dropout(num_classes, attn)
-        else:
-            model = build_model(model_name, num_classes, attn)
-
-    model.load_state_dict(sd)
-    model.eval()
-
-    classes = get_classes(label_type)
-
     img = Image.open(args.image).convert('RGB')
+    if args.bbox:
+        img = img.crop(args.bbox)  # (left, upper, right, lower)
     x   = EVAL_TRANSFORM(img).unsqueeze(0)
 
-    with torch.no_grad():
-        probs = torch.softmax(model(x), dim=1)[0]
+    all_probs   = []
+    model_infos = []
+
+    for pth_path in args.model_path:
+        model_name, attn, label_type = parse_model_info(pth_path)
+
+        sd          = torch.load(pth_path, map_location='cpu', weights_only=True)
+        num_classes = get_num_classes(sd)
+
+        with contextlib.redirect_stdout(io.StringIO()):
+            if model_name == 'resnet34d':
+                model = build_model_dropout(num_classes, attn)
+            else:
+                model = build_model(model_name, num_classes, attn)
+
+        model.load_state_dict(sd)
+        model.eval()
+
+        with torch.no_grad():
+            probs = torch.softmax(model(x), dim=1)[0]
+
+        all_probs.append(probs)
+        model_infos.append({
+            'model':       model_name,
+            'attn':        attn,
+            'label_type':  label_type,
+            'num_classes': num_classes,
+        })
+
+    # 앙상블 호환성 검증
+    label_types     = {m['label_type']  for m in model_infos}
+    num_classes_set = {m['num_classes'] for m in model_infos}
+    if len(label_types) > 1:
+        raise ValueError(f"앙상블 모델들의 label_type이 다릅니다: {label_types}")
+    if len(num_classes_set) > 1:
+        raise ValueError(f"앙상블 모델들의 num_classes가 다릅니다: {num_classes_set}")
+
+    label_type  = model_infos[0]['label_type']
+    num_classes = model_infos[0]['num_classes']
+    classes     = get_classes(label_type)
+
+    avg_probs = torch.stack(all_probs).mean(dim=0)
 
     top_k = min(args.top_k, num_classes)
-    top_probs, top_idx = probs.topk(top_k)
+    top_probs, top_idx = avg_probs.topk(top_k)
 
     predictions = [
         {
@@ -132,10 +158,12 @@ def main():
     print(json.dumps({
         'predictions': predictions,
         'model_info':  {
-            'model':       model_name,
-            'attn':        attn,
+            'models':      [m['model'] for m in model_infos],
+            'attns':       [m['attn']  for m in model_infos],
             'label_type':  label_type,
             'num_classes': num_classes,
+            'ensemble':    len(args.model_path) > 1,
+            'n_models':    len(args.model_path),
         },
     }))
 

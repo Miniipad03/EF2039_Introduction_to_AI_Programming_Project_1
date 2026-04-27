@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let models = [];
-	let selectedModel = '';
+	let selectedModels = [];
 	let imageFile = null;
 	let imageUrl = '';
 	let result = null;
@@ -11,18 +11,32 @@
 	let dragover = false;
 	let modelsError = '';
 
+	let previewImg;
+	let canvas;
+	let isDragging = false;
+	let bbox = null;
+	let drawStart = null;
+	let drawCurrent = null;
+
 	onMount(async () => {
 		try {
 			const res = await fetch('/api/models');
 			if (!res.ok) { modelsError = `API 오류 (HTTP ${res.status})`; return; }
 			models = await res.json();
-			if (models.length > 0) selectedModel = models[0].path;
 		} catch (e) {
 			modelsError = `모델 목록 로드 실패: ${e.message}`;
 		}
 	});
 
-	$: selectedMeta = models.find(m => m.path === selectedModel)?.meta ?? null;
+	function toggleModel(path) {
+		if (selectedModels.includes(path)) {
+			selectedModels = selectedModels.filter(p => p !== path);
+		} else {
+			selectedModels = [...selectedModels, path];
+		}
+	}
+
+	$: isEnsemble = selectedModels.length > 1;
 
 	function handleFile(f) {
 		if (!f || !f.type.startsWith('image/')) return;
@@ -31,6 +45,74 @@
 		imageUrl = URL.createObjectURL(f);
 		result = null;
 		errorMsg = '';
+		bbox = null;
+		drawStart = null;
+		drawCurrent = null;
+	}
+
+	function getCanvasCoords(e) {
+		const rect = canvas.getBoundingClientRect();
+		return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+	}
+
+	function onMouseDown(e) {
+		drawStart = getCanvasCoords(e);
+		drawCurrent = drawStart;
+		isDragging = true;
+	}
+
+	function onMouseMove(e) {
+		if (!isDragging) return;
+		drawCurrent = getCanvasCoords(e);
+		redrawCanvas();
+	}
+
+	function onMouseUp(e) {
+		if (!isDragging) return;
+		isDragging = false;
+		drawCurrent = getCanvasCoords(e);
+		redrawCanvas();
+		const scaleX = previewImg.naturalWidth  / previewImg.offsetWidth;
+		const scaleY = previewImg.naturalHeight / previewImg.offsetHeight;
+		const x1 = Math.min(drawStart.x, drawCurrent.x);
+		const y1 = Math.min(drawStart.y, drawCurrent.y);
+		const x2 = Math.max(drawStart.x, drawCurrent.x);
+		const y2 = Math.max(drawStart.y, drawCurrent.y);
+		bbox = {
+			xmin: Math.round(x1 * scaleX),
+			ymin: Math.round(y1 * scaleY),
+			xmax: Math.round(x2 * scaleX),
+			ymax: Math.round(y2 * scaleY),
+		};
+	}
+
+	function redrawCanvas() {
+		if (!canvas || !drawStart || !drawCurrent) return;
+		const ctx = canvas.getContext('2d');
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.strokeStyle = '#22c55e';
+		ctx.lineWidth = 2;
+		const x = Math.min(drawStart.x, drawCurrent.x);
+		const y = Math.min(drawStart.y, drawCurrent.y);
+		const w = Math.abs(drawCurrent.x - drawStart.x);
+		const h = Math.abs(drawCurrent.y - drawStart.y);
+		ctx.strokeRect(x, y, w, h);
+	}
+
+	function syncCanvas() {
+		if (!canvas || !previewImg) return;
+		canvas.width  = previewImg.offsetWidth;
+		canvas.height = previewImg.offsetHeight;
+	}
+
+	function clearBbox() {
+		bbox = null;
+		drawStart = null;
+		drawCurrent = null;
+		if (canvas) {
+			const ctx = canvas.getContext('2d');
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
 	}
 
 	function onDrop(e) {
@@ -45,14 +127,22 @@
 	}
 
 	async function runInference() {
-		if (!imageFile || !selectedModel) return;
+		if (!imageFile || selectedModels.length === 0) return;
 		inferring = true;
 		result = null;
 		errorMsg = '';
 
 		const form = new FormData();
 		form.append('image', imageFile);
-		form.append('modelPath', selectedModel);
+		for (const path of selectedModels) {
+			form.append('modelPath', path);
+		}
+		if (bbox) {
+			form.append('xmin', String(bbox.xmin));
+			form.append('ymin', String(bbox.ymin));
+			form.append('xmax', String(bbox.xmax));
+			form.append('ymax', String(bbox.ymax));
+		}
 
 		try {
 			const res = await fetch('/api/infer', { method: 'POST', body: form });
@@ -84,14 +174,34 @@
 		<div class="card">
 			<h2>이미지 업로드</h2>
 			{#if imageUrl}
-				<div>
-					<img src={imageUrl} alt="업로드된 이미지" class="preview-img" />
-					<button
-						class="btn-ghost"
-						style="width:100%;margin-top:8px"
-						on:click={() => document.getElementById('infer-file').click()}
-					>다른 이미지 선택</button>
+				<p style="font-size:12px;color:#64748b;margin-bottom:6px">항공기 영역을 드래그해서 BBox를 그리세요.</p>
+				<div class="canvas-wrap">
+					<img
+						src={imageUrl}
+						alt="업로드된 이미지"
+						bind:this={previewImg}
+						on:load={syncCanvas}
+					/>
+					<canvas
+						bind:this={canvas}
+						on:mousedown={onMouseDown}
+						on:mousemove={onMouseMove}
+						on:mouseup={onMouseUp}
+					></canvas>
 				</div>
+				{#if bbox}
+					<div style="display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap">
+						<span style="font-size:11px;color:#475569">BBox: ({bbox.xmin}, {bbox.ymin}) → ({bbox.xmax}, {bbox.ymax})</span>
+						<button class="btn-ghost" on:click={clearBbox} style="padding:2px 8px;font-size:11px">지우기</button>
+					</div>
+				{:else}
+					<p style="font-size:11px;color:#94a3b8;margin-top:6px">BBox 없음 — 이미지 전체로 추론</p>
+				{/if}
+				<button
+					class="btn-ghost"
+					style="width:100%;margin-top:8px"
+					on:click={() => document.getElementById('infer-file').click()}
+				>다른 이미지 선택</button>
 			{:else}
 				<div
 					class="drop-zone"
@@ -119,44 +229,65 @@
 		</div>
 
 		<div class="card">
-			<h2>모델 선택</h2>
+			<div class="model-header">
+				<h2 style="margin:0">모델 선택</h2>
+				{#if selectedModels.length > 0}
+					<span class="selected-badge">
+						{#if isEnsemble}앙상블 {selectedModels.length}개{:else}{selectedModels.length}개 선택{/if}
+					</span>
+				{/if}
+			</div>
+
 			{#if modelsError}
-				<p style="color:#ef4444;font-size:13px;line-height:1.6">{modelsError}</p>
+				<p style="color:#ef4444;font-size:13px;line-height:1.6;margin-top:10px">{modelsError}</p>
 			{:else if models.length === 0}
-				<p style="color:#94a3b8;font-size:13px;line-height:1.6">
+				<p style="color:#94a3b8;font-size:13px;line-height:1.6;margin-top:10px">
 					사용 가능한 .pth 파일이 없습니다.<br/>
 					<code>train.py</code>를 실행해 모델을 먼저 학습해주세요.
 				</p>
 			{:else}
-				<select bind:value={selectedModel} style="width:100%">
+				<div class="model-list">
 					{#each models as m}
-						<option value={m.path}>{m.name}</option>
+						<label class="model-item" class:checked={selectedModels.includes(m.path)}>
+							<input
+								type="checkbox"
+								checked={selectedModels.includes(m.path)}
+								on:change={() => toggleModel(m.path)}
+							/>
+							<div class="model-item-body">
+								<span class="model-item-name">{m.name}</span>
+								<div class="meta-tags" style="margin-top:4px">
+									<span class="tag tag-model">{m.meta.model}</span>
+									{#if m.meta.attn !== 'noattn'}
+										<span class="tag tag-attn">{m.meta.attn.toUpperCase()}</span>
+									{/if}
+									<span class="tag tag-label">{m.meta.label}</span>
+									{#if m.meta.data_tag}
+										<span class="tag tag-data">{m.meta.data_tag}</span>
+									{/if}
+									{#if m.meta.fold}
+										<span class="tag tag-fold">Fold {m.meta.fold}</span>
+									{/if}
+								</div>
+							</div>
+						</label>
 					{/each}
-				</select>
-
-				{#if selectedMeta}
-					<div class="meta-tags">
-						<span class="tag tag-model">{selectedMeta.model}</span>
-						{#if selectedMeta.attn !== 'noattn'}
-							<span class="tag tag-attn">{selectedMeta.attn.toUpperCase()}</span>
-						{/if}
-						<span class="tag tag-label">{selectedMeta.label}</span>
-						<span class="tag tag-data">{selectedMeta.data_tag}</span>
-						{#if selectedMeta.fold}
-							<span class="tag tag-fold">Fold {selectedMeta.fold}</span>
-						{/if}
-					</div>
+				</div>
+				{#if isEnsemble}
+					<p class="ensemble-hint">선택한 모델들의 softmax 확률을 평균내어 앙상블합니다.</p>
 				{/if}
 			{/if}
 		</div>
 
 		<button
 			class="btn-primary btn-run"
-			disabled={!imageFile || !selectedModel || inferring}
+			disabled={!imageFile || selectedModels.length === 0 || inferring}
 			on:click={runInference}
 		>
 			{#if inferring}
 				<span class="btn-spinner"></span> 추론 중...
+			{:else if isEnsemble}
+				앙상블 추론 실행
 			{:else}
 				추론 실행
 			{/if}
@@ -181,7 +312,9 @@
 		{:else if result}
 			<!-- Top prediction hero -->
 			<div class="card hero-card">
-				<div class="hero-eyebrow">최상위 예측</div>
+				<div class="hero-eyebrow">
+					{result.model_info.ensemble ? `앙상블 (${result.model_info.n_models}개 모델) 최상위 예측` : '최상위 예측'}
+				</div>
 				<div class="hero-label">{result.predictions[0].label}</div>
 				<div class="hero-conf">{pct(result.predictions[0].confidence)}</div>
 			</div>
@@ -211,9 +344,13 @@
 				</div>
 
 				<div class="model-footer">
-					<span>Model: <strong>{result.model_info.model}</strong></span>
-					{#if result.model_info.attn !== 'none'}
-						<span>Attention: <strong>{result.model_info.attn.toUpperCase()}</strong></span>
+					{#if result.model_info.ensemble}
+						<span>Models: <strong>{result.model_info.models.join(', ')}</strong></span>
+					{:else}
+						<span>Model: <strong>{result.model_info.models[0]}</strong></span>
+						{#if result.model_info.attns[0] !== 'none'}
+							<span>Attention: <strong>{result.model_info.attns[0].toUpperCase()}</strong></span>
+						{/if}
 					{/if}
 					<span>Label: <strong>{result.model_info.label_type}</strong></span>
 					<span>Classes: <strong>{result.model_info.num_classes}</strong></span>
@@ -247,27 +384,97 @@
 		gap: 14px;
 	}
 
-	/* Image preview */
-	.preview-img {
+	/* Image preview with bbox canvas */
+	.canvas-wrap {
+		position: relative;
+		display: inline-block;
 		width: 100%;
-		max-height: 260px;
+	}
+	.canvas-wrap img {
+		display: block;
+		width: 100%;
+		max-height: 280px;
 		object-fit: contain;
 		background: #f1f5f9;
 		border-radius: 6px;
-		display: block;
+	}
+	.canvas-wrap canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		cursor: crosshair;
+		border-radius: 6px;
+	}
+
+	/* Model selection */
+	.model-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 10px;
+	}
+	.selected-badge {
+		font-size: 11px;
+		font-weight: 600;
+		background: #dbeafe;
+		color: #1d4ed8;
+		padding: 2px 10px;
+		border-radius: 999px;
+	}
+	.model-list {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		max-height: 280px;
+		overflow-y: auto;
+	}
+	.model-item {
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		padding: 8px 10px;
+		border-radius: 8px;
+		border: 1px solid #e2e8f0;
+		cursor: pointer;
+		transition: background 0.15s, border-color 0.15s;
+	}
+	.model-item:hover { background: #f8fafc; }
+	.model-item.checked {
+		background: #eff6ff;
+		border-color: #93c5fd;
+	}
+	.model-item input[type="checkbox"] {
+		margin-top: 3px;
+		flex-shrink: 0;
+		accent-color: #3b82f6;
+	}
+	.model-item-body { flex: 1; min-width: 0; }
+	.model-item-name {
+		font-size: 12px;
+		font-weight: 500;
+		color: #1e293b;
+		word-break: break-all;
+	}
+	.ensemble-hint {
+		font-size: 12px;
+		color: #64748b;
+		margin-top: 10px;
+		padding: 8px 10px;
+		background: #f0fdf4;
+		border-radius: 6px;
+		border-left: 3px solid #22c55e;
 	}
 
 	/* Model metadata tags */
 	.meta-tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 6px;
-		margin-top: 10px;
+		gap: 4px;
 	}
 	.tag {
-		padding: 2px 10px;
+		padding: 2px 8px;
 		border-radius: 999px;
-		font-size: 11px;
+		font-size: 10px;
 		font-weight: 600;
 	}
 	.tag-model { background: #dbeafe; color: #1d4ed8; }
