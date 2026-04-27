@@ -19,13 +19,21 @@ export async function POST({ request }) {
 		return json({ error: 'image와 modelPath가 필요합니다' }, { status: 400 });
 	}
 
+	const xmin = formData.get('xmin');
+	const ymin = formData.get('ymin');
+	const xmax = formData.get('xmax');
+	const ymax = formData.get('ymax');
+
 	const tmpPath = join(tmpdir(), `infer_${Date.now()}_${Math.random().toString(36).slice(2)}.jpg`);
 	writeFileSync(tmpPath, Buffer.from(await imageFile.arrayBuffer()));
 
 	try {
+		const args = [INFER_SCRIPT, '--model_path', ...modelPaths, '--image', tmpPath, '--top_k', '5'];
+		if (xmin !== null) args.push('--bbox', xmin, ymin, xmax, ymax);
+
 		const result = spawnSync(
 			'python',
-			[INFER_SCRIPT, '--model_path', ...modelPaths, '--image', tmpPath, '--top_k', '5'],
+			args,
 			{ encoding: 'utf-8', timeout: 120_000 }
 		);
 

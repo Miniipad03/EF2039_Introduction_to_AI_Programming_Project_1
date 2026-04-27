@@ -92,9 +92,12 @@ def main():
     parser.add_argument('--model_path', required=True, nargs='+', help='모델 경로 (.pth) 하나 이상')
     parser.add_argument('--image',      required=True,  help='입력 이미지 경로')
     parser.add_argument('--top_k',      type=int, default=5)
+    parser.add_argument('--bbox',       type=int, nargs=4, metavar=('XMIN', 'YMIN', 'XMAX', 'YMAX'), default=None)
     args = parser.parse_args()
 
     img = Image.open(args.image).convert('RGB')
+    if args.bbox:
+        img = img.crop(args.bbox)  # (left, upper, right, lower)
     x   = EVAL_TRANSFORM(img).unsqueeze(0)
 
     all_probs   = []

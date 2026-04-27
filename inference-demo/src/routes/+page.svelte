@@ -11,6 +11,13 @@
 	let dragover = false;
 	let modelsError = '';
 
+	let previewImg;
+	let canvas;
+	let isDragging = false;
+	let bbox = null;
+	let drawStart = null;
+	let drawCurrent = null;
+
 	onMount(async () => {
 		try {
 			const res = await fetch('/api/models');
@@ -38,6 +45,74 @@
 		imageUrl = URL.createObjectURL(f);
 		result = null;
 		errorMsg = '';
+		bbox = null;
+		drawStart = null;
+		drawCurrent = null;
+	}
+
+	function getCanvasCoords(e) {
+		const rect = canvas.getBoundingClientRect();
+		return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+	}
+
+	function onMouseDown(e) {
+		drawStart = getCanvasCoords(e);
+		drawCurrent = drawStart;
+		isDragging = true;
+	}
+
+	function onMouseMove(e) {
+		if (!isDragging) return;
+		drawCurrent = getCanvasCoords(e);
+		redrawCanvas();
+	}
+
+	function onMouseUp(e) {
+		if (!isDragging) return;
+		isDragging = false;
+		drawCurrent = getCanvasCoords(e);
+		redrawCanvas();
+		const scaleX = previewImg.naturalWidth  / previewImg.offsetWidth;
+		const scaleY = previewImg.naturalHeight / previewImg.offsetHeight;
+		const x1 = Math.min(drawStart.x, drawCurrent.x);
+		const y1 = Math.min(drawStart.y, drawCurrent.y);
+		const x2 = Math.max(drawStart.x, drawCurrent.x);
+		const y2 = Math.max(drawStart.y, drawCurrent.y);
+		bbox = {
+			xmin: Math.round(x1 * scaleX),
+			ymin: Math.round(y1 * scaleY),
+			xmax: Math.round(x2 * scaleX),
+			ymax: Math.round(y2 * scaleY),
+		};
+	}
+
+	function redrawCanvas() {
+		if (!canvas || !drawStart || !drawCurrent) return;
+		const ctx = canvas.getContext('2d');
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		ctx.strokeStyle = '#22c55e';
+		ctx.lineWidth = 2;
+		const x = Math.min(drawStart.x, drawCurrent.x);
+		const y = Math.min(drawStart.y, drawCurrent.y);
+		const w = Math.abs(drawCurrent.x - drawStart.x);
+		const h = Math.abs(drawCurrent.y - drawStart.y);
+		ctx.strokeRect(x, y, w, h);
+	}
+
+	function syncCanvas() {
+		if (!canvas || !previewImg) return;
+		canvas.width  = previewImg.offsetWidth;
+		canvas.height = previewImg.offsetHeight;
+	}
+
+	function clearBbox() {
+		bbox = null;
+		drawStart = null;
+		drawCurrent = null;
+		if (canvas) {
+			const ctx = canvas.getContext('2d');
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
 	}
 
 	function onDrop(e) {
@@ -61,6 +136,12 @@
 		form.append('image', imageFile);
 		for (const path of selectedModels) {
 			form.append('modelPath', path);
+		}
+		if (bbox) {
+			form.append('xmin', String(bbox.xmin));
+			form.append('ymin', String(bbox.ymin));
+			form.append('xmax', String(bbox.xmax));
+			form.append('ymax', String(bbox.ymax));
 		}
 
 		try {
@@ -93,14 +174,34 @@
 		<div class="card">
 			<h2>이미지 업로드</h2>
 			{#if imageUrl}
-				<div>
-					<img src={imageUrl} alt="업로드된 이미지" class="preview-img" />
-					<button
-						class="btn-ghost"
-						style="width:100%;margin-top:8px"
-						on:click={() => document.getElementById('infer-file').click()}
-					>다른 이미지 선택</button>
+				<p style="font-size:12px;color:#64748b;margin-bottom:6px">항공기 영역을 드래그해서 BBox를 그리세요.</p>
+				<div class="canvas-wrap">
+					<img
+						src={imageUrl}
+						alt="업로드된 이미지"
+						bind:this={previewImg}
+						on:load={syncCanvas}
+					/>
+					<canvas
+						bind:this={canvas}
+						on:mousedown={onMouseDown}
+						on:mousemove={onMouseMove}
+						on:mouseup={onMouseUp}
+					></canvas>
 				</div>
+				{#if bbox}
+					<div style="display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap">
+						<span style="font-size:11px;color:#475569">BBox: ({bbox.xmin}, {bbox.ymin}) → ({bbox.xmax}, {bbox.ymax})</span>
+						<button class="btn-ghost" on:click={clearBbox} style="padding:2px 8px;font-size:11px">지우기</button>
+					</div>
+				{:else}
+					<p style="font-size:11px;color:#94a3b8;margin-top:6px">BBox 없음 — 이미지 전체로 추론</p>
+				{/if}
+				<button
+					class="btn-ghost"
+					style="width:100%;margin-top:8px"
+					on:click={() => document.getElementById('infer-file').click()}
+				>다른 이미지 선택</button>
 			{:else}
 				<div
 					class="drop-zone"
@@ -283,14 +384,26 @@
 		gap: 14px;
 	}
 
-	/* Image preview */
-	.preview-img {
+	/* Image preview with bbox canvas */
+	.canvas-wrap {
+		position: relative;
+		display: inline-block;
 		width: 100%;
-		max-height: 260px;
+	}
+	.canvas-wrap img {
+		display: block;
+		width: 100%;
+		max-height: 280px;
 		object-fit: contain;
 		background: #f1f5f9;
 		border-radius: 6px;
-		display: block;
+	}
+	.canvas-wrap canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		cursor: crosshair;
+		border-radius: 6px;
 	}
 
 	/* Model selection */
