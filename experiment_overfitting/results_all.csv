@@ -1,0 +1,5 @@
+model,attn,tuning,use_excluded,use_added,crop_bbox,added_repeat,label,folds,epochs,batch_size,lr,optimizer,weight_decay,label_smoothing,rotation,cutmix,num_params,train_time_sec,fold1_val_acc,fold2_val_acc,fold3_val_acc,fold4_val_acc,mean_val_acc,ensemble_test_acc,ensemble_cn_acc
+resnet34,none,False,False,False,True,1,family,4,50,32,0.001,adam,1e-05,0.0,15,0.0,21320582,1758,0.891,0.8825,0.886,0.887,0.886625,0.903,0.8916666666666667
+resnet34,none,False,False,False,True,1,family,4,50,32,0.001,adamw,0.005,0.0,15,0.0,21320582,1789,0.8995,0.885,0.88,0.887,0.887875,0.9085,0.8942261904761906
+resnet34d,none,False,False,False,True,1,family,4,50,32,0.001,adam,1e-05,0.0,15,0.0,21320582,1651,0.9055,0.894,0.893,0.892,0.896125,0.9075,0.8937797619047619
+resnet34,none,False,False,False,True,1,family,4,50,32,0.001,adam,1e-05,0.0,15,1.0,21320582,1702,0.9135,0.894,0.906,0.904,0.904375,0.92,0.9104464285714288

@@ -1,0 +1,2 @@
+model,shallow_attn,deep_attn,label,data,batch_size,lr,epochs,optimizer,best_val_acc,test_acc,cn_acc
+resnet34,none,cbam,family,original,32,0.001,30,adam,0.669066906690669,0.6825682568256826,0.6650301603277053

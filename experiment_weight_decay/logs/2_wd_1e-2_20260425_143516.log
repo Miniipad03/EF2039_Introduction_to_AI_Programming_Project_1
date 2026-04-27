@@ -1,0 +1,48 @@
+===== Input Arguments =====
+  model         : resnet34
+  attn          : none
+  tuning        : False
+  use_excluded  : False
+  use_added     : False
+  folds         : 4
+  epochs        : 30
+  batch_size    : 32
+  lr            : 0.001
+  optimizer     : adamw
+  weight_decay  : 0.01
+  label_smoothing: 0.0
+  label         : family
+  crop_bbox     : True
+  seed          : 42
+  save_csv      : results_all.csv
+  outdir        : /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_weight_decay
+  added_repeat  : 1
+===========================
+Device: cuda  |  AMP: True  |  Workers: 22
+Label: family  |  Classes: 70
+Mode: excl=False, added=False  |  Original: 10000, Added(train-only): 0 ×1 = 0
+Test set isolated: 2000 samples (20%, seed=42)
+Train+Val pool   : 8000 samples → 4-fold CV
+
+============================================================
+  Fold 1/4
+============================================================
+  Train: 6000, Val: 2000, Test: 2000
+  resnet34 (no attention)
+  [F1 E  1/30] Train 3.8190/0.1092  Val 3.3434/0.1915  (10.0s)
+  [F1 E  2/30] Train 3.1652/0.2217  Val 2.9720/0.2530  (9.3s)
+  [F1 E  3/30] Train 2.8550/0.2858  Val 2.8018/0.2980  (9.1s)
+  [F1 E  4/30] Train 2.6684/0.3173  Val 2.6650/0.3080  (9.0s)
+  [F1 E  5/30] Train 2.5147/0.3537  Val 2.5905/0.3155  (9.1s)
+  [Epoch 6] Backbone unfreeze (lr=1e-04)
+  [F1 E  6/30] Train 1.5900/0.5462  Val 1.0324/0.6875  (9.6s)
+  [F1 E  7/30] Train 0.6941/0.7912  Val 0.8010/0.7555  (9.8s)
+  [F1 E  8/30] Train 0.3734/0.8918  Val 0.6657/0.7980  (10.0s)
+  [F1 E  9/30] Train 0.2393/0.9298  Val 0.6960/0.8025  (10.1s)
+  [F1 E 10/30] Train 0.1630/0.9532  Val 0.6732/0.8080  (9.5s)
+  [F1 E 11/30] Train 0.1037/0.9747  Val 0.6827/0.8200  (10.1s)
+  [F1 E 12/30] Train 0.0883/0.9777  Val 0.6272/0.8365  (10.2s)
+  [F1 E 13/30] Train 0.0567/0.9847  Val 0.6078/0.8445  (10.5s)
+  [F1 E 14/30] Train 0.0300/0.9943  Val 0.6084/0.8445  (9.4s)
+  [F1 E 15/30] Train 0.0418/0.9875  Val 0.5992/0.8460  (9.5s)
+  [F1 E 16/30] Train 0.0238/0.9947  Val 0.5580/0.8600  (9.7s)

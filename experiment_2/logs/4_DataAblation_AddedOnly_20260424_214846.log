@@ -1,0 +1,193 @@
+===== Input Arguments =====
+  model         : resnet34
+  attn          : none
+  tuning        : False
+  use_excluded  : False
+  use_added     : True
+  folds         : 4
+  epochs        : 30
+  batch_size    : 32
+  lr            : 0.001
+  optimizer     : adam
+  weight_decay  : 0.0001
+  label         : family
+  crop_bbox     : False
+  seed          : 42
+  save_csv      : results_all.csv
+  outdir        : /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2
+===========================
+Device: cuda  |  AMP: True  |  Workers: 14
+Label: family  |  Classes: 70
+Mode: excl=False, added=True  |  Original: 10000, Added(train-only): 185
+Test set isolated: 2000 samples (20%, seed=42)
+Train+Val pool   : 8000 samples → 4-fold CV
+
+============================================================
+  Fold 1/4
+============================================================
+  Train: 6185, Val: 2000, Test: 2000
+  resnet34 (no attention)
+  [F1 E  1/30] Train 3.6227/0.1478  Val 3.0386/0.2680  (11.2s)
+  [F1 E  2/30] Train 2.7286/0.3214  Val 2.5142/0.3895  (10.9s)
+  [F1 E  3/30] Train 2.3195/0.4230  Val 2.3351/0.3815  (10.9s)
+  [F1 E  4/30] Train 2.0912/0.4632  Val 2.1529/0.4225  (10.1s)
+  [F1 E  5/30] Train 1.9351/0.4981  Val 2.0741/0.4565  (10.3s)
+  [Epoch 6] Backbone unfreeze (lr=1e-04)
+  [F1 E  6/30] Train 1.1437/0.6647  Val 0.8774/0.7355  (11.9s)
+  [F1 E  7/30] Train 0.4878/0.8569  Val 0.7430/0.7800  (11.2s)
+  [F1 E  8/30] Train 0.2755/0.9188  Val 0.5888/0.8350  (11.4s)
+  [F1 E  9/30] Train 0.1907/0.9470  Val 0.6650/0.8065  (12.3s)
+  [F1 E 10/30] Train 0.1457/0.9591  Val 0.6313/0.8300  (11.3s)
+  [F1 E 11/30] Train 0.1202/0.9635  Val 0.6645/0.8190  (12.2s)
+  [F1 E 12/30] Train 0.0989/0.9709  Val 0.6314/0.8210  (12.8s)
+  [F1 E 13/30] Train 0.0729/0.9796  Val 0.5311/0.8580  (11.0s)
+  [F1 E 14/30] Train 0.0521/0.9866  Val 0.5490/0.8645  (11.3s)
+  [F1 E 15/30] Train 0.0411/0.9897  Val 0.5605/0.8635  (11.7s)
+  [F1 E 16/30] Train 0.0313/0.9924  Val 0.5073/0.8725  (10.9s)
+  [F1 E 17/30] Train 0.0267/0.9945  Val 0.4862/0.8770  (12.4s)
+  [F1 E 18/30] Train 0.0167/0.9971  Val 0.5283/0.8675  (11.4s)
+  [F1 E 19/30] Train 0.0141/0.9968  Val 0.4649/0.8860  (11.6s)
+  [F1 E 20/30] Train 0.0109/0.9974  Val 0.4756/0.8800  (10.7s)
+  [F1 E 21/30] Train 0.0072/0.9985  Val 0.4765/0.8800  (11.6s)
+  [F1 E 22/30] Train 0.0101/0.9979  Val 0.4716/0.8815  (11.3s)
+  [F1 E 23/30] Train 0.0051/0.9997  Val 0.4620/0.8855  (11.3s)
+  [F1 E 24/30] Train 0.0046/0.9994  Val 0.4531/0.8860  (10.7s)
+  [F1 E 25/30] Train 0.0042/0.9995  Val 0.4514/0.8900  (11.1s)
+  [F1 E 26/30] Train 0.0027/0.9998  Val 0.4412/0.8930  (11.4s)
+  [F1 E 27/30] Train 0.0036/0.9997  Val 0.4453/0.8920  (12.0s)
+  [F1 E 28/30] Train 0.0029/0.9998  Val 0.4438/0.8910  (12.1s)
+  [F1 E 29/30] Train 0.0030/0.9998  Val 0.4451/0.8920  (11.1s)
+  [F1 E 30/30] Train 0.0022/1.0000  Val 0.4476/0.8930  (11.9s)
+  Fold 1 done — best val acc: 0.8930  (5m 45s)
+
+============================================================
+  Fold 2/4
+============================================================
+  Train: 6185, Val: 2000, Test: 2000
+  resnet34 (no attention)
+  [F2 E  1/30] Train 3.6348/0.1487  Val 3.0297/0.2510  (12.6s)
+  [F2 E  2/30] Train 2.7406/0.3206  Val 2.5397/0.3615  (12.4s)
+  [F2 E  3/30] Train 2.3229/0.4097  Val 2.2834/0.4130  (13.0s)
+  [F2 E  4/30] Train 2.0882/0.4645  Val 2.1546/0.4610  (11.0s)
+  [F2 E  5/30] Train 1.9192/0.5044  Val 2.0217/0.4705  (11.6s)
+  [Epoch 6] Backbone unfreeze (lr=1e-04)
+  [F2 E  6/30] Train 1.1214/0.6724  Val 0.9259/0.7310  (12.1s)
+  [F2 E  7/30] Train 0.4809/0.8516  Val 0.8340/0.7485  (11.9s)
+  [F2 E  8/30] Train 0.2733/0.9164  Val 0.5911/0.8350  (13.1s)
+  [F2 E  9/30] Train 0.1862/0.9457  Val 0.6655/0.8230  (12.1s)
+  [F2 E 10/30] Train 0.1482/0.9594  Val 0.7359/0.7960  (11.6s)
+  [F2 E 11/30] Train 0.1210/0.9627  Val 0.6219/0.8300  (11.9s)
+  [F2 E 12/30] Train 0.0873/0.9769  Val 0.5895/0.8530  (11.6s)
+  [F2 E 13/30] Train 0.0757/0.9795  Val 0.6087/0.8495  (13.0s)
+  [F2 E 14/30] Train 0.0536/0.9850  Val 0.5447/0.8645  (11.9s)
+  [F2 E 15/30] Train 0.0374/0.9916  Val 0.5474/0.8670  (11.6s)
+  [F2 E 16/30] Train 0.0331/0.9909  Val 0.5710/0.8640  (11.9s)
+  [F2 E 17/30] Train 0.0297/0.9929  Val 0.5520/0.8670  (12.6s)
+  [F2 E 18/30] Train 0.0267/0.9947  Val 0.4891/0.8820  (12.6s)
+  [F2 E 19/30] Train 0.0114/0.9981  Val 0.4934/0.8815  (11.8s)
+  [F2 E 20/30] Train 0.0085/0.9989  Val 0.4994/0.8840  (12.2s)
+  [F2 E 21/30] Train 0.0096/0.9979  Val 0.4832/0.8835  (11.8s)
+  [F2 E 22/30] Train 0.0078/0.9989  Val 0.4902/0.8840  (13.2s)
+  [F2 E 23/30] Train 0.0053/0.9995  Val 0.4785/0.8905  (12.8s)
+  [F2 E 24/30] Train 0.0046/0.9997  Val 0.4657/0.8955  (12.3s)
+  [F2 E 25/30] Train 0.0048/0.9989  Val 0.4630/0.8925  (12.3s)
+  [F2 E 26/30] Train 0.0039/0.9992  Val 0.4575/0.8920  (12.1s)
+  [F2 E 27/30] Train 0.0029/0.9998  Val 0.4512/0.8950  (12.3s)
+  [F2 E 28/30] Train 0.0030/0.9998  Val 0.4496/0.8955  (12.4s)
+  [F2 E 29/30] Train 0.0029/0.9998  Val 0.4564/0.8925  (11.8s)
+  [F2 E 30/30] Train 0.0029/0.9998  Val 0.4636/0.8920  (11.6s)
+  Fold 2 done — best val acc: 0.8955  (6m 7s)
+
+============================================================
+  Fold 3/4
+============================================================
+  Train: 6185, Val: 2000, Test: 2000
+  resnet34 (no attention)
+  [F3 E  1/30] Train 3.6120/0.1466  Val 2.9947/0.2690  (13.4s)
+  [F3 E  2/30] Train 2.7158/0.3195  Val 2.5296/0.3805  (13.0s)
+  [F3 E  3/30] Train 2.3182/0.4137  Val 2.3283/0.3900  (11.7s)
+  [F3 E  4/30] Train 2.0649/0.4758  Val 2.1944/0.4290  (12.1s)
+  [F3 E  5/30] Train 1.8975/0.5061  Val 2.0903/0.4330  (12.0s)
+  [Epoch 6] Backbone unfreeze (lr=1e-04)
+  [F3 E  6/30] Train 1.0918/0.6766  Val 0.9652/0.7010  (12.6s)
+  [F3 E  7/30] Train 0.4846/0.8519  Val 0.7562/0.7675  (13.0s)
+  [F3 E  8/30] Train 0.2992/0.9112  Val 0.6822/0.7990  (12.1s)
+  [F3 E  9/30] Train 0.1903/0.9441  Val 0.6434/0.8135  (12.1s)
+  [F3 E 10/30] Train 0.1295/0.9635  Val 0.6640/0.8135  (12.5s)
+  [F3 E 11/30] Train 0.0975/0.9745  Val 0.6490/0.8305  (12.4s)
+  [F3 E 12/30] Train 0.0946/0.9735  Val 0.6841/0.8155  (14.3s)
+  [F3 E 13/30] Train 0.0729/0.9801  Val 0.6544/0.8310  (13.0s)
+  [F3 E 14/30] Train 0.0540/0.9863  Val 0.6236/0.8465  (12.2s)
+  [F3 E 15/30] Train 0.0391/0.9916  Val 0.5996/0.8495  (13.2s)
+  [F3 E 16/30] Train 0.0420/0.9877  Val 0.6160/0.8460  (13.1s)
+  [F3 E 17/30] Train 0.0324/0.9924  Val 0.6040/0.8515  (12.6s)
+  [F3 E 18/30] Train 0.0192/0.9961  Val 0.5753/0.8620  (12.6s)
+  [F3 E 19/30] Train 0.0153/0.9960  Val 0.5791/0.8605  (12.3s)
+  [F3 E 20/30] Train 0.0156/0.9966  Val 0.5520/0.8675  (12.3s)
+  [F3 E 21/30] Train 0.0108/0.9992  Val 0.5368/0.8745  (14.1s)
+  [F3 E 22/30] Train 0.0055/0.9998  Val 0.5400/0.8715  (11.9s)
+  [F3 E 23/30] Train 0.0062/0.9989  Val 0.5258/0.8760  (12.1s)
+  [F3 E 24/30] Train 0.0043/0.9997  Val 0.5231/0.8760  (12.3s)
+  [F3 E 25/30] Train 0.0046/0.9994  Val 0.5264/0.8820  (12.1s)
+  [F3 E 26/30] Train 0.0044/0.9994  Val 0.5252/0.8800  (13.2s)
+  [F3 E 27/30] Train 0.0035/0.9995  Val 0.5239/0.8775  (11.7s)
+  [F3 E 28/30] Train 0.0031/0.9997  Val 0.5121/0.8780  (11.1s)
+  [F3 E 29/30] Train 0.0033/0.9997  Val 0.5098/0.8845  (12.7s)
+  [F3 E 30/30] Train 0.0033/0.9995  Val 0.5153/0.8795  (12.6s)
+  Fold 3 done — best val acc: 0.8845  (6m 19s)
+
+============================================================
+  Fold 4/4
+============================================================
+  Train: 6185, Val: 2000, Test: 2000
+  resnet34 (no attention)
+  [F4 E  1/30] Train 3.6113/0.1497  Val 3.0485/0.2765  (13.6s)
+  [F4 E  2/30] Train 2.7340/0.3196  Val 2.5581/0.3675  (12.8s)
+  [F4 E  3/30] Train 2.3190/0.4149  Val 2.3194/0.4125  (12.0s)
+  [F4 E  4/30] Train 2.0747/0.4640  Val 2.1950/0.4375  (11.7s)
+  [F4 E  5/30] Train 1.9061/0.5075  Val 2.1100/0.4395  (13.5s)
+  [Epoch 6] Backbone unfreeze (lr=1e-04)
+  [F4 E  6/30] Train 1.1218/0.6711  Val 0.8906/0.7250  (12.2s)
+  [F4 E  7/30] Train 0.4881/0.8519  Val 0.7027/0.7890  (12.3s)
+  [F4 E  8/30] Train 0.2836/0.9158  Val 0.6519/0.7925  (13.5s)
+  [F4 E  9/30] Train 0.1911/0.9431  Val 0.6668/0.8135  (12.3s)
+  [F4 E 10/30] Train 0.1384/0.9580  Val 0.7553/0.7915  (13.8s)
+  [F4 E 11/30] Train 0.1139/0.9685  Val 0.5745/0.8335  (13.1s)
+  [F4 E 12/30] Train 0.0713/0.9829  Val 0.6042/0.8375  (12.2s)
+  [F4 E 13/30] Train 0.0539/0.9869  Val 0.5274/0.8550  (13.0s)
+  [F4 E 14/30] Train 0.0588/0.9853  Val 0.5311/0.8555  (13.6s)
+  [F4 E 15/30] Train 0.0552/0.9859  Val 0.6169/0.8260  (12.5s)
+  [F4 E 16/30] Train 0.0420/0.9898  Val 0.5901/0.8555  (12.6s)
+  [F4 E 17/30] Train 0.0266/0.9948  Val 0.5335/0.8590  (12.0s)
+  [F4 E 18/30] Train 0.0156/0.9969  Val 0.5192/0.8605  (13.2s)
+  [F4 E 19/30] Train 0.0136/0.9981  Val 0.5208/0.8690  (12.8s)
+  [F4 E 20/30] Train 0.0190/0.9950  Val 0.5264/0.8670  (12.3s)
+  [F4 E 21/30] Train 0.0144/0.9968  Val 0.5464/0.8630  (12.1s)
+  [F4 E 22/30] Train 0.0108/0.9977  Val 0.5315/0.8705  (12.3s)
+  [F4 E 23/30] Train 0.0074/0.9989  Val 0.5234/0.8720  (12.3s)
+  [F4 E 24/30] Train 0.0055/0.9994  Val 0.5285/0.8720  (12.7s)
+  [F4 E 25/30] Train 0.0065/0.9992  Val 0.4963/0.8785  (13.0s)
+  [F4 E 26/30] Train 0.0030/1.0000  Val 0.5041/0.8775  (12.4s)
+  [F4 E 27/30] Train 0.0029/1.0000  Val 0.4970/0.8785  (11.9s)
+  [F4 E 28/30] Train 0.0034/0.9997  Val 0.4980/0.8795  (12.9s)
+  [F4 E 29/30] Train 0.0041/0.9998  Val 0.5038/0.8785  (12.4s)
+  [F4 E 30/30] Train 0.0040/0.9997  Val 0.4916/0.8815  (12.6s)
+  Fold 4 done — best val acc: 0.8815  (6m 22s)
+
+============================================================
+  Ensemble — Weighted Soft Voting
+  Fold val accs: ['0.8930', '0.8955', '0.8845', '0.8815']
+  Weights      : ['0.2512', '0.2519', '0.2488', '0.2480']
+============================================================
+  resnet34 (no attention)
+  resnet34 (no attention)
+  resnet34 (no attention)
+  resnet34 (no attention)
+Ensemble Test Acc : 0.8945
+Class-Norm Acc    : 0.8768
+History → /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2/history_resnet34_noattn_added_family_bs32_lr0.001_optadam.csv
+Curve → /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2/curve_resnet34_noattn_added_family_bs32_lr0.001_optadam.png
+Confusion → /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2/confusion_resnet34_noattn_added_family_bs32_lr0.001_optadam.png
+Class-wise → /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2/classwise_resnet34_noattn_added_family_bs32_lr0.001_optadam.csv
+Predictions → /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2/predictions_resnet34_noattn_added_family_bs32_lr0.001_optadam.csv
+Results → /home/work/AIPJ/EF2039_Introduction_to_AI_Programming_Project_1/experiment_2/results_all.csv

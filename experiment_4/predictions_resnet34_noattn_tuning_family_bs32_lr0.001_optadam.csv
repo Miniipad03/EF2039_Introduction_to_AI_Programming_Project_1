@@ -1,0 +1,2001 @@
+image_id,true_label,pred_label,correct
+2221303,Boeing 777,Boeing 767,False
+0356149,Beechcraft 1900,Beechcraft 1900,True
+2165387,DHC-1,DHC-1,True
+2005735,DHC-6,DHC-6,True
+1017974,Cessna Citation,Cessna Citation,True
+0447769,A320,A320,True
+0681537,Boeing 737,Boeing 737,True
+2094380,Boeing 777,Boeing 777,True
+1153404,DC-10,DC-10,True
+1351411,CRJ-700,CRJ-700,True
+0874951,MD-80,MD-80,True
+1337392,Boeing 737,Boeing 737,True
+1843535,Cessna Citation,Cessna Citation,True
+0457848,DC-9,MD-80,False
+2080684,Boeing 737,Boeing 737,True
+0563774,DC-3,DC-3,True
+1204296,A340,DC-9,False
+1413317,A340,A340,True
+1333639,Eurofighter Typhoon,Eurofighter Typhoon,True
+0593170,DC-8,DC-6,False
+1142906,Boeing 737,Boeing 737,True
+0062131,A320,A320,True
+1255008,C-47,C-47,True
+0458677,ATR-72,ATR-72,True
+1106865,Embraer ERJ 145,Embraer ERJ 145,True
+0396535,Boeing 747,Boeing 747,True
+2124427,Boeing 767,Boeing 767,True
+0097107,Boeing 767,Boeing 737,False
+1467694,MD-80,Boeing 717,False
+0255363,Boeing 757,Boeing 757,True
+0880590,Metroliner,Metroliner,True
+0907365,Metroliner,Metroliner,True
+1524816,Boeing 737,Boeing 737,True
+1810600,F/A-18,F/A-18,True
+0729223,Boeing 707,Boeing 707,True
+0147057,Boeing 737,Boeing 737,True
+0302922,Falcon 900,Falcon 900,True
+1038118,Boeing 747,Boeing 747,True
+1927270,Tornado,Tornado,True
+2204066,Cessna 172,Cessna 172,True
+1980084,A320,A320,True
+0727647,A340,A340,True
+0067865,A310,A310,True
+0950339,A330,Boeing 777,False
+2128061,C-130,C-130,True
+1772014,Fokker 70,Fokker 70,True
+0523001,A320,A320,True
+1353293,Boeing 737,Boeing 737,True
+0494477,A340,A340,True
+1118224,Boeing 737,Boeing 737,True
+0222915,MD-80,MD-80,True
+2003241,Boeing 717,Boeing 717,True
+1320584,Embraer Legacy 600,Embraer Legacy 600,True
+1778957,Spitfire,Spitfire,True
+0400394,EMB-120,EMB-120,True
+0127504,Boeing 747,Boeing 747,True
+0944245,Boeing 737,Boeing 737,True
+1340195,Boeing 747,Boeing 747,True
+1426526,CRJ-700,CRJ-700,True
+1948105,Embraer E-Jet,Embraer E-Jet,True
+1470663,A320,Boeing 777,False
+1670610,DR-400,DR-400,True
+1548863,DC-3,DC-6,False
+2213540,Embraer E-Jet,Embraer E-Jet,True
+0866092,MD-80,MD-80,True
+0543870,Gulfstream,Gulfstream,True
+0230833,A340,A340,True
+1855285,A330,A330,True
+0068813,Boeing 767,Boeing 767,True
+0233765,Boeing 717,Boeing 717,True
+0572855,Metroliner,Metroliner,True
+2117401,SR-20,SR-20,True
+1286165,Fokker 50,Fokker 50,True
+1043369,Beechcraft 1900,Beechcraft 1900,True
+1314986,Saab 2000,Saab 2000,True
+1243688,BAE-125,BAE-125,True
+0143396,Tu-154,Tu-154,True
+1186579,Embraer ERJ 145,Embraer ERJ 145,True
+1529412,Fokker 100,Fokker 100,True
+1790437,Boeing 747,Boeing 747,True
+0780820,Boeing 737,Boeing 737,True
+1703860,Cessna 172,Cessna 172,True
+0877089,Eurofighter Typhoon,Eurofighter Typhoon,True
+1674736,Fokker 100,Fokker 100,True
+1244762,Hawk T1,Hawk T1,True
+1912356,Hawk T1,Hawk T1,True
+1597903,EMB-120,EMB-120,True
+0083150,A320,A320,True
+0800390,Yak-42,Yak-42,True
+2208639,A330,A330,True
+0781154,Falcon 2000,Falcon 2000,True
+1744484,DC-3,DC-3,True
+1427680,Boeing 707,Boeing 707,True
+2123971,Embraer E-Jet,Embraer E-Jet,True
+0907431,Boeing 767,Boeing 767,True
+1606079,DR-400,DR-400,True
+1374699,DR-400,DR-400,True
+2163949,Dash 8,Dash 8,True
+0367973,Boeing 747,A300,False
+1139864,DC-3,C-47,False
+0948344,Boeing 747,Boeing 767,False
+0097748,DC-9,DC-9,True
+1476642,Boeing 737,Boeing 737,True
+1564407,C-130,C-130,True
+1527708,Global Express,Global Express,True
+1220934,BAE-125,BAE-125,True
+0242845,Boeing 737,Boeing 737,True
+0523028,Boeing 767,Boeing 767,True
+1918574,A310,A320,False
+0169635,EMB-120,EMB-120,True
+1736148,Embraer E-Jet,Embraer E-Jet,True
+0457871,King Air,King Air,True
+0249235,Embraer ERJ 145,Gulfstream,False
+1514487,Boeing 727,Boeing 727,True
+0977327,BAE 146,BAE 146,True
+1614884,F-16,F-16,True
+1571964,A340,A340,True
+2130084,Boeing 777,Boeing 777,True
+0988938,Boeing 767,Boeing 767,True
+0945368,Il-76,Il-76,True
+2239753,CRJ-700,CRJ-700,True
+1529275,Embraer E-Jet,Embraer E-Jet,True
+1503761,Boeing 737,Boeing 737,True
+0978815,An-12,An-12,True
+1291092,Boeing 747,Boeing 767,False
+2061742,A340,A340,True
+0801612,Metroliner,Metroliner,True
+1459176,Il-76,Il-76,True
+0610657,Boeing 707,Boeing 707,True
+1604652,A330,Embraer E-Jet,False
+1568114,A340,A340,True
+1535955,Fokker 50,Eurofighter Typhoon,False
+1388499,Cessna Citation,Cessna Citation,True
+1763810,MD-80,MD-90,False
+0357874,Dornier 328,ATR-42,False
+0492490,Gulfstream,Gulfstream,True
+1723913,Il-76,Il-76,True
+1169900,Boeing 727,Boeing 727,True
+0318420,DC-10,MD-11,False
+1132269,Boeing 747,Boeing 747,True
+1590459,Tu-154,Tu-154,True
+0143373,BAE 146,BAE 146,True
+1718867,Boeing 737,Boeing 737,True
+0136180,ATR-72,ATR-72,True
+2162060,SR-20,SR-20,True
+0939503,A320,A320,True
+1063985,Il-76,Il-76,True
+0478903,DHC-6,DHC-6,True
+1287650,Embraer ERJ 145,Embraer ERJ 145,True
+1567893,MD-90,MD-90,True
+2243382,Boeing 767,Boeing 767,True
+1313522,A340,A340,True
+0584541,Cessna Citation,Cessna Citation,True
+1913801,BAE 146,BAE 146,True
+0522876,DC-9,Boeing 717,False
+1395373,Falcon 900,Falcon 900,True
+0255294,Boeing 767,Boeing 767,True
+0606123,Yak-42,Yak-42,True
+1882581,Cessna Citation,Cessna Citation,True
+2170857,Boeing 737,Boeing 737,True
+0136383,MD-80,MD-80,True
+1330195,Embraer E-Jet,Embraer E-Jet,True
+1196996,DC-9,DC-9,True
+1973423,MD-11,MD-11,True
+0257282,A320,A320,True
+0427682,Embraer E-Jet,Embraer E-Jet,True
+0977899,Gulfstream,Gulfstream,True
+0681544,MD-11,MD-11,True
+1539428,A320,A320,True
+1158328,Cessna Citation,Cessna Citation,True
+0147047,Boeing 727,Tu-154,False
+0944182,Yak-42,Yak-42,True
+0770474,Boeing 737,Boeing 777,False
+0063926,Dash 8,Dash 8,True
+0554600,DHC-6,DHC-6,True
+0879883,DC-3,DC-3,True
+1859254,Tornado,Tornado,True
+0967849,Saab 2000,Saab 2000,True
+1178738,An-12,An-12,True
+1232502,CRJ-700,CRJ-700,True
+1183804,Falcon 900,Falcon 900,True
+0897300,A340,A340,True
+0411755,Cessna Citation,Cessna Citation,True
+1560883,Spitfire,Spitfire,True
+0586774,DC-3,DC-3,True
+1058494,CRJ-700,CRJ-700,True
+0818052,DH-82,DH-82,True
+0353522,ATR-42,ATR-42,True
+0100206,A300,Embraer E-Jet,False
+1658293,Eurofighter Typhoon,Eurofighter Typhoon,True
+0103328,Tu-154,Il-76,False
+1468804,Cessna Citation,Cessna Citation,True
+0631897,Boeing 707,Boeing 707,True
+1401605,Cessna Citation,Cessna Citation,True
+0817490,Il-76,Il-76,True
+1818393,Embraer E-Jet,Embraer E-Jet,True
+0343276,Saab 2000,Saab 2000,True
+0713739,BAE 146,BAE 146,True
+1673831,ATR-42,ATR-42,True
+1355218,Beechcraft 1900,Beechcraft 1900,True
+0522933,An-12,An-12,True
+0470833,A330,A330,True
+0848067,Beechcraft 1900,Beechcraft 1900,True
+0409532,Boeing 727,Boeing 727,True
+0448054,EMB-120,EMB-120,True
+0699510,MD-90,MD-80,False
+1888254,Gulfstream,Gulfstream,True
+2124349,Boeing 737,Boeing 737,True
+2029861,Boeing 777,Boeing 777,True
+0841849,Falcon 2000,Falcon 2000,True
+0973158,Fokker 70,Fokker 70,True
+1961232,Tornado,Tornado,True
+1352486,Embraer ERJ 145,Embraer ERJ 145,True
+0653804,Boeing 737,Boeing 737,True
+0993489,DC-10,DC-10,True
+1967574,Boeing 767,Boeing 767,True
+1215515,Gulfstream,Gulfstream,True
+0868108,Dash 8,Boeing 727,False
+0447765,Metroliner,Metroliner,True
+0155603,ATR-72,ATR-72,True
+1154647,A310,Boeing 737,False
+0574360,Dornier 328,Dash 8,False
+0731464,Boeing 737,Boeing 737,True
+0278439,Dornier 328,Tornado,False
+1259556,Boeing 747,Boeing 747,True
+1598901,BAE 146,BAE 146,True
+0062697,Dash 8,Dash 8,True
+1592077,Embraer ERJ 145,Embraer ERJ 145,True
+1103348,EMB-120,EMB-120,True
+1252133,EMB-120,Saab 340,False
+1358662,Boeing 737,Boeing 737,True
+2215834,Boeing 737,Boeing 737,True
+0391023,L-1011,DC-10,False
+0792175,Fokker 70,Fokker 70,True
+0078141,Fokker 70,Fokker 70,True
+1619369,C-47,C-47,True
+1126597,Cessna 172,Cessna 172,True
+1852270,PA-28,PA-28,True
+1335116,DC-3,DC-3,True
+0573368,Boeing 717,Boeing 717,True
+1169979,Embraer E-Jet,Embraer E-Jet,True
+2021834,Boeing 737,Boeing 737,True
+0753862,A300,A310,False
+1372357,F-16,F-16,True
+2162934,A330,A330,True
+0980397,Fokker 100,Fokker 100,True
+0167090,Boeing 747,Boeing 747,True
+1266357,Fokker 50,Fokker 50,True
+0296117,L-1011,L-1011,True
+1054081,Gulfstream,Gulfstream,True
+0978286,A310,A310,True
+1310046,MD-80,MD-80,True
+0239583,Boeing 717,MD-80,False
+2123950,Falcon 900,Falcon 900,True
+1646253,PA-28,PA-28,True
+1843606,King Air,King Air,True
+2185923,Challenger 600,Challenger 600,True
+1100234,Boeing 737,Boeing 737,True
+1168800,DC-8,Boeing 747,False
+1062013,Challenger 600,BAE-125,False
+1961354,A330,A330,True
+1046881,A340,A340,True
+0740891,MD-80,MD-80,True
+1774335,Cessna Citation,Cessna Citation,True
+0887066,Boeing 707,Boeing 707,True
+0975833,Embraer ERJ 145,Embraer ERJ 145,True
+2171061,Boeing 717,MD-80,False
+0547318,A320,A320,True
+1091953,Eurofighter Typhoon,Il-76,False
+1395799,Cessna 172,Cessna 172,True
+0851313,A320,A320,True
+1879800,L-1011,L-1011,True
+2201377,Boeing 737,Boeing 737,True
+1636570,SR-20,SR-20,True
+1272698,Gulfstream,Gulfstream,True
+0301967,A340,A340,True
+1341063,MD-90,MD-90,True
+1017808,ATR-72,ATR-72,True
+0218835,F/A-18,F/A-18,True
+0907364,Boeing 727,Boeing 727,True
+1990751,A380,A380,True
+1197109,MD-80,MD-80,True
+1386619,A320,A320,True
+0522863,MD-80,MD-80,True
+1884992,Boeing 737,Boeing 737,True
+0858585,Fokker 70,Fokker 70,True
+0725666,DC-6,DC-6,True
+0736232,C-130,C-130,True
+0195016,Il-76,Il-76,True
+0522872,Boeing 737,Boeing 737,True
+0518626,Global Express,Global Express,True
+1545983,An-12,An-12,True
+0538259,DC-6,DC-6,True
+0944751,BAE-125,BAE-125,True
+0447935,A340,A340,True
+1419049,Boeing 737,Boeing 737,True
+1380455,DHC-1,DHC-1,True
+0296011,Boeing 747,Boeing 747,True
+1143414,ATR-42,ATR-42,True
+1283510,Boeing 747,Boeing 747,True
+0476351,Boeing 767,Boeing 767,True
+2107061,Embraer E-Jet,A320,False
+0761093,Spitfire,Spitfire,True
+2072391,SR-20,SR-20,True
+2186366,Eurofighter Typhoon,Eurofighter Typhoon,True
+2025767,A300,Boeing 747,False
+0913940,Gulfstream,Gulfstream,True
+1956504,CRJ-700,CRJ-700,True
+1349340,F/A-18,F/A-18,True
+1608287,CRJ-700,CRJ-700,True
+2247793,A380,A380,True
+1304869,Boeing 737,Boeing 737,True
+1222829,DR-400,DR-400,True
+0808929,Tu-154,Tu-154,True
+0738259,An-12,An-12,True
+0995410,A300,A300,True
+0065226,A300,A300,True
+1600188,F/A-18,F/A-18,True
+1398071,DH-82,DH-82,True
+1961222,Tornado,Tornado,True
+0793692,PA-28,PA-28,True
+1559632,Fokker 100,Fokker 100,True
+1244285,Gulfstream,Gulfstream,True
+1202541,Dornier 328,Dornier 328,True
+1237648,King Air,King Air,True
+1055149,A320,A320,True
+0523220,Boeing 737,Boeing 737,True
+1974802,DH-82,DH-82,True
+1635084,DH-82,DH-82,True
+2222240,Embraer E-Jet,Embraer E-Jet,True
+2115048,C-47,C-47,True
+0950402,Fokker 100,Fokker 100,True
+1692197,Boeing 737,Boeing 737,True
+1223418,BAE 146,BAE 146,True
+1154577,MD-90,MD-90,True
+2054457,Tu-154,Tu-154,True
+1797935,King Air,King Air,True
+1031476,A300,A310,False
+1701067,A340,A340,True
+1576113,Eurofighter Typhoon,Eurofighter Typhoon,True
+1931348,Tornado,Tornado,True
+0628815,Dornier 328,Dornier 328,True
+1318408,Embraer E-Jet,Embraer E-Jet,True
+1248148,Fokker 70,Fokker 70,True
+1110732,Embraer ERJ 145,Embraer ERJ 145,True
+0944239,Yak-42,Yak-42,True
+0630229,Dash 8,Dash 8,True
+2132127,Boeing 767,Boeing 767,True
+0921023,DC-8,DC-8,True
+1042331,Cessna Citation,Cessna Citation,True
+0092976,DC-10,DC-10,True
+1414866,BAE 146,BAE 146,True
+0302650,DC-9,DC-9,True
+1377012,Boeing 737,Boeing 737,True
+0523168,BAE 146,BAE 146,True
+1961234,Embraer E-Jet,Embraer E-Jet,True
+0487364,Boeing 767,Boeing 767,True
+1053453,Cessna 208,Cessna 208,True
+1036863,A320,A320,True
+0875303,Boeing 737,Boeing 737,True
+0706206,C-130,C-130,True
+1690964,A340,A340,True
+0325574,Boeing 737,Boeing 737,True
+1170071,Cessna 172,Cessna 172,True
+1828262,Embraer E-Jet,Embraer E-Jet,True
+0765781,Boeing 757,Boeing 757,True
+1903311,Gulfstream,Gulfstream,True
+1776868,Beechcraft 1900,Beechcraft 1900,True
+1008872,Boeing 747,Boeing 747,True
+1294506,A300,A300,True
+1157371,Embraer ERJ 145,Embraer ERJ 145,True
+0698791,Boeing 737,Boeing 737,True
+1629329,Boeing 757,Boeing 767,False
+0574359,Boeing 707,Boeing 707,True
+0062680,Tu-154,Tu-154,True
+1767221,PA-28,SR-20,False
+1860128,Boeing 767,Boeing 767,True
+1549183,Boeing 737,Boeing 737,True
+1645747,Boeing 747,Boeing 747,True
+2142244,Fokker 50,Fokker 50,True
+2217839,Boeing 737,Boeing 737,True
+1687756,Boeing 737,Boeing 737,True
+1236413,Falcon 2000,Falcon 2000,True
+1569778,DC-3,DC-3,True
+0134598,Boeing 757,Boeing 757,True
+1055150,A340,A340,True
+1898447,MD-11,A340,False
+1028093,Global Express,Global Express,True
+2072257,Challenger 600,Challenger 600,True
+1535205,Dornier 328,Dornier 328,True
+1292390,DC-6,DC-6,True
+1116482,CRJ-200,CRJ-200,True
+1037168,King Air,King Air,True
+1459418,A330,A340,False
+0447170,Boeing 747,Boeing 747,True
+0483243,A300,A300,True
+1351194,Saab 340,Saab 340,True
+1302049,Cessna 172,Cessna 172,True
+1191244,Global Express,CRJ-700,False
+0699596,Boeing 737,Boeing 737,True
+1377518,DR-400,DR-400,True
+1276718,Embraer ERJ 145,Embraer ERJ 145,True
+1629114,ATR-72,ATR-72,True
+2076551,CRJ-700,CRJ-700,True
+0848057,Boeing 737,Boeing 737,True
+0302020,Boeing 717,Boeing 717,True
+1444715,Cessna Citation,Cessna Citation,True
+1340345,Yak-42,Yak-42,True
+0917712,BAE 146,BAE 146,True
+1548486,A320,A320,True
+0822344,Tu-154,Tu-154,True
+0523228,Il-76,Il-76,True
+1221335,CRJ-700,CRJ-700,True
+2217838,MD-80,Boeing 717,False
+1905022,Embraer E-Jet,Embraer E-Jet,True
+0602442,DC-3,DC-3,True
+1354835,Boeing 737,Boeing 737,True
+1879894,Boeing 737,Boeing 737,True
+2039044,Boeing 717,Boeing 717,True
+0548883,DC-6,DC-6,True
+1981537,Embraer E-Jet,Boeing 737,False
+1353412,Falcon 900,Falcon 900,True
+0543868,Cessna Citation,Cessna Citation,True
+0197892,Yak-42,Yak-42,True
+0819081,A330,A330,True
+0181732,Boeing 747,Boeing 747,True
+1017178,C-130,C-130,True
+1198418,An-12,An-12,True
+1531429,Embraer ERJ 145,Embraer ERJ 145,True
+1132271,A310,A310,True
+2126018,BAE 146,BAE 146,True
+2191947,Dash 8,Dash 8,True
+1569037,Boeing 717,Boeing 717,True
+2171767,A330,A330,True
+2228985,DR-400,DR-400,True
+0725997,Boeing 747,Boeing 747,True
+2038561,SR-20,SR-20,True
+0974359,Tu-134,Tu-134,True
+0901500,L-1011,L-1011,True
+0177655,Dash 8,Dash 8,True
+1053463,DHC-6,Cessna 208,False
+0467386,Tu-154,Tu-154,True
+1277982,BAE 146,BAE 146,True
+2137129,Embraer E-Jet,Embraer E-Jet,True
+0973103,CRJ-200,CRJ-700,False
+2107238,Cessna 208,Cessna 208,True
+1191372,DHC-1,DHC-1,True
+0082499,Cessna 208,Cessna 208,True
+2122835,A380,A380,True
+0894379,An-12,An-12,True
+1338551,CRJ-700,CRJ-700,True
+0236037,DC-3,DC-3,True
+0704265,MD-80,MD-90,False
+0863693,Boeing 767,Boeing 777,False
+1772714,Fokker 100,Fokker 100,True
+2128002,CRJ-200,CRJ-200,True
+2205704,Dash 8,Dash 8,True
+1914874,Boeing 717,MD-80,False
+1704824,Fokker 70,Fokker 70,True
+2258360,SR-20,SR-20,True
+1605154,Embraer Legacy 600,Dornier 328,False
+0968445,MD-11,Boeing 757,False
+1538918,SR-20,SR-20,True
+1219250,Saab 2000,Saab 2000,True
+0817610,Embraer ERJ 145,Embraer ERJ 145,True
+0103331,L-1011,L-1011,True
+0918624,Boeing 717,Boeing 717,True
+1009031,Boeing 747,Boeing 747,True
+1284367,CRJ-700,CRJ-700,True
+1390327,A340,A340,True
+1351205,MD-80,Boeing 717,False
+0547507,DC-8,DC-8,True
+0523019,Metroliner,Metroliner,True
+1801417,BAE-125,BAE-125,True
+0921743,CRJ-200,CRJ-200,True
+0721412,DC-8,DC-8,True
+1510217,Embraer E-Jet,Embraer E-Jet,True
+1377031,MD-80,MD-80,True
+1849793,SR-20,SR-20,True
+1784297,Gulfstream,Gulfstream,True
+1291894,A300,A300,True
+0924311,A300,A300,True
+1365790,Global Express,Global Express,True
+1535321,Gulfstream,Gulfstream,True
+1900831,Cessna Citation,Boeing 737,False
+1300106,King Air,King Air,True
+1253533,Dash 8,Dash 8,True
+0383407,CRJ-700,CRJ-700,True
+1609735,A340,A340,True
+0981290,DHC-1,DHC-1,True
+1237861,Boeing 757,Boeing 757,True
+1714826,Embraer Legacy 600,Embraer Legacy 600,True
+0091361,EMB-120,EMB-120,True
+2113367,BAE 146,BAE 146,True
+1985096,A330,A330,True
+1060226,CRJ-200,CRJ-200,True
+0996336,DC-9,DC-9,True
+1950537,MD-80,MD-80,True
+2132449,F/A-18,F/A-18,True
+0962152,A340,A340,True
+1476103,Embraer Legacy 600,Embraer Legacy 600,True
+0368356,Eurofighter Typhoon,Il-76,False
+0996410,A340,A340,True
+0636482,Beechcraft 1900,Beechcraft 1900,True
+2039227,DHC-1,DHC-1,True
+0129326,Beechcraft 1900,Beechcraft 1900,True
+1421346,A340,A340,True
+2035598,Boeing 777,Boeing 777,True
+1928766,PA-28,PA-28,True
+1683877,A320,A320,True
+2183378,Boeing 767,Boeing 767,True
+1870570,Dash 8,Dash 8,True
+0894324,A320,A320,True
+0788471,Boeing 767,Boeing 767,True
+0895308,F-16,F-16,True
+0723572,Boeing 737,Boeing 737,True
+0082492,Dash 8,Dash 8,True
+1647400,C-130,C-130,True
+1862132,Boeing 767,Boeing 767,True
+2143595,SR-20,SR-20,True
+1411126,DC-9,MD-80,False
+1398857,Boeing 717,Boeing 717,True
+1806229,Cessna Citation,Cessna Citation,True
+1341989,Challenger 600,Challenger 600,True
+0977357,ATR-42,ATR-42,True
+0336540,Boeing 737,Boeing 737,True
+0454829,DHC-6,DHC-6,True
+1053968,Boeing 717,MD-80,False
+1407503,EMB-120,Cessna Citation,False
+1052986,An-12,An-12,True
+1141849,MD-80,MD-80,True
+1764197,Dash 8,Dash 8,True
+1469943,Cessna Citation,Cessna Citation,True
+0434358,Boeing 737,Boeing 737,True
+2223255,Hawk T1,Hawk T1,True
+0350851,A340,A340,True
+1006795,BAE-125,BAE-125,True
+1736085,F-16,F-16,True
+1998936,DHC-6,DHC-6,True
+1053447,A340,A340,True
+1155928,Metroliner,Metroliner,True
+1147907,C-47,C-47,True
+1367983,F-16,F-16,True
+2018705,Hawk T1,Hawk T1,True
+1962770,An-12,An-12,True
+0869743,Boeing 747,Boeing 747,True
+0841712,CRJ-200,A320,False
+1337849,Boeing 737,DC-10,False
+1413233,Boeing 767,Boeing 767,True
+1846144,Gulfstream,Gulfstream,True
+1570282,King Air,King Air,True
+0065838,Il-76,Il-76,True
+0894206,BAE 146,BAE 146,True
+0085330,Saab 340,Saab 340,True
+0181712,Boeing 717,Boeing 717,True
+0875404,L-1011,L-1011,True
+0939579,Boeing 777,DC-3,False
+1043786,Cessna 208,Cessna 208,True
+0312400,CRJ-700,CRJ-700,True
+0198100,DC-8,DC-8,True
+0257380,Saab 340,Saab 340,True
+1611465,F-16,F-16,True
+1898332,Falcon 900,Falcon 900,True
+0301964,A330,A330,True
+2117298,Embraer E-Jet,Embraer E-Jet,True
+1744483,DH-82,DH-82,True
+1352223,ATR-72,ATR-72,True
+0275719,Boeing 727,Yak-42,False
+1773981,Boeing 737,Boeing 737,True
+1912564,Embraer E-Jet,Embraer E-Jet,True
+1100739,Gulfstream,Gulfstream,True
+1806211,Challenger 600,Challenger 600,True
+1381998,Cessna Citation,Cessna Citation,True
+2186728,PA-28,PA-28,True
+2118954,F-16,F-16,True
+2233941,SR-20,SR-20,True
+1218795,A320,A320,True
+0788134,Saab 2000,Saab 2000,True
+1764574,F-16,F-16,True
+1535181,Embraer E-Jet,Embraer E-Jet,True
+1826635,Yak-42,Yak-42,True
+2161794,Boeing 747,Boeing 747,True
+0923506,Boeing 737,Boeing 737,True
+0869696,L-1011,L-1011,True
+1427275,A330,Fokker 70,False
+0501286,Challenger 600,Tornado,False
+0558232,Boeing 767,Boeing 767,True
+0911710,DH-82,DH-82,True
+2251723,Saab 340,Saab 340,True
+1627449,BAE-125,BAE-125,True
+1758545,Boeing 737,Boeing 737,True
+1362802,Boeing 737,Boeing 737,True
+1921656,Gulfstream,Gulfstream,True
+0957905,ATR-72,ATR-72,True
+0061401,L-1011,L-1011,True
+2082475,Boeing 767,Boeing 767,True
+1117094,Fokker 50,Fokker 50,True
+0723122,Boeing 737,Boeing 737,True
+0867011,Embraer ERJ 145,Embraer ERJ 145,True
+1152214,DHC-1,DHC-1,True
+1695007,SR-20,SR-20,True
+1754503,Boeing 737,Boeing 737,True
+1900832,Falcon 900,Falcon 900,True
+1260332,MD-90,MD-80,False
+0062255,DC-9,Boeing 717,False
+1724870,Embraer Legacy 600,Embraer Legacy 600,True
+2090707,Falcon 2000,Gulfstream,False
+0842124,Embraer ERJ 145,Embraer ERJ 145,True
+0877683,Hawk T1,Hawk T1,True
+2002223,Boeing 737,Boeing 737,True
+0926108,MD-80,MD-80,True
+1291218,Global Express,Global Express,True
+0523013,Boeing 757,Boeing 757,True
+1136119,A340,A340,True
+2021840,MD-80,CRJ-700,False
+1226558,EMB-120,EMB-120,True
+0441018,DC-9,DC-9,True
+1852244,Boeing 777,Boeing 777,True
+1940832,A320,A320,True
+0490170,An-12,An-12,True
+0694490,MD-11,MD-11,True
+0209211,Boeing 737,DHC-6,False
+0958129,Boeing 767,Boeing 767,True
+1031474,DC-10,DC-10,True
+1711191,SR-20,SR-20,True
+0175704,MD-90,MD-90,True
+1779647,Boeing 777,A330,False
+2204922,Boeing 777,Boeing 777,True
+1349345,Tornado,Tornado,True
+0395615,Boeing 737,Boeing 737,True
+0443893,Boeing 737,Boeing 737,True
+1673535,DH-82,DH-82,True
+1899099,Boeing 737,Boeing 737,True
+1806232,Cessna Citation,Cessna Citation,True
+1879110,Boeing 737,Boeing 737,True
+1158573,DHC-6,DHC-6,True
+1895885,BAE 146,BAE 146,True
+0547330,DC-3,DC-3,True
+1870831,Falcon 900,Falcon 900,True
+2089280,A380,A380,True
+1376572,DH-82,DH-82,True
+0536338,DC-10,DC-10,True
+0063102,MD-90,MD-80,False
+1555884,A320,Embraer E-Jet,False
+1136124,Boeing 737,Boeing 737,True
+2084967,A330,A330,True
+2191962,A330,A330,True
+0709959,Embraer ERJ 145,Embraer ERJ 145,True
+1265817,King Air,King Air,True
+1268068,Boeing 737,Boeing 737,True
+1588716,F/A-18,F/A-18,True
+0964904,Dornier 328,Dornier 328,True
+1033340,A340,A340,True
+0958138,Boeing 717,MD-80,False
+0716451,Tu-154,L-1011,False
+2118953,F/A-18,F/A-18,True
+0884477,A340,A340,True
+1172360,Cessna 172,Cessna 172,True
+1790505,Boeing 767,Boeing 767,True
+0699302,A310,A310,True
+1699062,Embraer E-Jet,Embraer E-Jet,True
+2218009,Boeing 747,Boeing 747,True
+0923766,Saab 2000,Saab 2000,True
+1048572,MD-11,DC-10,False
+0880582,Cessna Citation,Cessna Citation,True
+1709263,Eurofighter Typhoon,Eurofighter Typhoon,True
+1472410,DH-82,DH-82,True
+1672425,Gulfstream,Gulfstream,True
+2176031,PA-28,PA-28,True
+0394154,Fokker 70,Fokker 70,True
+1647313,Embraer E-Jet,Embraer E-Jet,True
+1284226,MD-11,MD-11,True
+1950558,ATR-72,ATR-72,True
+1581524,DR-400,DR-400,True
+2259899,MD-80,MD-80,True
+0164676,MD-11,MD-11,True
+0442919,ATR-42,ATR-42,True
+1024161,Falcon 2000,Falcon 2000,True
+2117313,CRJ-700,CRJ-700,True
+1506678,Hawk T1,Hawk T1,True
+1423648,Challenger 600,Global Express,False
+0719790,A340,A340,True
+0783933,ATR-72,ATR-72,True
+1132237,Challenger 600,Challenger 600,True
+1693645,Dornier 328,Dornier 328,True
+1158571,Beechcraft 1900,Beechcraft 1900,True
+0127496,Boeing 767,Boeing 767,True
+1895800,MD-11,MD-11,True
+1364710,Eurofighter Typhoon,Eurofighter Typhoon,True
+1355493,MD-80,MD-80,True
+0760910,Boeing 707,Boeing 707,True
+1334600,Saab 340,Saab 340,True
+0493824,Boeing 777,Boeing 777,True
+2190740,Cessna Citation,Cessna Citation,True
+2199430,DHC-1,DHC-1,True
+0618964,Boeing 747,Boeing 747,True
+1542796,ATR-72,ATR-72,True
+0796296,DC-6,DC-6,True
+2171010,Boeing 767,Boeing 767,True
+1671731,A320,Boeing 737,False
+0457837,A330,A330,True
+1163999,Embraer E-Jet,Embraer E-Jet,True
+0184344,A300,A300,True
+1594735,EMB-120,EMB-120,True
+0158891,Boeing 757,Boeing 757,True
+1346446,A340,C-130,False
+1317747,Eurofighter Typhoon,Eurofighter Typhoon,True
+2091938,Embraer E-Jet,Embraer E-Jet,True
+2221716,A310,Boeing 747,False
+1177369,MD-80,MD-80,True
+1937368,DC-6,DC-6,True
+1225610,Dash 8,Dash 8,True
+1492330,King Air,King Air,True
+0792283,BAE 146,Boeing 737,False
+0468262,Falcon 2000,Falcon 2000,True
+2226325,A320,A320,True
+0361351,Boeing 737,Boeing 737,True
+2191092,Boeing 777,Boeing 777,True
+0562105,Boeing 737,Boeing 737,True
+1686506,Falcon 900,Falcon 900,True
+0688081,Fokker 100,Fokker 100,True
+1781350,BAE 146,Boeing 737,False
+2227561,Embraer E-Jet,Embraer E-Jet,True
+0536306,L-1011,L-1011,True
+2057963,Gulfstream,Gulfstream,True
+0065830,Boeing 747,Boeing 747,True
+2107214,BAE 146,BAE 146,True
+1377655,CRJ-700,CRJ-700,True
+2120181,Boeing 737,Boeing 737,True
+2035343,Boeing 777,Boeing 777,True
+0476825,Boeing 737,Boeing 737,True
+0851311,Boeing 747,Boeing 747,True
+1539352,ATR-42,DHC-6,False
+1807932,A320,A320,True
+1620908,Saab 340,Saab 340,True
+1573339,CRJ-700,CRJ-700,True
+0503703,Metroliner,Metroliner,True
+1476963,F-16,F-16,True
+0239592,Challenger 600,Challenger 600,True
+2194210,CRJ-700,CRJ-700,True
+1754078,F-16,F-16,True
+0983542,Boeing 747,Boeing 747,True
+2126016,C-47,DC-3,False
+1545325,Boeing 737,Boeing 737,True
+0562553,Boeing 737,Boeing 737,True
+2197331,DHC-6,DHC-6,True
+1575768,Metroliner,Spitfire,False
+2079513,Boeing 747,Boeing 747,True
+0738252,An-12,An-12,True
+1133481,F/A-18,F/A-18,True
+0689282,L-1011,L-1011,True
+1783026,Boeing 777,Boeing 777,True
+0682665,Boeing 747,Boeing 747,True
+0151664,EMB-120,EMB-120,True
+2020641,Boeing 757,Boeing 757,True
+0713693,Spitfire,Spitfire,True
+1838645,A320,A320,True
+1307739,PA-28,PA-28,True
+1736177,Hawk T1,Hawk T1,True
+1401587,A320,A320,True
+0994986,Boeing 727,Boeing 727,True
+1023007,DHC-6,DHC-6,True
+0690072,Fokker 100,Fokker 100,True
+1152778,Dornier 328,Dornier 328,True
+1958762,A320,A320,True
+2057425,Saab 2000,Saab 2000,True
+1059813,Boeing 747,Boeing 747,True
+1979428,Fokker 100,Fokker 100,True
+1714820,BAE-125,BAE-125,True
+1200651,Boeing 757,Boeing 757,True
+1647809,A330,Boeing 737,False
+2142087,DC-3,DC-3,True
+0492487,Gulfstream,Gulfstream,True
+2136384,Eurofighter Typhoon,Eurofighter Typhoon,True
+1206453,A340,A340,True
+0321715,MD-80,MD-80,True
+1097907,A320,A320,True
+2054232,MD-11,MD-11,True
+1346004,Boeing 707,Boeing 707,True
+1079168,A320,A320,True
+0523052,Tu-154,Tu-154,True
+1590785,A320,A320,True
+0749478,Yak-42,Yak-42,True
+0174926,CRJ-200,CRJ-200,True
+1804775,SR-20,SR-20,True
+0188143,Boeing 767,Boeing 737,False
+1384649,Boeing 737,Boeing 737,True
+1347949,DHC-1,DHC-1,True
+0546334,DC-8,Boeing 707,False
+1886145,BAE 146,BAE 146,True
+1143131,Boeing 777,Boeing 777,True
+1369269,BAE-125,BAE-125,True
+1230443,Boeing 777,Boeing 777,True
+1869886,Il-76,Il-76,True
+0735021,DHC-6,DHC-6,True
+0523031,A320,A320,True
+1695906,Yak-42,Yak-42,True
+0752805,Embraer ERJ 145,Embraer ERJ 145,True
+0445389,Boeing 767,Boeing 767,True
+0248131,DC-9,DC-9,True
+0704643,C-47,C-47,True
+0996666,PA-28,PA-28,True
+0907359,Boeing 727,Embraer ERJ 145,False
+0467798,Boeing 737,Boeing 737,True
+2146985,A320,A320,True
+1335195,A340,A340,True
+0325518,Fokker 70,Eurofighter Typhoon,False
+1400105,Boeing 737,Boeing 737,True
+1100466,CRJ-700,CRJ-700,True
+2198761,Boeing 737,Boeing 737,True
+2175577,DH-82,DH-82,True
+1231212,MD-80,MD-80,True
+1862134,Boeing 727,Boeing 727,True
+0521262,Cessna Citation,Cessna Citation,True
+0735020,DHC-6,DHC-6,True
+1590546,Tu-134,Tu-134,True
+0901458,DC-8,DC-8,True
+1085156,Hawk T1,Hawk T1,True
+0174896,DC-6,DC-6,True
+1908623,DHC-1,DHC-1,True
+2031384,Boeing 737,Boeing 737,True
+0396589,A310,A310,True
+1324595,Cessna 172,Cessna 172,True
+1198138,Falcon 2000,MD-11,False
+0388910,CRJ-700,CRJ-700,True
+2194912,A320,A320,True
+1176949,A320,A320,True
+1358472,CRJ-700,CRJ-700,True
+2103000,A380,A380,True
+0848059,DHC-6,DHC-6,True
+1943366,Falcon 2000,Falcon 2000,True
+1567592,Hawk T1,Hawk T1,True
+2245399,Gulfstream,Gulfstream,True
+1084922,BAE 146,BAE 146,True
+1017406,DC-8,DC-8,True
+1075856,A340,A340,True
+1088600,A340,A340,True
+0547008,DC-6,DC-6,True
+0747565,F-16,F-16,True
+0901496,DC-9,DC-9,True
+1244288,Boeing 737,Boeing 737,True
+1472586,Hawk T1,Hawk T1,True
+0447785,A340,A340,True
+2127989,Saab 2000,Saab 2000,True
+1347237,Cessna 208,DC-3,False
+1306316,Boeing 767,Boeing 767,True
+2057958,Dash 8,Dash 8,True
+1771959,Boeing 737,Boeing 737,True
+0780417,Challenger 600,Challenger 600,True
+0683605,ATR-72,ATR-72,True
+0539398,DC-3,DC-3,True
+2232678,Boeing 767,Boeing 767,True
+2162376,Spitfire,Spitfire,True
+1104208,BAE 146,BAE 146,True
+2044258,Falcon 2000,Falcon 2000,True
+1744537,Spitfire,Spitfire,True
+1017179,Boeing 707,Boeing 707,True
+0845036,Tu-134,Fokker 70,False
+1018875,A320,A320,True
+1531175,A380,A380,True
+1611222,Fokker 100,Fokker 100,True
+0302207,Dash 8,Dash 8,True
+1062970,Cessna Citation,SR-20,False
+1567287,A340,A340,True
+0606403,DC-6,DC-6,True
+0959047,Boeing 737,Boeing 737,True
+0922639,BAE 146,BAE 146,True
+1660305,Eurofighter Typhoon,Eurofighter Typhoon,True
+0944247,Boeing 737,Boeing 737,True
+1052314,Boeing 737,Boeing 737,True
+0609174,Embraer Legacy 600,Embraer Legacy 600,True
+1950564,MD-90,MD-80,False
+2015492,Boeing 777,Boeing 777,True
+1316960,DC-6,DC-6,True
+1355208,Metroliner,Metroliner,True
+0403850,PA-28,PA-28,True
+1882621,DR-400,DR-400,True
+1650652,Boeing 747,Boeing 747,True
+1768769,A320,A320,True
+1369907,A320,A320,True
+0337282,Fokker 50,Fokker 50,True
+1471691,Boeing 757,Boeing 757,True
+2172533,Cessna 172,Cessna 172,True
+2120026,A330,A330,True
+2188618,Boeing 737,Boeing 737,True
+0979377,Boeing 707,Boeing 707,True
+0116718,Embraer ERJ 145,Embraer ERJ 145,True
+1736210,F/A-18,F/A-18,True
+0710650,A340,A340,True
+0218801,Boeing 737,Boeing 737,True
+0783526,Boeing 747,Boeing 747,True
+1298912,Boeing 757,Boeing 757,True
+0218834,F/A-18,F/A-18,True
+1553993,Boeing 747,Boeing 747,True
+0691437,Tornado,Tornado,True
+1527509,Embraer E-Jet,Embraer E-Jet,True
+1776806,EMB-120,EMB-120,True
+0877086,Spitfire,Spitfire,True
+0907419,Tu-134,Tu-134,True
+2218525,A330,A330,True
+0064200,Tu-154,F/A-18,False
+0487386,A340,A330,False
+0726925,C-47,DC-3,False
+1113089,Tu-154,Tu-154,True
+1017972,Cessna 208,Cessna 208,True
+1215240,Cessna 172,Cessna 208,False
+2004902,Boeing 767,Boeing 767,True
+1692199,CRJ-700,CRJ-700,True
+0061136,Boeing 717,MD-80,False
+0068811,C-47,C-47,True
+0684605,Boeing 747,Boeing 747,True
+0286125,F/A-18,F/A-18,True
+1099216,Boeing 747,Boeing 747,True
+1626934,Falcon 2000,Falcon 2000,True
+2179973,EMB-120,EMB-120,True
+1094669,Boeing 737,Boeing 737,True
+2164953,A320,A320,True
+1236292,Embraer ERJ 145,Embraer ERJ 145,True
+0331433,Embraer ERJ 145,Embraer ERJ 145,True
+1033590,C-130,C-130,True
+2109389,A330,A320,False
+1543529,Boeing 737,Boeing 737,True
+1336452,Boeing 717,Boeing 717,True
+1443841,Dornier 328,Dornier 328,True
+2097519,Falcon 2000,Falcon 2000,True
+1852175,CRJ-700,CRJ-700,True
+0642069,Saab 340,Saab 340,True
+0895165,Boeing 707,Boeing 707,True
+0822350,Falcon 900,Falcon 900,True
+1251098,Falcon 900,Falcon 900,True
+1312743,Saab 2000,Saab 2000,True
+0592981,DC-8,DC-8,True
+1313666,BAE 146,BAE 146,True
+0081592,Dash 8,Dash 8,True
+0127032,Boeing 767,Boeing 767,True
+1544178,Yak-42,Yak-42,True
+0681535,A310,A310,True
+1787740,A340,A340,True
+0738967,Dornier 328,Dornier 328,True
+0931109,ATR-72,ATR-72,True
+1145204,Boeing 747,Boeing 747,True
+1223346,ATR-72,ATR-72,True
+1150188,Boeing 757,Boeing 757,True
+1942698,Boeing 737,Boeing 737,True
+2266584,SR-20,SR-20,True
+0457822,MD-11,MD-11,True
+1124487,Boeing 757,Boeing 757,True
+0732667,Boeing 707,Boeing 707,True
+1090346,Embraer ERJ 145,Embraer ERJ 145,True
+1696057,CRJ-200,CRJ-200,True
+0914134,CRJ-700,CRJ-700,True
+1659448,A320,A320,True
+0469128,Boeing 777,Boeing 777,True
+1602329,Tu-134,Tu-134,True
+0911713,DHC-1,DHC-1,True
+1095342,MD-80,MD-80,True
+1714816,Cessna Citation,Cessna Citation,True
+0255288,Saab 340,Saab 340,True
+0457869,Boeing 747,Boeing 747,True
+2266079,Fokker 100,Fokker 100,True
+1291783,Boeing 737,Boeing 737,True
+1966297,Embraer ERJ 145,Embraer ERJ 145,True
+0607513,F-16,F-16,True
+1050578,Il-76,Il-76,True
+1289663,F-16,F/A-18,False
+1388205,DR-400,DR-400,True
+1463710,F-16,F-16,True
+1285638,A340,A340,True
+1193567,DC-8,DC-8,True
+2068053,A340,A340,True
+1619901,Boeing 747,Boeing 747,True
+1801880,ATR-42,ATR-42,True
+2171063,BAE-125,BAE-125,True
+1823272,King Air,King Air,True
+1704745,Boeing 757,Boeing 757,True
+1885833,A320,A320,True
+2123937,Embraer E-Jet,Embraer E-Jet,True
+0114415,Saab 340,Saab 340,True
+1350775,DC-3,DC-3,True
+1576955,Spitfire,Spitfire,True
+1378765,Embraer Legacy 600,Embraer Legacy 600,True
+1211088,Boeing 767,Boeing 767,True
+2162684,Boeing 747,Boeing 747,True
+1251766,Boeing 737,Boeing 737,True
+1125619,Cessna 172,Cessna 172,True
+0336925,Boeing 747,Boeing 747,True
+1689673,Cessna Citation,Cessna Citation,True
+0719053,Tu-134,Cessna 172,False
+0439774,Saab 2000,Saab 2000,True
+1276405,Global Express,Global Express,True
+1055151,A380,A380,True
+1701058,A380,Boeing 747,False
+0907432,Boeing 767,Boeing 767,True
+1213738,Dornier 328,Dornier 328,True
+1883803,ATR-42,ATR-42,True
+1546282,Gulfstream,Gulfstream,True
+0157159,Dash 8,Dash 8,True
+1503763,A320,A320,True
+1215395,Boeing 727,Boeing 727,True
+1234832,A340,A340,True
+2263428,Boeing 767,Boeing 767,True
+1408802,ATR-72,ATR-72,True
+0097108,Boeing 737,Boeing 737,True
+2164986,Embraer ERJ 145,Embraer ERJ 145,True
+0175746,Boeing 737,Boeing 737,True
+0046946,MD-90,MD-80,False
+2096267,ATR-72,A340,False
+0114407,Dash 8,Dash 8,True
+0765780,A310,A310,True
+1386630,BAE 146,BAE 146,True
+1379395,Boeing 777,Boeing 777,True
+0487353,MD-11,MD-11,True
+0337266,Boeing 737,Boeing 737,True
+0953561,Fokker 50,Fokker 50,True
+0067396,L-1011,L-1011,True
+1474763,Embraer ERJ 145,Embraer ERJ 145,True
+0235626,CRJ-200,CRJ-200,True
+0171387,MD-80,Fokker 70,False
+1355201,Beechcraft 1900,Beechcraft 1900,True
+0925061,Eurofighter Typhoon,Eurofighter Typhoon,True
+0143371,Saab 340,Saab 340,True
+1248046,Hawk T1,Hawk T1,True
+0721589,BAE 146,BAE 146,True
+0434370,A300,A300,True
+1637925,DR-400,DR-400,True
+0901350,DC-9,DC-9,True
+2168926,A320,A320,True
+0950331,MD-11,DC-10,False
+1564427,C-130,C-130,True
+1341837,Beechcraft 1900,Beechcraft 1900,True
+0800871,C-47,C-47,True
+1235480,Saab 2000,Saab 2000,True
+2188611,Embraer E-Jet,Embraer E-Jet,True
+0895456,BAE 146,BAE 146,True
+0893717,Hawk T1,Hawk T1,True
+0994751,Gulfstream,Gulfstream,True
+1398527,Il-76,Il-76,True
+1992923,Embraer Legacy 600,Embraer Legacy 600,True
+2147399,A330,Boeing 737,False
+0732456,Boeing 727,Yak-42,False
+1429072,Embraer ERJ 145,Embraer ERJ 145,True
+1864425,BAE 146,BAE 146,True
+1569045,DC-10,DC-10,True
+0482796,A300,A300,True
+2188100,F-16,F-16,True
+1145151,Embraer E-Jet,Embraer E-Jet,True
+2224813,Boeing 757,Boeing 757,True
+0921761,ATR-42,ATR-42,True
+1778108,CRJ-700,CRJ-700,True
+2007881,Tu-154,Tu-154,True
+0483582,Fokker 70,Fokker 70,True
+0730742,ATR-42,ATR-42,True
+1014363,BAE-125,BAE-125,True
+1299978,CRJ-200,CRJ-200,True
+0257552,Boeing 737,Boeing 737,True
+1945974,Tornado,Tornado,True
+1889545,Cessna Citation,Cessna Citation,True
+2206141,Embraer E-Jet,Embraer E-Jet,True
+0066411,L-1011,L-1011,True
+1400629,Gulfstream,CRJ-700,False
+0967804,BAE 146,BAE 146,True
+1895474,Gulfstream,Gulfstream,True
+0091354,A300,A300,True
+0746112,Boeing 737,Boeing 737,True
+0467450,Fokker 70,Fokker 70,True
+0973290,A320,A320,True
+0716370,Boeing 767,Boeing 767,True
+2026597,Boeing 767,Boeing 767,True
+2207935,A330,A330,True
+0072491,Dash 8,Dash 8,True
+0062669,Tu-134,Tu-134,True
+0944253,Boeing 737,Boeing 737,True
+1122822,Dornier 328,Dornier 328,True
+0198104,A320,A320,True
+0816285,Cessna 208,Cessna 208,True
+1202350,C-130,C-130,True
+1288673,BAE 146,BAE 146,True
+1313348,Boeing 737,Boeing 737,True
+0625195,Embraer ERJ 145,Embraer ERJ 145,True
+0418706,BAE 146,BAE 146,True
+0734099,DC-10,DC-10,True
+1122585,A340,A340,True
+1113588,A300,A340,False
+0072870,A340,A340,True
+2208641,Boeing 727,Boeing 727,True
+2248944,MD-80,MD-80,True
+0943962,Dornier 328,Dornier 328,True
+2021848,C-47,DC-3,False
+1825883,Fokker 70,Fokker 70,True
+1444748,Embraer E-Jet,Embraer E-Jet,True
+1294569,F-16,F-16,True
+0732118,An-12,An-12,True
+0879882,C-47,C-47,True
+1085151,F/A-18,F/A-18,True
+0548481,DC-3,DC-3,True
+1723103,DC-6,C-47,False
+1726555,Falcon 900,Falcon 900,True
+0418567,Fokker 70,Fokker 70,True
+1092262,Saab 340,Saab 340,True
+0078400,Cessna 208,Cessna 208,True
+0688079,MD-90,MD-90,True
+1385878,DR-400,DR-400,True
+1774353,Cessna Citation,Cessna Citation,True
+1036801,C-47,DC-3,False
+1312101,Fokker 50,Fokker 50,True
+1370959,A320,A320,True
+1230044,Embraer E-Jet,DC-3,False
+1095671,MD-80,MD-80,True
+0114425,Dash 8,Dash 8,True
+1637519,Dash 8,Dash 8,True
+1430019,Tu-154,Tu-154,True
+1501746,King Air,King Air,True
+2094375,Tornado,Tornado,True
+1417441,A380,A380,True
+1659449,A340,A340,True
+1806227,Cessna Citation,Cessna Citation,True
+1931138,Dornier 328,Dornier 328,True
+0957893,Boeing 757,Boeing 757,True
+0447810,MD-80,MD-80,True
+0701140,Boeing 737,Boeing 737,True
+1121194,Boeing 777,Boeing 777,True
+1569052,Boeing 737,Boeing 737,True
+1645736,Gulfstream,Gulfstream,True
+0807951,DC-3,DC-3,True
+0944166,Boeing 737,Boeing 737,True
+1389219,Boeing 747,Boeing 747,True
+0895892,CRJ-200,CRJ-200,True
+0710454,Boeing 737,Boeing 737,True
+2226297,MD-90,MD-90,True
+0517633,BAE-125,BAE-125,True
+0118429,Beechcraft 1900,Beechcraft 1900,True
+0907407,Boeing 767,Boeing 767,True
+1002458,DC-3,DC-3,True
+1066875,Il-76,Il-76,True
+0488869,Boeing 757,Boeing 757,True
+1210745,Embraer E-Jet,Embraer E-Jet,True
+0867007,Boeing 767,Boeing 767,True
+1187417,Saab 2000,Saab 2000,True
+1715545,Eurofighter Typhoon,Eurofighter Typhoon,True
+1338345,Dash 8,Dash 8,True
+0219265,DC-8,DC-8,True
+0220011,L-1011,DC-10,False
+1667002,PA-28,PA-28,True
+0966109,BAE 146,BAE 146,True
+1144107,Falcon 2000,Falcon 2000,True
+1966254,Saab 2000,Saab 2000,True
+1897992,Cessna Citation,Cessna Citation,True
+1600342,Dash 8,Dash 8,True
+1085189,Tornado,Tornado,True
+1251382,Tornado,Tornado,True
+0936117,Tu-154,Tu-154,True
+0065414,L-1011,L-1011,True
+1142892,CRJ-700,CRJ-700,True
+1296886,Falcon 2000,Falcon 2000,True
+0066677,A320,Boeing 767,False
+1540297,Cessna 208,Cessna 208,True
+1468399,Cessna Citation,Cessna Citation,True
+1877806,Global Express,Global Express,True
+1224263,Boeing 747,Boeing 747,True
+1418227,Boeing 777,Boeing 777,True
+0995426,Fokker 100,Fokker 100,True
+1299912,Embraer ERJ 145,Embraer ERJ 145,True
+1111461,MD-80,MD-80,True
+0063293,Tu-134,Tu-134,True
+1810932,A340,A340,True
+1240881,Tornado,Tornado,True
+0814904,An-12,An-12,True
+0192630,PA-28,DC-3,False
+1095701,ATR-42,ATR-42,True
+1272007,BAE-125,BAE-125,True
+2259653,Metroliner,Metroliner,True
+1226609,MD-11,MD-11,True
+1062510,Embraer ERJ 145,Embraer ERJ 145,True
+1088345,Boeing 777,Boeing 777,True
+2171602,A320,A320,True
+1025167,BAE-125,BAE-125,True
+0872421,Dash 8,Dash 8,True
+1531908,BAE 146,BAE 146,True
+0885290,F/A-18,F/A-18,True
+1031460,Beechcraft 1900,Beechcraft 1900,True
+1220713,Fokker 100,Fokker 70,False
+1266143,Boeing 737,Boeing 737,True
+1857537,Falcon 900,Falcon 900,True
+0885966,Boeing 747,Boeing 747,True
+0894311,Tu-154,Tu-154,True
+2094478,Saab 2000,Saab 2000,True
+1348951,DH-82,DH-82,True
+0923550,DC-10,DC-10,True
+1139750,A320,A320,True
+1418807,Tu-154,Tu-154,True
+1112646,PA-28,DR-400,False
+0879892,Boeing 727,Boeing 727,True
+0869712,Gulfstream,Gulfstream,True
+0062664,Metroliner,Metroliner,True
+1500676,Gulfstream,Gulfstream,True
+1700374,Tu-134,Tu-134,True
+2015169,DHC-6,DHC-6,True
+0182178,ATR-72,ATR-72,True
+0529811,A340,A340,True
+0741298,Cessna Citation,Cessna Citation,True
+1158365,Challenger 600,Challenger 600,True
+1529574,Boeing 737,Boeing 737,True
+0197891,Yak-42,Yak-42,True
+1603124,Boeing 777,Boeing 757,False
+2233055,Embraer E-Jet,Embraer E-Jet,True
+0957980,Beechcraft 1900,Beechcraft 1900,True
+0829999,Boeing 737,Boeing 737,True
+1541601,DR-400,DR-400,True
+1067522,Embraer Legacy 600,Embraer Legacy 600,True
+0529781,Boeing 767,Boeing 767,True
+0450014,Boeing 707,MD-90,False
+1193361,A330,A330,True
+0985788,L-1011,L-1011,True
+1517329,CRJ-700,CRJ-700,True
+0182731,Fokker 100,Fokker 100,True
+2169104,Embraer E-Jet,Embraer E-Jet,True
+1693795,Challenger 600,Challenger 600,True
+0936133,A320,A320,True
+1388982,MD-90,MD-90,True
+0321703,Dash 8,Dash 8,True
+1566620,MD-90,MD-90,True
+1548441,CRJ-200,CRJ-200,True
+1017287,Boeing 737,Boeing 737,True
+1158363,Cessna 208,Cessna 208,True
+1760948,Boeing 777,Boeing 777,True
+0738982,Tu-134,Tu-134,True
+1534376,Gulfstream,Gulfstream,True
+2172296,Embraer E-Jet,Embraer E-Jet,True
+2239815,A380,A380,True
+1485655,PA-28,PA-28,True
+1448765,DHC-1,DHC-1,True
+2195569,A320,A320,True
+2200403,CRJ-700,CRJ-700,True
+0774291,MD-90,MD-80,False
+0758789,Il-76,Il-76,True
+1448036,Fokker 100,Fokker 70,False
+1046884,Falcon 2000,Falcon 2000,True
+1115161,Tornado,Tornado,True
+0602228,C-47,DC-3,False
+1655252,Cessna Citation,F-16,False
+0877084,Tornado,Tornado,True
+1115131,Spitfire,Spitfire,True
+0494862,Boeing 767,Boeing 767,True
+1256349,Boeing 757,Boeing 757,True
+1798654,ATR-72,ATR-72,True
+0720882,Tu-134,Tu-134,True
+0977350,Boeing 737,Boeing 737,True
+1206539,A340,A340,True
+0467448,Boeing 767,Boeing 767,True
+2227595,Boeing 767,Boeing 767,True
+0091297,DC-6,DC-6,True
+1304878,Embraer ERJ 145,Embraer ERJ 145,True
+0880570,Boeing 747,Boeing 747,True
+0923507,Boeing 727,Boeing 727,True
+0464476,C-130,C-130,True
+1146067,Dash 8,Dash 8,True
+1389713,Boeing 767,Boeing 767,True
+0094396,Tu-134,Tu-134,True
+1429836,A310,A310,True
+1043797,Dash 8,Dash 8,True
+2074641,DR-400,DR-400,True
+0685277,Hawk T1,Hawk T1,True
+1336460,Boeing 737,Boeing 737,True
+2031400,CRJ-200,CRJ-200,True
+1840139,A340,A340,True
+1570575,DHC-1,DHC-1,True
+2106086,Boeing 737,Boeing 737,True
+1639639,An-12,An-12,True
+0709332,King Air,King Air,True
+2171897,Hawk T1,Hawk T1,True
+0192204,DC-8,DC-8,True
+1355813,Falcon 2000,Falcon 2000,True
+1009081,DHC-6,DHC-6,True
+2019475,Saab 2000,Saab 2000,True
+1739298,Cessna 172,Cessna 172,True
+2066356,DHC-6,DHC-6,True
+1341843,Beechcraft 1900,Beechcraft 1900,True
+0523219,A320,A320,True
+1550042,Embraer E-Jet,Embraer E-Jet,True
+1647134,Embraer Legacy 600,Embraer Legacy 600,True
+2246105,A320,A320,True
+1279666,Boeing 757,Boeing 757,True
+1177961,Tu-154,Tu-154,True
+1958758,Boeing 737,Boeing 737,True
+2046694,Embraer E-Jet,Embraer E-Jet,True
+0864982,Challenger 600,Challenger 600,True
+2157090,DC-9,MD-80,False
+1458702,Dornier 328,Dornier 328,True
+2054447,MD-90,MD-90,True
+1255726,A300,A300,True
+2006049,SR-20,SR-20,True
+0136193,DC-9,DC-9,True
+1833887,Boeing 727,Boeing 727,True
+1004164,A300,Boeing 767,False
+1332663,A320,A320,True
+1379570,A380,Boeing 737,False
+0781670,Il-76,Il-76,True
+1001728,Il-76,Il-76,True
+1471860,King Air,King Air,True
+0680027,A300,A300,True
+1538889,C-47,DC-6,False
+1661601,A340,A340,True
+1088532,Boeing 777,Boeing 767,False
+0523246,Il-76,Il-76,True
+1785533,Cessna 208,Cessna 208,True
+0973167,Boeing 737,Boeing 737,True
+1359128,Boeing 767,Boeing 767,True
+1319791,Boeing 737,Boeing 737,True
+2091949,Challenger 600,Challenger 600,True
+0483585,CRJ-200,CRJ-200,True
+1206352,Embraer Legacy 600,Embraer Legacy 600,True
+0697386,Boeing 737,Boeing 737,True
+0662509,CRJ-200,Embraer ERJ 145,False
+0716452,MD-80,MD-80,True
+0983934,Boeing 747,Boeing 747,True
+2244446,Boeing 737,Boeing 737,True
+0063920,Metroliner,Metroliner,True
+1764776,Eurofighter Typhoon,Eurofighter Typhoon,True
+1887787,Spitfire,Spitfire,True
+1196354,DHC-1,DHC-1,True
+0551249,DC-9,DC-9,True
+1922917,Boeing 777,Boeing 777,True
+2031392,Metroliner,Metroliner,True
+1258577,Falcon 2000,DC-10,False
+2180833,Gulfstream,Gulfstream,True
+1203670,Yak-42,Yak-42,True
+0670556,Embraer ERJ 145,Embraer ERJ 145,True
+1210463,A340,A340,True
+1418846,Tornado,Tornado,True
+1106412,A330,A300,False
+0187671,A340,A340,True
+1214893,Cessna Citation,Cessna Citation,True
+0139297,MD-90,MD-90,True
+0095379,Dash 8,Dash 8,True
+0519448,A320,A320,True
+1806212,Embraer Legacy 600,Embraer Legacy 600,True
+2119896,Saab 340,Saab 340,True
+2031661,Saab 340,Saab 340,True
+0175819,A330,A330,True
+1716062,DHC-1,DHC-1,True
+1468794,Global Express,Global Express,True
+1767653,Embraer Legacy 600,Embraer Legacy 600,True
+1037509,Dash 8,Dash 8,True
+0883341,C-130,C-130,True
+1842042,Boeing 737,Boeing 737,True
+0547019,C-130,C-130,True
+1650662,Boeing 737,Boeing 737,True
+1524818,Global Express,Global Express,True
+1109944,CRJ-700,CRJ-700,True
+1146233,Boeing 777,Boeing 767,False
+0685282,Boeing 747,Boeing 747,True
+1663377,Boeing 737,Boeing 737,True
+1368002,DHC-1,DHC-1,True
+1912967,Saab 2000,Saab 2000,True
+0067037,EMB-120,EMB-120,True
+1139794,A330,A330,True
+2152231,Embraer E-Jet,Embraer E-Jet,True
+1719561,A340,A340,True
+0482818,Boeing 747,Boeing 747,True
+1117081,Boeing 737,Boeing 737,True
+1607357,BAE 146,BAE 146,True
+1774010,Boeing 737,Boeing 737,True
+2080693,Boeing 777,Boeing 777,True
+2143407,BAE-125,BAE-125,True
+2168374,A320,A320,True
+2193516,A340,A340,True
+1696058,Boeing 777,Boeing 737,False
+1758544,A310,A310,True
+0490186,Boeing 737,Boeing 737,True
+1817155,F/A-18,F/A-18,True
+0274621,Boeing 737,Boeing 737,True
+1573056,MD-90,MD-90,True
+1800296,King Air,King Air,True
+2123565,F-16,F-16,True
+0702845,Boeing 737,Boeing 737,True
+0157278,Cessna 208,Metroliner,False
+0383400,Yak-42,Yak-42,True
+1070335,BAE-125,BAE-125,True
+0799696,A340,A320,False
+1638972,Cessna 172,Cessna 172,True
+2080691,Embraer Legacy 600,Embraer Legacy 600,True
+1555557,Boeing 777,Boeing 777,True
+1283207,DR-400,DR-400,True
+0606126,DHC-6,DHC-6,True
+1378673,F/A-18,F/A-18,True
+1283206,Cessna 172,Cessna 172,True
+2102999,Gulfstream,Gulfstream,True
+1204728,Fokker 50,Fokker 50,True
+0412779,BAE 146,BAE 146,True
+0953562,King Air,King Air,True
+0974654,Cessna 172,Cessna 172,True
+0941235,CRJ-700,CRJ-700,True
+1956397,Boeing 777,Boeing 767,False
+1337508,CRJ-200,CRJ-200,True
+2195493,Boeing 737,Boeing 737,True
+0735988,Il-76,Il-76,True
+0070035,Fokker 70,Fokker 70,True
+0688097,Boeing 767,Boeing 767,True
+1467620,A330,A330,True
+0857553,DHC-6,Tornado,False
+2113949,Embraer E-Jet,Embraer E-Jet,True
+0347754,Saab 340,Saab 340,True
+2048576,Dornier 328,Dornier 328,True
+0525834,BAE 146,BAE 146,True
+0757186,Il-76,Il-76,True
+1753661,A330,A330,True
+1250052,Falcon 900,Falcon 900,True
+1155017,Boeing 757,Boeing 757,True
+1347626,Gulfstream,Gulfstream,True
+0097119,Boeing 737,Boeing 737,True
+1906969,PA-28,PA-28,True
+1902706,BAE-125,BAE-125,True
+1008569,Gulfstream,Gulfstream,True
+1288743,Fokker 100,Fokker 100,True
+1420069,Embraer E-Jet,Embraer E-Jet,True
+0740907,Boeing 737,Boeing 737,True
+0523144,Tu-134,Tu-134,True
+1307364,Spitfire,Spitfire,True
+1149060,Boeing 727,Boeing 727,True
+1404391,C-130,C-130,True
+2106202,Gulfstream,Gulfstream,True
+0977248,CRJ-200,CRJ-200,True
+0100263,PA-28,PA-28,True
+1142348,Saab 340,Saab 340,True
+1692500,CRJ-700,CRJ-700,True
+1194590,MD-80,MD-80,True
+0726611,L-1011,L-1011,True
+1661665,A340,A340,True
+1370066,DH-82,DH-82,True
+0167073,ATR-42,ATR-42,True
+2217964,Boeing 747,Boeing 747,True
+1901689,Eurofighter Typhoon,Eurofighter Typhoon,True
+0649689,Boeing 737,Boeing 737,True
+1758713,A340,A340,True
+1376174,Boeing 747,Boeing 747,True
+1966165,Boeing 737,Boeing 737,True
+0241450,A340,A340,True
+0941858,Boeing 777,Boeing 707,False
+0901358,Boeing 767,Boeing 767,True
+1472400,PA-28,PA-28,True
+1910716,Boeing 737,Boeing 737,True
+1476339,Hawk T1,Hawk T1,True
+1554094,Embraer ERJ 145,Embraer ERJ 145,True
+0525265,BAE-125,BAE-125,True
+0109461,DC-8,DC-8,True
+1912107,F-16,F-16,True
+0923884,Boeing 707,Boeing 707,True
+1072668,Cessna 172,Cessna 172,True
+0973100,Falcon 900,Falcon 900,True
+0712062,CRJ-200,DC-9,False
+0437932,Saab 340,Saab 340,True
+0229722,Boeing 737,Boeing 737,True
+1078482,Boeing 737,Boeing 737,True
+0063059,DC-10,MD-11,False
+0497894,Gulfstream,Gulfstream,True
+1396737,A330,A330,True
+1992245,DHC-6,DHC-6,True
+0874976,F/A-18,F/A-18,True
+0198443,Boeing 737,Boeing 737,True
+1426920,DC-8,DC-8,True
+0115064,Fokker 50,Fokker 50,True
+0767364,DH-82,DH-82,True
+0345877,Saab 340,Saab 340,True
+0784350,Boeing 737,Boeing 737,True
+1198329,Gulfstream,Gulfstream,True
+1348421,A340,A340,True
+1092252,Fokker 70,Fokker 70,True
+0833334,ATR-42,ATR-42,True
+1543648,C-130,C-130,True
+1471543,A320,A320,True
+2067948,A380,A380,True
+0209555,DC-10,DC-10,True
+2211104,A330,A330,True
+0198777,Yak-42,Yak-42,True
+1041754,C-47,DC-3,False
+2180329,DHC-1,DHC-1,True
+0422938,A340,A340,True
+1719820,CRJ-700,CRJ-700,True
+1987428,A380,A340,False
+2063400,Tornado,Tornado,True
+1567620,CRJ-200,Embraer ERJ 145,False
+0248336,Boeing 737,Boeing 737,True
+2236962,Boeing 737,Boeing 737,True
+0920945,DC-6,DC-6,True
+0395643,DC-8,Boeing 707,False
+2188372,Metroliner,Metroliner,True
+1116410,Boeing 747,Boeing 747,True
+1149116,ATR-42,ATR-42,True
+1062969,Boeing 747,Boeing 747,True
+0176108,MD-80,MD-80,True
+1687909,Embraer E-Jet,Embraer E-Jet,True
+0065834,DC-10,MD-11,False
+2188615,Global Express,Global Express,True
+2264249,A340,A340,True
+2166443,Fokker 100,Boeing 717,False
+0457892,DC-6,DC-6,True
+1546041,A320,A320,True
+1363578,Boeing 767,Boeing 777,False
+0702843,ATR-42,ATR-42,True
+0989281,Boeing 747,Boeing 747,True
+1405302,PA-28,PA-28,True
+1953630,Embraer E-Jet,Embraer E-Jet,True
+1885840,Dash 8,Dash 8,True
+0977265,ATR-42,ATR-42,True
+1756560,Fokker 50,Fokker 50,True
+1393334,Boeing 737,Boeing 737,True
+2063809,A340,A340,True
+0333816,DC-10,DC-10,True
+2234653,A330,A330,True
+0082500,Cessna 208,Cessna 208,True
+0536299,Tornado,Tornado,True
+1318175,Boeing 747,Boeing 747,True
+0904858,Boeing 767,Boeing 767,True
+1531944,Falcon 2000,Falcon 2000,True
+2166004,A320,A320,True
+0874829,ATR-42,ATR-42,True
+0858700,Metroliner,Metroliner,True
+0907370,Boeing 727,Boeing 727,True
+2169490,A380,A380,True
+0295742,Embraer ERJ 145,Embraer ERJ 145,True
+1031522,Dash 8,Dash 8,True
+0923416,Global Express,Global Express,True
+1197204,DC-9,DC-9,True
+0496773,Boeing 767,Boeing 737,False
+1289187,BAE 146,BAE 146,True
+0460482,A330,A340,False
+1085159,Eurofighter Typhoon,Eurofighter Typhoon,True
+2133249,Boeing 737,Boeing 737,True
+0977340,MD-80,MD-80,True
+1428219,L-1011,L-1011,True
+0482806,A310,A320,False
+1543285,Saab 340,Saab 340,True
+1085193,F-16,F-16,True
+1027362,A310,A310,True
+2006296,A320,A320,True
+1468661,Challenger 600,Challenger 600,True
+2046832,A380,A380,True
+2021865,MD-80,MD-80,True
+0931107,A300,A300,True
+0836257,Tu-134,Tu-134,True
+1363681,Cessna Citation,Cessna Citation,True
+2137098,A340,A340,True
+0412223,A320,A320,True
+0737315,An-12,An-12,True
+1120136,F/A-18,F/A-18,True
+1726551,DR-400,DR-400,True
+2158616,Eurofighter Typhoon,Eurofighter Typhoon,True
+0447772,EMB-120,EMB-120,True
+1232268,Eurofighter Typhoon,C-47,False
+0985695,Embraer Legacy 600,Embraer Legacy 600,True
+1251289,Boeing 737,Boeing 737,True
+2151715,SR-20,SR-20,True
+1409353,Spitfire,C-130,False
+2071199,SR-20,SR-20,True
+0143351,DC-10,DC-10,True
+0184351,Boeing 757,Boeing 757,True
+2193216,CRJ-700,CRJ-700,True
+0955450,Boeing 767,Boeing 767,True
+1564822,Boeing 767,Boeing 767,True
+1329317,DC-9,Fokker 100,False
+0857160,A330,A300,False
+0184373,EMB-120,EMB-120,True
+0256997,Boeing 767,Boeing 767,True
+1736242,Hawk T1,Hawk T1,True
+1198431,MD-80,MD-80,True
+0056297,Boeing 757,Boeing 757,True
+1525660,A340,A340,True
+0936118,A340,A340,True
+1231579,Falcon 900,Falcon 900,True
+1239223,Beechcraft 1900,Beechcraft 1900,True
+0876440,Boeing 737,Boeing 737,True
+0447439,Fokker 50,Fokker 50,True
+1119448,C-47,C-47,True
+0492538,EMB-120,EMB-120,True
+0710667,A340,A340,True
+1213100,Falcon 900,Falcon 900,True
+1151616,Challenger 600,Challenger 600,True
+1647142,Cessna 172,Cessna 172,True
+1376343,Spitfire,Spitfire,True
+1602738,DR-400,DR-400,True
+1771266,SR-20,SR-20,True
+0497639,Gulfstream,Gulfstream,True
+0525849,Challenger 600,Challenger 600,True
+2094475,Boeing 777,Boeing 777,True
+0869692,Boeing 707,Boeing 707,True
+1770257,DHC-1,DHC-1,True
+0885590,PA-28,PA-28,True
+0923501,Fokker 50,Fokker 50,True
+0062769,Boeing 747,Boeing 747,True
+1503758,Embraer ERJ 145,Embraer ERJ 145,True
+2200433,SR-20,SR-20,True
+1088603,Embraer E-Jet,A320,False
+0658110,Boeing 707,Boeing 707,True
+1779182,Embraer E-Jet,Embraer E-Jet,True
+1739526,Boeing 747,Boeing 747,True
+1371565,F/A-18,F/A-18,True
+1514524,DC-8,DC-8,True
+1211875,A330,Boeing 777,False
+1396728,MD-80,MD-80,True
+2101942,Dornier 328,Dornier 328,True
+1461334,C-47,C-47,True
+1966244,A320,A320,True
+1102089,Boeing 737,Boeing 737,True
+0759487,Falcon 900,Falcon 900,True
+0907363,Dash 8,Dash 8,True
+0920422,DC-6,DC-6,True
+1375987,Boeing 757,Boeing 757,True
+2081083,A340,A340,True
+1192627,King Air,King Air,True
+1878581,Cessna Citation,Cessna Citation,True
+0894384,MD-11,MD-11,True
+0767799,An-12,An-12,True
+1571407,Saab 340,Saab 340,True
+0894313,Boeing 767,Boeing 767,True
+2149502,Challenger 600,Challenger 600,True
+2164771,Fokker 70,Fokker 70,True
+1377250,DC-9,DC-9,True
+1387820,CRJ-700,CRJ-700,True
+1089989,Boeing 727,Boeing 727,True
+1037466,Global Express,Global Express,True
+1246392,DR-400,DR-400,True
+1115400,Boeing 737,Boeing 737,True
+1210465,Embraer Legacy 600,Embraer Legacy 600,True
+0851157,Cessna 208,Cessna 208,True
+0918557,Boeing 717,Boeing 717,True
+0874832,Metroliner,Metroliner,True
+1073334,Boeing 717,Boeing 717,True
+0324987,Tu-134,Tu-134,True
+0102560,DC-6,DC-6,True
+1823327,Global Express,Global Express,True
+1156456,Embraer ERJ 145,Embraer ERJ 145,True
+1967054,Cessna Citation,Cessna Citation,True
+0950119,A340,A340,True
+0684607,Boeing 757,Boeing 757,True
+0885288,DH-82,DH-82,True
+2094893,Global Express,Global Express,True
+1053502,DHC-6,DHC-6,True
+1368866,A320,A320,True
+0847480,DC-10,DC-10,True
+1258557,Hawk T1,Hawk T1,True
+0625762,A320,A320,True
+0591254,C-130,C-130,True
+1277617,Boeing 757,Boeing 757,True
+0179062,Boeing 747,Boeing 747,True
+1158131,Global Express,Global Express,True
+1646217,Boeing 777,Boeing 777,True
+0862739,A320,A320,True
+0874688,Saab 2000,Saab 2000,True
+1366856,A320,A320,True
+0143339,Tu-134,Tu-134,True
+0445491,A320,A320,True
+0773398,C-130,C-130,True
+1695437,DH-82,DH-82,True
+2117477,Boeing 737,Boeing 737,True
+0056333,Dash 8,Dash 8,True
+1624193,Boeing 747,Boeing 747,True
+0114403,Boeing 737,Boeing 737,True
+0383402,Boeing 737,Boeing 737,True
+1292318,MD-80,MD-80,True
+0648034,DC-6,DC-6,True
+1709677,Dash 8,Dash 8,True
+0276022,Boeing 737,Boeing 737,True
+0980092,MD-11,MD-11,True
+1700645,Boeing 777,Boeing 777,True
+0362888,Dash 8,Dash 8,True
+0127633,Fokker 50,Fokker 50,True
+1535044,Boeing 737,Boeing 737,True
+1707900,Boeing 747,Boeing 747,True
+1041645,Boeing 747,Boeing 747,True
+0905532,A320,A320,True
+0907287,Embraer ERJ 145,Embraer ERJ 145,True
+1395431,C-130,C-130,True
+1374642,DR-400,DR-400,True
+1675548,Cessna Citation,Cessna Citation,True
+0678976,Boeing 757,Boeing 757,True
+1545068,Embraer E-Jet,Embraer E-Jet,True
+1474251,Boeing 737,Boeing 737,True
+1477073,Hawk T1,Hawk T1,True
+1684410,Spitfire,C-130,False
+1240934,Fokker 70,Fokker 70,True
+0091357,Beechcraft 1900,Beechcraft 1900,True
+2054355,Il-76,Il-76,True
+1573348,A320,A320,True
+0602750,L-1011,L-1011,True
+0477671,Boeing 757,Boeing 757,True
+1341834,Embraer ERJ 145,Embraer ERJ 145,True
+1252312,Fokker 50,ATR-72,False
+0968446,DC-10,A320,False
+0730396,Beechcraft 1900,EMB-120,False
+1126460,Cessna 172,Cessna 172,True
+0690074,A340,A340,True
+1361693,Boeing 737,Boeing 737,True
+1387200,Embraer Legacy 600,Embraer Legacy 600,True
+1352205,Boeing 737,Boeing 737,True
+0944176,Yak-42,Yak-42,True
+1948194,A380,Embraer E-Jet,False
+1031465,MD-11,MD-11,True
+1033308,Boeing 747,Boeing 747,True
+0482793,Boeing 757,Boeing 757,True
+1541386,Boeing 747,Boeing 747,True
+0835837,Boeing 767,Boeing 767,True
+0447936,Boeing 707,Boeing 707,True
+1270710,An-12,An-12,True
+1320915,Falcon 2000,Falcon 2000,True
+0318361,DC-9,Il-76,False
+1663379,Gulfstream,Gulfstream,True
+1429799,A300,A300,True
+1916452,Embraer E-Jet,Embraer E-Jet,True
+1338156,DC-8,DC-8,True
+0213505,Boeing 727,Boeing 727,True
+2022236,Embraer E-Jet,Embraer E-Jet,True
+1693646,Fokker 50,Fokker 50,True
+1122579,A340,A340,True
+2151483,Spitfire,Spitfire,True
+1842168,Boeing 777,Boeing 777,True
+1767079,Spitfire,Spitfire,True
+1200890,Embraer Legacy 600,Embraer Legacy 600,True
+0594827,Boeing 757,Boeing 757,True
+0829651,A310,A310,True
+1146034,Boeing 737,Boeing 737,True
+0741746,BAE-125,BAE-125,True
+1598389,A320,A320,True
+2115317,Embraer E-Jet,Embraer E-Jet,True
+1355825,Fokker 100,Fokker 100,True
+1940180,C-130,An-12,False
+1167955,Spitfire,Spitfire,True
+1614860,DC-10,DC-10,True
+1230223,Boeing 747,Boeing 747,True
+1345732,Boeing 707,Boeing 707,True
+0620009,DC-6,DC-6,True
+0852820,A340,A340,True
+1283304,F/A-18,F/A-18,True
+1004978,ATR-72,ATR-72,True
+1932450,Embraer E-Jet,Embraer E-Jet,True
+2143568,Embraer E-Jet,Embraer E-Jet,True
+2169127,Boeing 737,Boeing 737,True
+2208537,Embraer ERJ 145,Embraer ERJ 145,True
+1891304,Boeing 747,Boeing 747,True
+1251237,MD-80,MD-80,True
+0274619,A320,A320,True
+1200647,A310,A310,True
+1025794,Boeing 707,Boeing 707,True
+2199048,A380,A380,True
+0383679,A310,A300,False
+1252081,Fokker 50,An-12,False
+0822346,ATR-42,ATR-42,True
+1790500,A330,A330,True
+0928792,Boeing 747,Boeing 747,True
+1240022,Tornado,Tornado,True
+0939537,Boeing 737,Boeing 737,True
+0183579,Boeing 737,Boeing 737,True
+0880576,Boeing 747,Boeing 747,True
+1099308,Fokker 70,Fokker 70,True
+2060949,Embraer E-Jet,Embraer E-Jet,True
+0116701,MD-80,MD-80,True
+1950428,DH-82,DH-82,True
+1218932,Global Express,Global Express,True
+1186595,CRJ-700,CRJ-700,True
+1974384,King Air,King Air,True
+1696063,Fokker 100,Fokker 100,True
+0977928,C-130,C-130,True
+1935338,Falcon 900,Falcon 900,True
+0574356,Boeing 717,Boeing 717,True
+1043727,Dash 8,Dash 8,True
+0958304,Embraer ERJ 145,Embraer ERJ 145,True
+1964929,Cessna Citation,Cessna Citation,True
+1189508,Embraer Legacy 600,Embraer Legacy 600,True
+0905907,Boeing 737,Boeing 737,True
+1459188,A320,A320,True
+0977324,A380,A340,False
+1585848,MD-90,MD-90,True
+1050604,DC-8,DC-8,True
+1562161,Fokker 50,Fokker 50,True
+1992047,A380,A380,True
+0492491,Saab 2000,Saab 2000,True
+0538339,DC-10,DC-10,True
+1670091,MD-90,MD-90,True
+1725804,A330,A330,True
+1270604,Tornado,Tornado,True
+1544176,Tu-134,MD-80,False
+1474094,Boeing 767,Boeing 767,True
+1296189,A320,A320,True
+0564261,DC-6,DC-6,True
+0539191,DC-3,DC-3,True
+1842173,A340,A340,True
+1255662,Saab 340,Saab 340,True
+1758606,Boeing 737,Boeing 737,True
+1026571,Metroliner,Metroliner,True
+1703213,Boeing 767,Boeing 767,True
+1266018,Tornado,Tornado,True
+1831582,DC-6,DC-6,True
+2158992,Yak-42,Yak-42,True
+0716371,Fokker 100,Fokker 100,True
+0482820,L-1011,L-1011,True
+1549128,A330,A330,True
+1364162,Boeing 767,Boeing 737,False
+1615560,A340,A340,True
+2218526,Boeing 777,Boeing 777,True
+1591269,DHC-1,DHC-1,True
+0934705,A320,A320,True
+1869877,Boeing 737,Boeing 737,True
+1480281,MD-90,MD-90,True
+1619881,Tu-134,Tu-134,True
+0683550,C-47,DC-3,False
+0843964,Boeing 747,Boeing 747,True
+1753611,Falcon 2000,Falcon 2000,True
+1942524,Boeing 747,Boeing 747,True
+2145444,F-16,F-16,True
+1172147,DHC-1,DHC-1,True
+1829871,Cessna 172,Cessna 172,True
+0509496,Cessna 172,DR-400,False
+0980197,MD-11,MD-11,True
+1796772,Gulfstream,Gulfstream,True
+1905772,Global Express,Embraer ERJ 145,False
+2120028,An-12,An-12,True
+2137126,Boeing 757,Boeing 757,True
+2148651,Boeing 747,Boeing 747,True
+2139677,Cessna Citation,Cessna Citation,True
+2003459,DHC-6,DHC-6,True
+1735490,Eurofighter Typhoon,Eurofighter Typhoon,True
+1818731,Boeing 737,Boeing 737,True
+0496749,Boeing 757,Boeing 757,True
+2248561,A320,Tornado,False
+1299225,Spitfire,Spitfire,True
+1889566,Cessna Citation,Cessna Citation,True
+0066521,DC-10,F/A-18,False
+1698608,A340,A340,True
+0993510,Embraer Legacy 600,Embraer Legacy 600,True
+2034716,BAE-125,BAE-125,True
+0879893,Tu-154,Tu-154,True
+0115072,A320,A320,True
+1398987,Boeing 737,Boeing 737,True
+2169125,Dash 8,Dash 8,True
+2115335,ATR-42,ATR-42,True
+0921924,ATR-72,ATR-72,True
+2185726,DR-400,DR-400,True
+0996668,Embraer E-Jet,Embraer E-Jet,True
+1486878,Boeing 757,Boeing 757,True
+1043800,Cessna 208,Cessna 208,True
+0939547,Boeing 747,Boeing 747,True
+0845910,Fokker 70,Fokker 70,True
+2228007,C-130,C-130,True
+1860177,A320,A320,True
+0383399,Boeing 737,A340,False
+0442918,Boeing 737,Boeing 737,True
+1260718,DH-82,DH-82,True
+0958065,Gulfstream,Gulfstream,True
+1999292,Embraer E-Jet,Embraer E-Jet,True
+1539524,A320,A320,True
+1320344,A330,A330,True
+1288222,A320,A320,True
+0843145,A310,A330,False
+1073033,A340,A340,True
+2123970,Dornier 328,Dornier 328,True
+1872634,A340,A340,True
+1097975,Boeing 747,Boeing 747,True
+1331448,A340,A340,True
+0037512,Boeing 737,DC-9,False
+0064890,Boeing 747,Boeing 747,True
+1313891,Boeing 737,Boeing 737,True
+0540717,DC-9,DC-9,True
+2136870,SR-20,SR-20,True
+0227119,Embraer ERJ 145,Embraer ERJ 145,True
+0386937,Boeing 757,Boeing 757,True
+1314181,DC-10,DC-10,True
+0929568,Boeing 747,Boeing 747,True
+1036822,Beechcraft 1900,Beechcraft 1900,True
+0812685,Il-76,Il-76,True
+1036820,Cessna 208,Cessna 208,True
+1381995,Boeing 767,Boeing 767,True
+1722177,F/A-18,F/A-18,True
+1706500,DH-82,DH-82,True
+0819685,Yak-42,A340,False
+0069769,Fokker 50,Fokker 50,True
+0806578,DC-3,DC-3,True
+1676591,Embraer ERJ 145,Embraer ERJ 145,True
+0916252,EMB-120,EMB-120,True
+1326096,PA-28,PA-28,True
+0962875,Boeing 747,Boeing 747,True
+1877324,Boeing 777,Boeing 737,False
+1376842,Boeing 737,Boeing 737,True
+2244063,Boeing 777,Boeing 777,True
+2122310,EMB-120,Dash 8,False
+1337431,Boeing 727,Boeing 727,True
+0694275,A320,A320,True
+1260869,Fokker 50,ATR-72,False
+1530087,Beechcraft 1900,Beechcraft 1900,True
+2133240,A380,A340,False
+0367786,A310,A310,True
+1137743,CRJ-700,CRJ-700,True
+1356930,Boeing 757,Boeing 757,True
+1254089,King Air,King Air,True
+1785531,Metroliner,Metroliner,True
+0064933,Boeing 707,Boeing 707,True
+1327556,An-12,An-12,True
+1693197,Dornier 328,Tornado,False
+0138993,Boeing 757,Boeing 757,True
+1312518,BAE-125,BAE-125,True
+0056323,Boeing 757,F/A-18,False
+1200712,Boeing 747,Boeing 747,True
+1058012,King Air,King Air,True
+1658290,Boeing 777,Boeing 777,True
+0237414,A340,A340,True
+1657942,Boeing 767,Boeing 767,True
+0498907,Boeing 717,Il-76,False
+0063284,Boeing 737,Boeing 737,True
+1979060,Falcon 900,Falcon 900,True
+1517894,C-47,C-47,True
+1680707,Embraer E-Jet,Embraer E-Jet,True
+1823702,A340,A340,True
+1514483,A310,A310,True
+1471554,Embraer E-Jet,Embraer E-Jet,True
+2033052,Challenger 600,Challenger 600,True
+2231709,DR-400,DR-400,True
+1122472,ATR-42,ATR-42,True
+2245660,A320,A320,True
+1945517,CRJ-700,CRJ-700,True
+0218812,Boeing 757,Boeing 757,True
+0820512,DH-82,DH-82,True
+0523227,Yak-42,Yak-42,True
+2106391,DH-82,DH-82,True
+1884741,A330,A330,True
+2139395,DC-3,Tornado,False
+2115318,Boeing 737,Boeing 737,True
+1807104,Saab 2000,Saab 2000,True
+0104604,Yak-42,Yak-42,True
+1240501,A330,Boeing 767,False
+2219553,Dash 8,Dash 8,True
+2066138,Boeing 777,Boeing 777,True
+0722225,Boeing 737,Boeing 737,True
+0507837,Boeing 757,A330,False
+0143336,A340,A340,True
+0312421,CRJ-700,CRJ-700,True
+1027002,Boeing 767,Boeing 767,True
+1143413,Boeing 767,Boeing 767,True
+0570801,BAE 146,BAE 146,True
+0127034,MD-80,Boeing 717,False
+0063289,Beechcraft 1900,Beechcraft 1900,True
+0447777,ATR-72,ATR-72,True
+1754180,Hawk T1,Hawk T1,True
+1245215,Boeing 747,Boeing 747,True
+0523148,An-12,An-12,True
+2175563,DHC-1,DHC-1,True
+1028704,Dash 8,Dash 8,True
+0888030,CRJ-700,CRJ-700,True
+0809054,BAE 146,BAE 146,True
+1094264,Boeing 747,Boeing 747,True
+0981462,Boeing 747,Boeing 747,True
+1997878,Boeing 747,Boeing 747,True
+1386611,BAE 146,BAE 146,True
+0836147,Boeing 747,Boeing 747,True
+1054022,A340,A340,True
+1857534,Gulfstream,Gulfstream,True
+1549035,Embraer E-Jet,Embraer E-Jet,True
+1204566,CRJ-200,CRJ-200,True
+2150934,Cessna 208,Cessna 208,True
+1146070,Cessna 208,Cessna 208,True
+1031457,Cessna 208,Cessna 208,True
+1099217,L-1011,L-1011,True
+1297059,Tu-134,Tu-134,True
+1043726,Dash 8,Dash 8,True
+0732742,Embraer ERJ 145,Embraer ERJ 145,True
+1560605,Fokker 70,Fokker 70,True
+1115302,C-47,C-47,True
+1103635,King Air,King Air,True
+1083206,Global Express,Global Express,True
+1255533,Embraer E-Jet,Embraer E-Jet,True
+1117178,Spitfire,Spitfire,True
+0445490,Boeing 737,Boeing 737,True
+0440694,Challenger 600,Challenger 600,True
+1341820,EMB-120,EMB-120,True
+0880559,Saab 2000,Saab 2000,True
+1594717,Tu-134,Tu-134,True
+0458627,A340,A340,True
+0478342,Boeing 757,Boeing 767,False
+1554751,CRJ-700,CRJ-700,True
+0109630,DC-8,DC-8,True
+0957896,Boeing 737,Boeing 737,True
+0728390,Boeing 737,Boeing 737,True
+1525673,Cessna 208,Cessna 208,True
+1759217,Spitfire,Spitfire,True
+1895036,Global Express,Global Express,True
+1000013,Yak-42,Yak-42,True
+1620007,Metroliner,Metroliner,True
+2087628,A320,A320,True
+1060506,Cessna Citation,Cessna Citation,True
+1692498,CRJ-700,CRJ-700,True
+1864276,Falcon 2000,Falcon 2000,True
+1660306,BAE 146,BAE 146,True
+1483195,Boeing 737,Boeing 737,True
+0916254,MD-11,Boeing 767,False
+1276530,BAE 146,BAE 146,True
+2156795,Embraer E-Jet,Embraer E-Jet,True
+0275804,MD-11,DC-10,False
+1869869,Tu-154,DC-9,False
+0765599,Boeing 747,Boeing 747,True
+1469691,Boeing 747,Boeing 747,True
+2234509,Gulfstream,Gulfstream,True
+1767104,Boeing 757,Boeing 757,True
+1244760,Hawk T1,Hawk T1,True
