@@ -132,3 +132,103 @@ npm install         # Install dependencies
 npm run dev         # Start the Development Server
 ```
 Visit `http://localhost:5173` (or the port specified in your console, e.g., `5174`) to interact with the demo.
+
+---
+
+## 📈 8. Experimental Results
+
+### 8.1 Overview
+
+All experiments share the following base configuration: **4-Fold Cross Validation**, AdamW optimizer, lr=0.001 (Cosine Annealing), weight_decay=5e-3, batch_size=32, BBox Crop, RandomRotation±15°, CutMix α=0.5, `family` label (70 classes).
+
+| # | Model | Attention | Data Strategy | Mean Val Acc | **Test Acc** |
+|---|-------|-----------|---------------|-------------|-------------|
+| 1 | SimpleCNN | — | Vanilla | 31.39% | 36.15% |
+| 2 | ResNet-34d | None | Vanilla | 90.61% | 91.75% |
+| 3 | ResNet-34d | None | Excluded | 90.76% | 91.90% |
+| 4 | ResNet-34d | None | Added | 90.69% | 92.20% |
+| 5 | ResNet-34d | None | Tuning (Excl+Add) | 90.54% | 92.25% |
+| 6 | ResNet-34d | **Channel** | Tuning | **91.00%** | **93.00%** |
+| 7 | ResNet-34d | Spatial | Tuning | 90.55% | 92.45% |
+| 8 | ResNet-34d | CBAM | Tuning | 90.64% | 91.50% |
+
+> **Best Model: ResNet-34d + Channel Attention + Tuning → 93.00% Test Accuracy**
+
+### 8.2 Baseline vs Best Model
+
+| | SimpleCNN | ResNet-34d + Channel + Tuning |
+|--|-----------|-------------------------------|
+| Test Accuracy | 36.15% | **93.00%** |
+| Parameters | 2.5M | 21.5M |
+| Training Time | 3,305s | 2,003s |
+| Epochs | 100 | 50 |
+| Overfitting | Severe (train≈20%, val≈31%) | Mild (train≈82%, val≈91%) |
+
+SimpleCNN failed to learn meaningful discriminative features across 70 visually similar aircraft families even after 100 epochs. ResNet-34d with ImageNet pretrained weights surpassed 90% within 50 epochs, demonstrating the critical role of transfer learning for fine-grained datasets.
+
+### 8.3 Effect of Each Component
+
+**Data Strategy:**
+- Excluded only: +0.15%p
+- Added only: +0.45%p
+- Tuning (both): +0.50%p
+
+**Attention Module (over Tuning baseline 92.25%):**
+- Channel: **+0.75%p** ← Best
+- Spatial: +0.20%p
+- CBAM: -0.75%p
+
+Channel Attention outperformed CBAM despite being a subset of it. After BBox cropping removes background, the spatial attention in CBAM likely suppresses useful aircraft regions — making pure channel-wise feature selection the more effective strategy.
+
+---
+
+## 🔬 9. Error Analysis
+
+### 9.1 Lowest Performing Classes (Best Model)
+
+| Class | Samples | Accuracy |
+|-------|---------|----------|
+| C-47 | 20 | 60.0% |
+| DC-10 | 20 | 70.0% |
+| DC-9 | 20 | 70.0% |
+| A330 | 40 | 72.5% |
+| A300 | 20 | 75.0% |
+
+**Root Causes:**
+- **C-47 vs DC-3**: C-47 is a military derivative of DC-3 — nearly identical fuselage and wing shape
+- **DC-10 vs MD-11**: Both share the tri-engine layout (two underwing + one tail), and MD-11 is the direct evolution of DC-10
+- **DC-9 vs MD-80/MD-90**: All rear twin-engine narrowbodies from the same design lineage
+- **A330 vs A300**: Similar wide-body fuselage cross-section and wing planform
+
+### 9.2 Perfect Accuracy Classes
+
+Military jets (F-16, Tornado, Spitfire), business jets (Gulfstream, Global Express, Falcon 900), and utility aircraft (C-130, DR-400) all achieved **100% accuracy**, as their silhouettes are visually distinct from commercial airliners.
+
+---
+
+## 💬 10. Discussion & Conclusion
+
+### Key Findings
+
+1. **Transfer learning is essential** for fine-grained classification with limited data. The 56.85%p gap between SimpleCNN and ResNet-34d cannot be explained by model size alone — ImageNet pretraining provides reusable low/mid-level features critical for shape recognition.
+
+2. **Channel Attention > CBAM** when input is spatially pre-cropped. The BBox crop already handles spatial noise; adding spatial attention on top introduces unnecessary suppression of informative aircraft regions.
+
+3. **Active Labeling has compounding value.** While individual gains (Excluded: +0.15%p, Added: +0.45%p) appear modest, the system enables continuous dataset improvement without any code changes — a meaningful operational advantage.
+
+4. **K-Fold Ensemble improves reliability.** Fold-to-fold val accuracy variance stayed within 1.5%p, confirming stable generalization rather than sensitivity to a particular data split.
+
+### Future Work
+- Targeted data collection for confused class pairs (C-47/DC-3, DC-10/MD-11)
+- Grad-CAM visualization to verify model attention on discriminative aircraft parts
+- Higher input resolution (448×448) for finer detail recognition
+
+---
+
+## 📚 References
+
+1. Maji et al. (2013). Fine-grained visual classification of aircraft. *arXiv:1306.5151*
+2. He et al. (2016). Deep residual learning for image recognition. *CVPR 2016*
+3. Woo et al. (2018). CBAM: Convolutional block attention module. *ECCV 2018*
+4. Yun et al. (2019). CutMix: Training strategy that makes use of sample mixing. *ICCV 2019*
+5. Loshchilov & Hutter (2019). Decoupled weight decay regularization. *ICLR 2019*
