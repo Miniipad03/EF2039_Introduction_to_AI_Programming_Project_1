@@ -204,6 +204,10 @@ Channel Attention outperformed CBAM despite being a subset of it. After BBox cro
 
 Military jets (F-16, Tornado, Spitfire), business jets (Gulfstream, Global Express, Falcon 900), and utility aircraft (C-130, DR-400) all achieved **100% accuracy**, as their silhouettes are visually distinct from commercial airliners.
 
+### 9.3 Visual Explanation (Grad-CAM)
+
+**Grad-CAM (Gradient-weighted Class Activation Mapping)** was utilized to visually verify the model's decision-making process. The generated heatmaps confirmed that our attention-enhanced models successfully pinpoint and focus on the most discriminative aircraft structures—such as engine configurations, tail designs, and wing shapes—rather than relying on arbitrary background noise.
+
 ---
 
 ## 💬 10. Discussion & Conclusion
@@ -220,7 +224,6 @@ Military jets (F-16, Tornado, Spitfire), business jets (Gulfstream, Global Expre
 
 ### Future Work
 - Targeted data collection for confused class pairs (C-47/DC-3, DC-10/MD-11)
-- Grad-CAM visualization to verify model attention on discriminative aircraft parts
 - Higher input resolution (448×448) for finer detail recognition
 
 ---
