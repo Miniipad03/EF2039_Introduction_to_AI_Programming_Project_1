@@ -115,15 +115,20 @@ All results are automatically flushed to your `--outdir` generating:
 > python pick_best_data.py results.csv
 > ```
 
-## 🖥️ 7. How to Run the Inference Demo (Labeling Tool)
-Instead of a standard local python GUI, this project features a modern **SvelteKit** web application `labeling-tool`. This serves as both an inference visualizer and an active data-centric AI refinement environment. 
+## 🖥️ 7. How to Run the Inference Demo
+Instead of a standard local python GUI, this project features a modern **SvelteKit** web application `inference-demo`. This demo allows you to easily test your trained models in a user-friendly web interface.
+
+### Key Features
+- **Drag & Drop Image Upload**: Easily upload images of aircraft for inference.
+- **Bounding Box Cropping**: Draw a bounding box directly on the canvas to focus inference on the aircraft area.
+- **Model Selection & Ensemble**: Choose one or multiple `.pth` models trained by `train.py`. Selecting multiple models will automatically perform an ensemble prediction.
+- **Visual Results**: Beautifully visualized top predictions with confidence score bars.
 
 ### Launching the Web App
 Make sure you have Node.js (`npm`) installed.
 ```bash
-cd labeling-tool
-npm ci              # Install precise dependency tree
-npm run prepare     # Sync SvelteKit routes
+cd inference-demo
+npm install         # Install dependencies
 npm run dev         # Start the Development Server
 ```
-Visit `http://localhost:5173` (or the port specified in your console) to interact with the demo. The JSON results will be automatically parsed by `train.py` on your next training run!
+Visit `http://localhost:5173` (or the port specified in your console, e.g., `5174`) to interact with the demo.
