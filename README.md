@@ -6,6 +6,27 @@
 
 ---
 
+## 📁 Project Structure
+
+```
+Project_1/
+├── train.py                  # Main training entry point
+├── dataset_utils.py          # Dataset loading, splits, transforms
+├── models.py                 # ResNet variants + attention modules
+├── download_dataset.py       # Dataset downloader
+├── activate.sh               # One-click environment setup
+├── requirements.txt          # Python dependencies
+├── pick_best_model.py        # Find best checkpoint from results.csv
+├── pick_best_data.py         # Find best data strategy from results.csv
+├── data/                     # FGVC-Aircraft dataset (downloaded)
+├── labeling-tool/            # SvelteKit web app for excluding/adding images
+├── inference-demo/           # SvelteKit web app for model inference
+├── best_model/               # Saved model checkpoints
+└── experiment_*/             # Per-experiment output logs and plots
+```
+
+---
+
 ## ⚡ Quick Start
 
 ```bash
@@ -135,7 +156,7 @@ The evaluation phase is built directly into the end of the `train.py` script. Af
 All results are automatically flushed to your `--outdir` generating:
 1. **`results.csv`**: A master log appending the performance of every experiment.
 2. **`history_[tag].csv`**: Epoch-by-epoch loss/accuracy metrics.
-3. **`curve_[tag].png`**: Beautiful matplotlib visualizations of your learning curves.
+3. **`curve_[tag].png`**: Learning curve plots (train/val loss and accuracy).
 4. **`confusion_[tag].png`**: A normalized Seaborn heatmap of the test predictions.
 5. **`classwise_[tag].csv`**: Per-class accuracy metrics to identify underperforming aircraft variants.
 
@@ -146,13 +167,13 @@ All results are automatically flushed to your `--outdir` generating:
 > ```
 
 ## 🖥️ 7. How to Run the Inference Demo
-Instead of a standard local python GUI, this project features a modern **SvelteKit** web application `inference-demo`. This demo allows you to easily test your trained models in a user-friendly web interface.
+This project includes a **SvelteKit** web app (`inference-demo`) for testing trained models in the browser.
 
 ### Key Features
 - **Drag & Drop Image Upload**: Easily upload images of aircraft for inference.
 - **Bounding Box Cropping**: Draw a bounding box directly on the canvas to focus inference on the aircraft area.
 - **Model Selection & Ensemble**: Choose one or multiple `.pth` models trained by `train.py`. Selecting multiple models will automatically perform an ensemble prediction.
-- **Visual Results**: Beautifully visualized top predictions with confidence score bars.
+- **Visual Results**: Top predictions displayed with confidence score bars.
 
 ### Prerequisites
 
