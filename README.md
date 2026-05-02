@@ -124,11 +124,32 @@ Instead of a standard local python GUI, this project features a modern **SvelteK
 - **Model Selection & Ensemble**: Choose one or multiple `.pth` models trained by `train.py`. Selecting multiple models will automatically perform an ensemble prediction.
 - **Visual Results**: Beautifully visualized top predictions with confidence score bars.
 
+### Prerequisites
+
+**1. Node.js (npm)**
+Download and install Node.js from https://nodejs.org (LTS version recommended). npm is bundled with Node.js.
+
+**2. Python Path Configuration**
+The inference server spawns a Python subprocess to run `scripts/infer.py`. By default it uses the system `python` command, but if you're using a conda environment you must update the path in `inference-demo/src/routes/api/infer/+server.js`:
+
+```js
+// Line ~35 — replace with your actual Python path
+const result = spawnSync(
+    'python',   // e.g. 'C:\\Users\\yourname\\miniconda3\\envs\\YOUR_ENV\\python.exe'
+    args,
+    ...
+```
+
+To find your conda environment's Python path:
+```bash
+conda activate YOUR_ENV
+python -c "import sys; print(sys.executable)"
+```
+
 ### Launching the Web App
-Make sure you have Node.js (`npm`) installed.
 ```bash
 cd inference-demo
-npm install         # Install dependencies
+npm install         # Install dependencies (first time only)
 npm run dev         # Start the Development Server
 ```
 Visit `http://localhost:5173` (or the port specified in your console, e.g., `5174`) to interact with the demo.

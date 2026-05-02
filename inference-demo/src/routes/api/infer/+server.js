@@ -32,7 +32,7 @@ export async function POST({ request }) {
 		if (xmin !== null) args.push('--bbox', xmin, ymin, xmax, ymax);
 
 		const result = spawnSync(
-			'python',
+			'C:\\Users\\bb105\\miniconda3\\envs\\EL3006\\python.exe',
 			args,
 			{ encoding: 'utf-8', timeout: 120_000 }
 		);
